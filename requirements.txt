@@ -1,4 +1,3 @@
 synapseclient
 snakemake
 boto3
-awscli
