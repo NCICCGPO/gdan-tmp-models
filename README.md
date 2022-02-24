@@ -77,3 +77,19 @@ RUN CF_For_Docker/KIRCKICH/run_all.sh
 then `docker image build --tag cloudforest .`
 
 `docker run cloudforest` this runs without error but no output files locally. might need to mount a volume to persist the data
+
+
+
+now
+```
+pip install cwlref-runner
+```
+
+
+```
+docker run -ti --rm -v `pwd`:/transfer -u `id -u` cloudforest
+
+cd transfer/cloud-forest/
+
+cwl-runner docker.cwl docker-job.yaml
+```

@@ -1,0 +1,9 @@
+fm:
+  class: File
+  path:  ../CF_For_Docker/KIRCKICH/FM/TE_1_4_1_1_3.fm
+
+rfpred:
+  class: File
+  path: ../CF_For_Docker/KIRCKICH/SF/rf_1_4_1_1_3.sf
+
+preds: "rf_1_4_1_1_3.cl"
