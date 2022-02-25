@@ -11,21 +11,19 @@ hints:
 
 
 inputs:
-  # fm input file
-  fm:
+  fm_input:
     type: File
     inputBinding:
       position: 1
       prefix: -fm
 
-  # rfpred file
-  rfpred:
+  rfpred_input:
     type: File
     inputBinding:
       position: 2
       prefix: -rfpred
 
-  preds:
+  preds_input:
     type: string
     inputBinding:
       position: 3
@@ -35,4 +33,4 @@ outputs:
   predictionouts:
     type: File
     outputBinding:
-      glob: "rf_1_4_1_1_3.cl"
+      glob: "rf_*.cl"
