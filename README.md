@@ -33,7 +33,8 @@ docker image build --tag cloudforest .
 ```
 
 ### Run Model
-Cloud forest machine learning model can be ran as a CWL workflow
+Cloud forest machine learning model can be ran as a CWL workflow. Run ML and saves predictions in `CL/`
 ```
 bash RUN.sh
 ```
+Where the output predictions are saved as a tsv with non-named columns that are `[CaseLabel, Predicted, Actual]`
