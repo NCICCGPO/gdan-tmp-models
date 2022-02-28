@@ -5,21 +5,24 @@ class: Workflow
 requirements:
   - class: DockerRequirement
     dockerPull: "cloudforest"
+  - class: ScatterFeatureRequirement
+  - class: StepInputExpressionRequirement
+  - class: SubworkflowFeatureRequirement
 
 
 
 
 
 inputs:
-  fm_input:
-    doc: tbd
-    type: File
-  rfpred_input:
-    doc: tbd
-    type: File
-  preds_input:
-    doc: tbd
-    type: string
+  fm_input: File[]
+    #doc: tbd
+    #type: File
+  rfpred_input: File[]
+    #doc: tbd
+    #type: File
+  preds_input: string[]
+    #doc: tbd
+    #type: string
 
 
 
@@ -28,7 +31,7 @@ inputs:
 outputs:
   predictionouts:
     doc: tbd
-    type: File
+    type: File[]
     outputBinding:
       glob: "rf_*.cl"
     outputSource: stepcloudforest/predictionouts
@@ -38,11 +41,12 @@ outputs:
 
 
 steps:
-  # Cloudforest
   stepcloudforest:
-    run: ../tools/cloudforest-pred.cwl
     in:
       fm_input: fm_input
       rfpred_input: rfpred_input
       preds_input: preds_input
+    scatter: [fm_input, rfpred_input, preds_input]
+    scatterMethod: dotproduct
     out: [predictionouts]
+    run: ../tools/cloudforest-pred.cwl
