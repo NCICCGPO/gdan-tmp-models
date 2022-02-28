@@ -3,4 +3,4 @@
 # run cwl tool
 cwl-runner --outdir CF_For_Docker/KIRCKICH/CL \
   workflows/ml_workflow.cwl \
-  tools/cloudforest-inputs.yml
+  job_inputs/cloudforest-inputs.yml
