@@ -27,12 +27,12 @@ aws_secret_access_key=XXX
 Input feature matrices and a predictor forest must be already created.
 
 Feature matrices must be placed in `cloudforest/CF_For_Docker/KIRCKICH/FM/` with the format:
-| .  | tes3 | tes6 |
-|----|---|---|
-| B:0 | 1 | 1 |
-| feature1  | 0.037816 | 0.056716 |
-| feature2  | 0.059439 | 0.088822 |
-| ... | ... | ... |
+| .  | tes3 | tes6 | ... |
+|----|---|---| ---|
+| B:0 | 1 | 1 | ... |
+| feature1  | 0.037816 | 0.056716 | ... |
+| feature2  | 0.059439 | 0.088822 | ... |
+| ... | ... | ... | ... |
 
 Predictor forests must be placed in `cloudforest/CF_For_Docker/KIRCKICH/SF/`
 
