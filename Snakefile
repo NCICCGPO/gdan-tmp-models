@@ -3,7 +3,8 @@
 rule all:
     input:
         "subscope.info",
-        "aklimate.info"
+        "aklimate.info",
+        "cloudforest.info"
 
 rule subscope_docker:
     output:
@@ -32,3 +33,9 @@ rule aklimate_docker_load:
         "stuartlab_tmp_aklimate_20210714_docker_image.tar.gz"
     shell:
         "docker load -i stuartlab_tmp_aklimate_20210714_docker_image.tar.gz && docker tag 4befea59cb3b aklimate-tmp:latest && docker images | grep aklimate > aklimate.info"
+
+rule cloudforest:
+    output:
+        "cloudforest.info"
+    shell:
+        "docker build -t cloudforest cloudforest/ && docker images | grep cloudforest > cloudforest.info"
