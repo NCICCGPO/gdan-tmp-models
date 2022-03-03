@@ -4,8 +4,6 @@ Create environment and setup
 ```
 python -m venv venv
 . venv/bin/activate
-
-conda install python==3.8
 ```
 
 Synapse and AWS
@@ -21,6 +19,9 @@ aws_access_key_id=XXX
 aws_secret_access_key=XXX
 ```
 
+# Build Docker Images
+
+Snakemake must already be installed. Run `Snakefile` that builds Docker images for each method (ex. Cloud Forest)
 
 # WIP - Cloud Forest ML
 
@@ -42,18 +43,10 @@ Predictor forests must be placed in `cloudforest/CF_For_Docker/KIRCKICH/SF/`
 Output folder for predictions should already exist `cloudforest/CF_For_Docker/KIRCKICH/CL/`
 
 
-### Build Docker Image
-Create docker image for Cloud Forest models (multi-stage build)
-```
-cd cloud-forest/
-```
-```
-docker image build --tag cloudforest .
-```
-
 ### Run Model For Predicted Subtypes
 Cloud forest machine learning model can be ran as a CWL workflow. Run ML and saves predictions in `CL/`
 ```
+cd cloud-forest/
 bash RUN.sh
 ```
 Where the output predictions are saved as a tsv with non-named columns that are `[CaseLabel, Predicted, Actual]`
