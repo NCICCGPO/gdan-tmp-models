@@ -22,7 +22,10 @@ aws_secret_access_key=XXX
 ```
 
 
-# Cloud Forest ML
+# WIP - Cloud Forest ML
+
+Status = Blocker from collaborator on outputs
+
 ### Prep
 Input feature matrices and a predictor forest must be already created.
 
@@ -56,7 +59,7 @@ bash RUN.sh
 Where the output predictions are saved as a tsv with non-named columns that are `[CaseLabel, Predicted, Actual]`
 
 
-# Skgrid ML
+# WIP - Skgrid ML
 ### Train Models
 The scripts to do this are located in private repo https://github.com/kellrott/GDAN_TMP_classification
 
