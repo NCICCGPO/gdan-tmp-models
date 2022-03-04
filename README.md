@@ -53,22 +53,9 @@ Format to universal output.
 
 
 # JADBio
-### One Time Setup
-Download requires access to Synapse project page.
-```
-# Get jar file from Synapse
-cd jadbio
-synapse get -r syn27367851 --downloadLocation src/
-```
-
-### Manually Build Docker Image for JADBio
-```
-cd jadbio
-docker build -t jadbio .
-````
-
 ### Run Model for Predicted Subtypes
 ```
+cd jadbio
 bash RUN.sh
 ```
 
