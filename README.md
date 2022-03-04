@@ -23,10 +23,7 @@ aws_secret_access_key=XXX
 
 Snakemake must already be installed. Run `Snakefile` that builds Docker images for each method (ex. Cloud Forest).
 
-# WIP - Cloud Forest ML
-
-Status = Blocker from collaborator on outputs
-
+# Cloud Forest ML
 ### Prep
 Input feature matrices and a predictor forest must be already created.
 
@@ -51,23 +48,32 @@ bash RUN.sh
 ```
 Where the output predictions are saved as a tsv with non-named columns that are `[CaseLabel, Predicted, Actual]`
 
-# WIP - JADBio
+### WIP - Post Formatting
+Format to universal output.
+
+
+# JADBio
 ### One Time Setup
+Download requires access to Synapse project page.
 ```
 # Get jar file from Synapse
 cd jadbio
 synapse get -r syn27367851 --downloadLocation src/
 ```
 
-### WIP - Manually Build Docker Image for JADBio
+### Manually Build Docker Image for JADBio
 ```
 cd jadbio
 docker build -t jadbio .
 ````
 
+### Run Model for Predicted Subtypes
 ```
 bash RUN.sh
 ```
+
+### WIP - Post Formatting
+Format to universal output.
 
 
 # WIP - Skgrid ML
