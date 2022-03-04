@@ -1,0 +1,10 @@
+model:
+  - class: File
+    path:  ../data/models/ACC_GEXP_model.bin
+
+input_data:
+  - class: File
+    path: ../data/input/input_example.csv
+
+out:
+  - "../data/preds/ACC_preds.csv"
