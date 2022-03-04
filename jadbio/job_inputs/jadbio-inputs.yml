@@ -1,10 +1,135 @@
 model:
   - class: File
     path:  ../data/models/ACC_GEXP_model.bin
+  - class: File
+    path:  ../data/models/BLCA_v8_20200203_model.bin
+  - class: File
+    path:  ../data/models/BRCA_GEXP_model.bin
+  - class: File
+    path:  ../data/models/CESC_GEXP_model.bin
+  - class: File
+    path:  ../data/models/COADREAD_v8_20200203_model.bin
+  - class: File
+    path:  ../data/models/ESCC_GEXP_model.bin
+  - class: File
+    path:  ../data/models/GEA_v8_20200203_model.bin
+  - class: File
+    path:  ../data/models/HNSC_GEXP_model.bin
+  - class: File
+    path:  ../data/models/KIRCKICH_GEXP_model.bin
+  - class: File
+    path:  ../data/models/KIRP_v8_20200203_model.bin
+  - class: File
+    path:  ../data/models/LGGGBM_v8_20200203_model.bin
+  - class: File
+    path:  ../data/models/LIHCCHOL_v12_20210228_model.bin
+  - class: File
+    path:  ../data/models/LUAD_GEXP_model.bin
+  - class: File
+    path:  ../data/models/LUSC_v8_20200203_model.bin
+  - class: File
+    path:  ../data/models/MESO_v8_20200203_model.bin
+  - class: File
+    path:  ../data/models/OV_GEXP_model.bin
+  - class: File
+    path:  ../data/models/PAAD_GEXP_model.bin
+  - class: File
+    path:  ../data/models/PCPG_GEXP_model.bin
+  - class: File
+    path:  ../data/models/PRAD_v8_20200203_model.bin
+  - class: File
+    path:  ../data/models/SARC_GEXP_model.bin
+  - class: File
+    path:  ../data/models/SKCM_MUTA_model.bin
+  - class: File
+    path:  ../data/models/TGCT_v8_20200203_model.bin
+  - class: File
+    path:  ../data/models/THCA_v8_20200203_model.bin
+  - class: File
+    path:  ../data/models/THYM_MIR_model.bin
+  - class: File
+    path:  ../data/models/UCEC_v8_20200203_model.bin
+  - class: File
+    path:  ../data/models/UVM_v8_20200203_model.bin
 
 input_data:
   - class: File
-    path: ../data/input/input_example.csv
+    path: ../data/input/input_example1.csv
+  - class: File
+    path: ../data/input/input_example2.csv
+  - class: File
+    path: ../data/input/input_example3.csv
+  - class: File
+    path: ../data/input/input_example4.csv
+  - class: File
+    path: ../data/input/input_example5.csv
+  - class: File
+    path: ../data/input/input_example6.csv
+  - class: File
+    path: ../data/input/input_example7.csv
+  - class: File
+    path: ../data/input/input_example8.csv
+  - class: File
+    path: ../data/input/input_example9.csv
+  - class: File
+    path: ../data/input/input_example10.csv
+  - class: File
+    path: ../data/input/input_example11.csv
+  - class: File
+    path: ../data/input/input_example12.csv
+  - class: File
+    path: ../data/input/input_example13.csv
+  - class: File
+    path: ../data/input/input_example14.csv
+  - class: File
+    path: ../data/input/input_example15.csv
+  - class: File
+    path: ../data/input/input_example16.csv
+  - class: File
+    path: ../data/input/input_example17.csv
+  - class: File
+    path: ../data/input/input_example18.csv
+  - class: File
+    path: ../data/input/input_example19.csv
+  - class: File
+    path: ../data/input/input_example20.csv
+  - class: File
+    path: ../data/input/input_example21.csv
+  - class: File
+    path: ../data/input/input_example22.csv
+  - class: File
+    path: ../data/input/input_example23.csv
+  - class: File
+    path: ../data/input/input_example24.csv
+  - class: File
+    path: ../data/input/input_example25.csv
+  - class: File
+    path: ../data/input/input_example26.csv
 
 out:
-  - "../data/preds/ACC_preds.csv"
+  - "ACC_preds.csv"
+  - "BLCA_preds.csv"
+  - "BRCA_preds.csv"
+  - "CESC_preds.csv"
+  - "COADREAD_preds.csv"
+  - "ESCC_preds.csv"
+  - "GEA_preds.csv"
+  - "HNSC_preds.csv"
+  - "KIRCKICH_preds.csv"
+  - "KIRP_preds.csv"
+  - "LGGGBM_preds.csv"
+  - "LIHCCHOL_preds.csv"
+  - "LUAD_preds.csv"
+  - "LUSC_preds.csv"
+  - "MESO_preds.csv"
+  - "OV_preds.csv"
+  - "PAAD_preds.csv"
+  - "PCPG_preds.csv"
+  - "PRAD_preds.csv"
+  - "SARC_preds.csv"
+  - "SKCM_preds.csv"
+  - "TGCT_preds.csv"
+  - "THCA_preds.csv"
+  - "THYM_preds.csv"
+  - "UCEC_preds.csv"
+  - "UVM_preds.csv"

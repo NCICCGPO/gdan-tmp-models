@@ -2,7 +2,7 @@
 
 cwlVersion: v1.0
 class: CommandLineTool
-baseCommand: [java, --enable-preview, -jar, src/jadbio-model-exe.jar ./]
+baseCommand: [java, --enable-preview, -jar, /src/jadbio-model-exe.jar]
 requirements:
   InlineJavascriptRequirement: {}
 hints:
