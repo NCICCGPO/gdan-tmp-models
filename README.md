@@ -59,6 +59,16 @@ cd jadbio
 synapse get -r syn27367851 --downloadLocation src/
 ```
 
+### WIP - Manually Build Docker Image for JADBio
+```
+cd jadbio
+docker build -t jadbio .
+````
+
+```
+bash RUN.sh
+```
+
 
 # WIP - Skgrid ML
 ### Train Models
