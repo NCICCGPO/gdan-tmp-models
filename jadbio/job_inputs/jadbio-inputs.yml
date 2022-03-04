@@ -7,4 +7,4 @@ input_data:
     path: ../data/input/input_example.csv
 
 out:
-  - "../data/preds/ACC_preds.csv"
+  - "ACC_preds.csv"
