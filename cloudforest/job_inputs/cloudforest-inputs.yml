@@ -1,0 +1,132 @@
+fm_input:
+  - class: File
+    path:  ../CF_For_Docker/KIRCKICH/FM/TE_1_4_1_1_3.fm
+  - class: File
+    path:  ../CF_For_Docker/KIRCKICH/FM/TE_1_4_2_1_3.fm
+  - class: File
+    path:  ../CF_For_Docker/KIRCKICH/FM/TE_1_4_3_1_3.fm
+  - class: File
+    path:  ../CF_For_Docker/KIRCKICH/FM/TE_1_4_4_1_3.fm
+  - class: File
+    path:  ../CF_For_Docker/KIRCKICH/FM/TE_1_4_5_1_3.fm
+  - class: File
+    path:  ../CF_For_Docker/KIRCKICH/FM/TE_1_4_1_2_3.fm
+  - class: File
+    path:  ../CF_For_Docker/KIRCKICH/FM/TE_1_4_2_2_3.fm
+  - class: File
+    path:  ../CF_For_Docker/KIRCKICH/FM/TE_1_4_3_2_3.fm
+  - class: File
+    path:  ../CF_For_Docker/KIRCKICH/FM/TE_1_4_4_2_3.fm
+  - class: File
+    path:  ../CF_For_Docker/KIRCKICH/FM/TE_1_4_5_2_3.fm
+  - class: File
+    path:  ../CF_For_Docker/KIRCKICH/FM/TE_1_4_1_3_3.fm
+  - class: File
+    path:  ../CF_For_Docker/KIRCKICH/FM/TE_1_4_2_3_3.fm
+  - class: File
+    path:  ../CF_For_Docker/KIRCKICH/FM/TE_1_4_3_3_3.fm
+  - class: File
+    path:  ../CF_For_Docker/KIRCKICH/FM/TE_1_4_4_3_3.fm
+  - class: File
+    path:  ../CF_For_Docker/KIRCKICH/FM/TE_1_4_5_3_3.fm
+  - class: File
+    path:  ../CF_For_Docker/KIRCKICH/FM/TE_1_4_1_4_3.fm
+  - class: File
+    path:  ../CF_For_Docker/KIRCKICH/FM/TE_1_4_2_4_3.fm
+  - class: File
+    path:  ../CF_For_Docker/KIRCKICH/FM/TE_1_4_3_4_3.fm
+  - class: File
+    path:  ../CF_For_Docker/KIRCKICH/FM/TE_1_4_4_4_3.fm
+  - class: File
+    path:  ../CF_For_Docker/KIRCKICH/FM/TE_1_4_5_4_3.fm
+  - class: File
+    path:  ../CF_For_Docker/KIRCKICH/FM/TE_1_4_1_5_3.fm
+  - class: File
+    path:  ../CF_For_Docker/KIRCKICH/FM/TE_1_4_2_5_3.fm
+  - class: File
+    path:  ../CF_For_Docker/KIRCKICH/FM/TE_1_4_3_5_3.fm
+  - class: File
+    path:  ../CF_For_Docker/KIRCKICH/FM/TE_1_4_4_5_3.fm
+  - class: File
+    path:  ../CF_For_Docker/KIRCKICH/FM/TE_1_4_5_5_3.fm
+
+
+rfpred_input:
+  - class: File
+    path: ../CF_For_Docker/KIRCKICH/SF/rf_1_4_1_1_3.sf
+  - class: File
+    path: ../CF_For_Docker/KIRCKICH/SF/rf_1_4_2_1_3.sf
+  - class: File
+    path: ../CF_For_Docker/KIRCKICH/SF/rf_1_4_3_1_3.sf
+  - class: File
+    path: ../CF_For_Docker/KIRCKICH/SF/rf_1_4_4_1_3.sf
+  - class: File
+    path: ../CF_For_Docker/KIRCKICH/SF/rf_1_4_5_1_3.sf
+  - class: File
+    path: ../CF_For_Docker/KIRCKICH/SF/rf_1_4_1_2_3.sf
+  - class: File
+    path: ../CF_For_Docker/KIRCKICH/SF/rf_1_4_2_2_3.sf
+  - class: File
+    path: ../CF_For_Docker/KIRCKICH/SF/rf_1_4_3_2_3.sf
+  - class: File
+    path: ../CF_For_Docker/KIRCKICH/SF/rf_1_4_4_2_3.sf
+  - class: File
+    path: ../CF_For_Docker/KIRCKICH/SF/rf_1_4_5_2_3.sf
+  - class: File
+    path: ../CF_For_Docker/KIRCKICH/SF/rf_1_4_1_3_3.sf
+  - class: File
+    path: ../CF_For_Docker/KIRCKICH/SF/rf_1_4_2_3_3.sf
+  - class: File
+    path: ../CF_For_Docker/KIRCKICH/SF/rf_1_4_3_3_3.sf
+  - class: File
+    path: ../CF_For_Docker/KIRCKICH/SF/rf_1_4_4_3_3.sf
+  - class: File
+    path: ../CF_For_Docker/KIRCKICH/SF/rf_1_4_5_3_3.sf
+  - class: File
+    path: ../CF_For_Docker/KIRCKICH/SF/rf_1_4_1_4_3.sf
+  - class: File
+    path: ../CF_For_Docker/KIRCKICH/SF/rf_1_4_2_4_3.sf
+  - class: File
+    path: ../CF_For_Docker/KIRCKICH/SF/rf_1_4_3_4_3.sf
+  - class: File
+    path: ../CF_For_Docker/KIRCKICH/SF/rf_1_4_4_4_3.sf
+  - class: File
+    path: ../CF_For_Docker/KIRCKICH/SF/rf_1_4_5_4_3.sf
+  - class: File
+    path: ../CF_For_Docker/KIRCKICH/SF/rf_1_4_1_5_3.sf
+  - class: File
+    path: ../CF_For_Docker/KIRCKICH/SF/rf_1_4_2_5_3.sf
+  - class: File
+    path: ../CF_For_Docker/KIRCKICH/SF/rf_1_4_3_5_3.sf
+  - class: File
+    path: ../CF_For_Docker/KIRCKICH/SF/rf_1_4_4_5_3.sf
+  - class: File
+    path: ../CF_For_Docker/KIRCKICH/SF/rf_1_4_5_5_3.sf
+
+
+preds_input:
+  - "rf_1_4_1_1_3.cl"
+  - "rf_1_4_2_1_3.cl"
+  - "rf_1_4_3_1_3.cl"
+  - "rf_1_4_4_1_3.cl"
+  - "rf_1_4_5_1_3.cl"
+  - "rf_1_4_1_2_3.cl"
+  - "rf_1_4_2_2_3.cl"
+  - "rf_1_4_3_2_3.cl"
+  - "rf_1_4_4_2_3.cl"
+  - "rf_1_4_5_2_3.cl"
+  - "rf_1_4_1_3_3.cl"
+  - "rf_1_4_2_3_3.cl"
+  - "rf_1_4_3_3_3.cl"
+  - "rf_1_4_4_3_3.cl"
+  - "rf_1_4_5_3_3.cl"
+  - "rf_1_4_1_4_3.cl"
+  - "rf_1_4_2_4_3.cl"
+  - "rf_1_4_3_4_3.cl"
+  - "rf_1_4_4_4_3.cl"
+  - "rf_1_4_5_4_3.cl"
+  - "rf_1_4_1_5_3.cl"
+  - "rf_1_4_2_5_3.cl"
+  - "rf_1_4_3_5_3.cl"
+  - "rf_1_4_4_5_3.cl"
+  - "rf_1_4_5_5_3.cl"
