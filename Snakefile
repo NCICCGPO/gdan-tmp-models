@@ -24,7 +24,7 @@ rule aklimate_docker:
     output:
         "stuartlab_tmp_aklimate_20210714_docker_image.tar.gz"
     shell:
-        "synapse get syn25982821"
+        "synapse get -r syn25982821 --downloadLocation aklimate/src/"
 
 rule aklimate_docker_load:
     output:
@@ -32,7 +32,7 @@ rule aklimate_docker_load:
     input:
         "stuartlab_tmp_aklimate_20210714_docker_image.tar.gz"
     shell:
-        "docker load -i stuartlab_tmp_aklimate_20210714_docker_image.tar.gz && docker tag 4befea59cb3b aklimate-tmp:latest && docker images | grep aklimate > aklimate.info"
+        "docker load -i aklimate/src/stuartlab_tmp_aklimate_20210714_docker_image.tar.gz && docker tag 4befea59cb3b aklimate-tmp:latest && docker images | grep aklimate > aklimate.info"
 
 rule cloudforest:
     output:
