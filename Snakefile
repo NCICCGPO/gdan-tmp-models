@@ -39,3 +39,17 @@ rule cloudforest:
         "cloudforest.info"
     shell:
         "docker build -t cloudforest cloudforest/ && docker images | grep cloudforest > cloudforest.info"
+
+rule jadbio_java:
+    output:
+        "jadbio/src/jadbio-model-exe.jar"
+    shell:
+        "synapse get -r syn27367851 --downloadLocation jadbio/src/"
+
+rule jadbio_docker_load:
+    output:
+        "jabio.info"
+    input:
+        "jadbio/src/jadbio-model-exe.jar"
+    shell:
+        "docker build -t jadbio . && docker images | grep jadbio > jadbio.info"
