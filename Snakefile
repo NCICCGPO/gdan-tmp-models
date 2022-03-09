@@ -42,7 +42,7 @@ rule cloudforest:
 
 rule jadbio_java:
     output:
-        "jadbio-model-exe.jar"
+        "jadbio/src/jadbio-model-exe.jar"
     shell:
         "synapse get -r syn27367851 --downloadLocation jadbio/src/"
 
@@ -50,6 +50,6 @@ rule jadbio_docker_load:
     output:
         "jabio.info"
     input:
-        "jadbio-model-exe.jar"
+        "jadbio/src/jadbio-model-exe.jar"
     shell:
         "docker build -t jadbio . && docker images | grep jadbio > jadbio.info"
