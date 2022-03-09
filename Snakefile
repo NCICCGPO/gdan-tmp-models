@@ -4,7 +4,8 @@ rule all:
     input:
         "subscope.info",
         "aklimate.info",
-        "cloudforest.info"
+        "cloudforest.info",
+        "jadbio.info"
 
 rule subscope_docker:
     output:
