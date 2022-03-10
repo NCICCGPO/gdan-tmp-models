@@ -48,9 +48,6 @@ bash RUN.sh
 ```
 Where the output predictions are saved as a tsv with non-named columns that are `[CaseLabel, Predicted, Actual]`
 
-### WIP - Post Formatting
-Format to universal output.
-
 
 # JADBio
 ### Run Model for Predicted Subtypes
@@ -59,15 +56,12 @@ cd jadbio
 bash RUN.sh
 ```
 
-### WIP - Post Formatting
-Format to universal output.
 
-
-# WIP - AKLIMATE
+# AKLIMATE
 ### Build image with permissions updated
 ```
 cd cloudforest
-docker build image --tag aklimate2 .
+docker build --tag aklimate2 .
 ```
 ### Run Model for Predicted Subtypes
 ```
@@ -76,21 +70,12 @@ bash RUN.sh
 ```
 
 
-# WIP - SubSCOPE
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# SubSCOPE
+### Run Model for Predicted Subtypes
+```
+cd subscope
+bash RUN.sh
+```
 
 
 # WIP - Skgrid ML
