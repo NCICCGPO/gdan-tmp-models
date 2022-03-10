@@ -22,7 +22,7 @@ rule subscope_docker_load:
 
 rule aklimate_docker:
     output:
-        "stuartlab_tmp_aklimate_20210714_docker_image.tar.gz"
+        "aklimate/src/stuartlab_tmp_aklimate_20210714_docker_image.tar.gz"
     shell:
         "synapse get -r syn25982821 --downloadLocation aklimate/src/"
 
@@ -30,7 +30,7 @@ rule aklimate_docker_load:
     output:
         "aklimate.info"
     input:
-        "stuartlab_tmp_aklimate_20210714_docker_image.tar.gz"
+        "aklimate/src/stuartlab_tmp_aklimate_20210714_docker_image.tar.gz"
     shell:
         "docker load -i aklimate/src/stuartlab_tmp_aklimate_20210714_docker_image.tar.gz && docker tag 4befea59cb3b aklimate-tmp:latest && docker images | grep aklimate > aklimate.info"
 
