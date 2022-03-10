@@ -76,6 +76,36 @@ bash RUN.sh
 Format to universal output.
 
 
+# WIP - AKLIMATE
+### Build image with permissions updated
+```
+cd cloudforest
+docker build image --tag aklimate2 .
+```
+### Run Model for Predicted Subtypes
+```
+# Predict subtypes
+bash RUN.sh
+```
+
+
+# WIP - SubSCOPE
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # WIP - Skgrid ML
 ### Train Models
 The scripts to do this are located in private repo https://github.com/kellrott/GDAN_TMP_classification

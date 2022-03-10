@@ -1,0 +1,7 @@
+cancer:
+  - "BRCA"
+
+
+input_data:
+  - class: File
+    path: ../data/input/metabric_tmprescale.tsv
