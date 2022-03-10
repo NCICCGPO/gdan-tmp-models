@@ -9,7 +9,7 @@ requirements:
 hints:
   DockerRequirement:
     dockerPull: "subscope"
-    dockerOutputDirectory: "/data"
+    dockerOutputDirectory: "/data/results"
 
 
 inputs:
@@ -28,7 +28,31 @@ inputs:
 
 
 outputs:
-  predictionouts:
+  combined_results:
     type: File
     outputBinding:
-      glob: "*.tsv"
+      glob: "*results.txt"
+  combined_confidence:
+    type: File
+    outputBinding:
+      glob: "*confidence.txt"
+  model1:
+    type: Directory
+    outputBinding:
+      glob: "*model1"
+  model2:
+    type: Directory
+    outputBinding:
+      glob: "*model2"
+  model3:
+    type: Directory
+    outputBinding:
+      glob: "*model3"
+  model4:
+    type: Directory
+    outputBinding:
+      glob: "*model4"
+  model5:
+    type: Directory
+    outputBinding:
+      glob: "*model5"
