@@ -4,15 +4,22 @@ import os
 import sys
 import pickle
 import pandas as pd
+import argparse
 
-input = sys.argv[1]
-output = sys.argv[2]
-models = sys.argv[3:]
+parser = argparse.ArgumentParser()
+parser.add_argument("--data", help='data to make subtype predictions')
+parser.add_argument("--out", help="file to save predictions to")
+parser.add_argument("--trained", nargs = '+',help="trained model pickle file")
+args = parser.parse_args()
 
-feat=pd.read_csv(input, sep="\t", index_col=0)
+# data = sys.argv[1]
+# out = sys.argv[2]
+# models = sys.argv[3:]
+
+feat=pd.read_csv(args.data, sep="\t", index_col=0)
 
 out = {}
-for model in models:
+for model in args.trained:
     model_name = os.path.basename(model)
     obj = pickle.load(open(model, "rb"))
     X = feat[obj.feature_names_in_]
@@ -27,7 +34,7 @@ for model in models:
         out[model_name] = labels
 
 df = pd.DataFrame(out)
-if output == "-":
+if args.out == "-":
     df.to_csv(sys.stdout, sep="\t")
 else:
-    df.to_csv(output, sep="\t")
+    df.to_csv(args.out, sep="\t")

@@ -70,15 +70,14 @@ def get_classifier(name, params):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument('--feature_list', type=str, help="File with list of features to be used")
-    parser.add_argument('--feat_file', type=str, help='Input path for feature file')
-    parser.add_argument('--hypr_file', type=str, help='Input path for model config')
-    parser.add_argument('--output', type=str, help="output destination")
-
+    parser.add_argument('--ft_list', type=str, help="File with list of features to be used")
+    parser.add_argument('--ft_file', type=str, help='Input path for feature file')
+    parser.add_argument('--model', type=str, help='Input path for model config (in model_library)')
+    parser.add_argument('--out', type=str, help="output destination")
     args = parser.parse_args()
 
     configs = []
-    with open(args.hypr_file) as handle:
+    with open(args.model) as handle:
         for line in handle:
             configs.append( json.loads(line) )
 
@@ -92,7 +91,7 @@ if __name__ == "__main__":
             "_".join( "%s-%s" % (k,v) for k,v in config['params'].items() )
         )
 
-        lst_file=pd.read_csv(args.feature_list, sep="\t", header=None)
+        lst_file=pd.read_csv(args.ft_list, sep="\t", header=None)
         select_features = lst_file.iloc[:,0].to_list()
         print("Feature: ", select_features )
         print("loading feature matrix")
@@ -102,4 +101,4 @@ if __name__ == "__main__":
         y = feat["Labels"]
         clf.fit(X, y)
         #clf.features_ = select_features
-        pickle.dump( clf, open( os.path.join(args.output, model_name + ".model") , "wb" ) )
+        pickle.dump( clf, open( os.path.join(args.out, model_name + ".model") , "wb" ) )

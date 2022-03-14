@@ -41,10 +41,9 @@ classifers = {
 }
 
 parser = argparse.ArgumentParser()
-parser.add_argument("grid_config")
+parser.add_argument("--config", help='path to grid config yaml file')
 parser.add_argument("--outdir", default="config")
 parser.add_argument("-n", default=1, type=int)
-
 args = parser.parse_args()
 
 with open(args.grid_config) as handle:
