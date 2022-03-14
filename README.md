@@ -79,9 +79,27 @@ bash RUN.sh
 
 
 # WIP - Skgrid ML
-### Train Models
-The scripts to do this are located in private repo https://github.com/kellrott/GDAN_TMP_classification
+### WIP - Run Feature selection
+```
+# Build feature selection docker image
+cd skgrid/mxm
+docker image build --tag mxm .
 
-TODO: pull relevant scripts into this repo
+```
 
-### Run Model for Predicted Subtypes
+
+### WIP - Train Models and Predicted Subtypes
+Get feature list files for the top model (all data platforms) from `featureSetML_TCGA/data/figure_panel_a/best_models_BRCA.tsv` and format it into this input file `gdan-tmp-models/skgrid/data/src/featurelist.txt`
+
+```
+cd skgrid
+docker image build --tag skgrid .
+```
+
+```
+docker run --rm -ti -v `pwd`:/transfer -u `id -u` --entrypoint bash skgrid
+```
+```
+cd transfer
+bash RUN.sh
+```
