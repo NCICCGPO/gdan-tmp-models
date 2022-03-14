@@ -12,10 +12,6 @@ parser.add_argument("--out", help="file to save predictions to")
 parser.add_argument("--trained", nargs = '+',help="trained model pickle file")
 args = parser.parse_args()
 
-# data = sys.argv[1]
-# out = sys.argv[2]
-# models = sys.argv[3:]
-
 feat=pd.read_csv(args.data, sep="\t", index_col=0)
 
 out = {}
