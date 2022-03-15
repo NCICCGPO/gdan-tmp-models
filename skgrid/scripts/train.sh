@@ -1,6 +1,4 @@
 #!/bin/bash
-#COPY create_grid.py run_learn.py runner.py run_train.py train.sh  ./
-
 # Build full skgrid model library
 python scripts/create_grid.py \
 	--config data/src/grid.yml  \
