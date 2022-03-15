@@ -12,3 +12,5 @@ CMD chmod -R o+r ./
 CMD chmod 777 ./scripts/train.sh
 
 CMD ["./scripts/train.sh"]
+
+ENTRYPOINT ["./predict.sh"]
