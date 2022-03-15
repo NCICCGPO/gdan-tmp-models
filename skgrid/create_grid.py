@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-
 import os
 import sys
 import yaml
@@ -46,7 +45,7 @@ parser.add_argument("--outdir", default="config")
 parser.add_argument("-n", default=1, type=int)
 args = parser.parse_args()
 
-with open(args.grid_config) as handle:
+with open(args.config) as handle:
     config = yaml.load(handle, Loader=yaml.FullLoader)
 
 def chunks(lst, n):

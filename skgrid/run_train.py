@@ -95,7 +95,7 @@ if __name__ == "__main__":
         select_features = lst_file.iloc[:,0].to_list()
         print("Feature: ", select_features )
         print("loading feature matrix")
-        feat=pd.read_csv(args.feat_file, sep="\t", index_col=0)
+        feat=pd.read_csv(args.ft_file, sep="\t", index_col=0)
         print("subsetting matrix")
         X = feat[select_features]
         y = feat["Labels"]
