@@ -88,7 +88,7 @@ docker image build --tag mxm .
 
 
 ### Build image
-Get feature list files for the top model (all data platforms) from `featureSetML_TCGA/data/figure_panel_a/best_models_BRCA.tsv` and format it into this input file `gdan-tmp-models/skgrid/data/src/featurelist.txt`
+Get feature list files for the top model (all data platforms) from `featureSetML_TCGA/data/figure_panel_a/best_models_BRCA.tsv` and format it into this input file `gdan-tmp-models/skgrid/data/input/featurelist.txt`
 ```
 cd skgrid
 docker image build --tag skgrid .

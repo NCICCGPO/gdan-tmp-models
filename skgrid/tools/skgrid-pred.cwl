@@ -20,8 +20,8 @@ inputs:
     type: string
     inputBinding:
       position: 2
-  model:
-    type: File
+  platform:
+    type: string
     inputBinding:
       position: 3
 

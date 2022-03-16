@@ -8,7 +8,7 @@ parser.add_argument("--cancer", help="cancer cohort of the skgrid model to use")
 parser.add_argument("--platform",help="data platform (i.e. GEXP, MUTA, MIR, CNVR, METH) of the skgrid model to use ")
 args = parser.parse_args()
 
-with open('select_model.yml', 'r') as fh:
+with open('/skgrid/select_model.yml', 'r') as fh:
     try:
         modelconfig = yaml.safe_load(fh)
     except yaml.YAMLError as exc:

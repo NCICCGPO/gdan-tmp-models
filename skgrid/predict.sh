@@ -2,14 +2,19 @@
 
 data=${1}
 cancer=${2}
-# model=${3}
-platform=GEXP
+platform=${3}
 
 # Determine which model to use
 model=$(python /skgrid/pick_model.py --cancer ${cancer} --platform ${platform})
 
-# Predict subtypes
-python /skgrid/prediction_runner.py \
-	--data ${data} \
-	--cancer  ${cancer} \
-	--model "/skgrid/data/train/${model}"
+if [[ ${model} == '' ]]
+then
+	echo 'Error no model found, check user input {CANCER} and {PLATFORM} values'
+else
+	# Predict subtypes
+	echo 'best model: ' ${model}
+	python /skgrid/prediction_runner.py \
+		--data ${data} \
+		--cancer  ${cancer} \
+		--model "/skgrid/data/train/${model}"
+fi

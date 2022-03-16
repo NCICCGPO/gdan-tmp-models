@@ -13,7 +13,7 @@ requirements:
 inputs:
   input_data: File[]
   cancer: string[]
-  model: File[]
+  platform: string[]
 
 outputs:
   predictionouts:
@@ -29,8 +29,8 @@ steps:
     in:
       input_data: input_data
       cancer: cancer
-      model: model
-    scatter: [input_data, cancer, model]
+      platform: platform
+    scatter: [input_data, cancer, platform]
     scatterMethod: dotproduct
     out: [predictionouts]
     run: ../tools/skgrid-pred.cwl
