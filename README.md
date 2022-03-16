@@ -84,11 +84,10 @@ bash RUN.sh
 # Build feature selection docker image
 cd skgrid/mxm
 docker image build --tag mxm .
-
 ```
 
 
-### Build image with trained models
+### Build image
 Get feature list files for the top model (all data platforms) from `featureSetML_TCGA/data/figure_panel_a/best_models_BRCA.tsv` and format it into this input file `gdan-tmp-models/skgrid/data/src/featurelist.txt`
 ```
 cd skgrid
@@ -99,5 +98,5 @@ docker image build --tag skgrid .
 ### Run Model for Predicted Subtypes
 Example for running BRCA cohort using BRCA_v12_20210228 as the dataset for predictions
 ```
-docker run --rm -v `pwd`:/skgrid skgrid data/src/BRCA_v12_20210228.tsv data/output/preds/BRCA_preds.tsv data/output/train/RandomForestClassifier-criterion-entropy_n_estimators-200.model
+bash RUN.sh
 ```
