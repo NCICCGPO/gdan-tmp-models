@@ -8,7 +8,7 @@ import argparse
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--data", help='data to make subtype predictions')
-parser.add_argument("--out", help="file to save predictions to")
+parser.add_argument("--cancer", help="cancer cohort used for output file naming")
 parser.add_argument("--trained", nargs = '+',help="trained model pickle file")
 args = parser.parse_args()
 
@@ -30,7 +30,7 @@ for model in args.trained:
         out[model_name] = labels
 
 df = pd.DataFrame(out)
-if args.out == "-":
+if args.cancer == "-":
     df.to_csv(sys.stdout, sep="\t")
 else:
-    df.to_csv(args.out, sep="\t")
+    df.to_csv(args.cancer + '_preds.tsv', sep="\t")

@@ -5,12 +5,11 @@ RUN pip install sklearn pandas pyyaml argparse numpy
 WORKDIR /skgrid/
 
 COPY scripts  ./
-COPY data/src ./data/src
-COPY data/output/model_library ./data/output/model_library
-COPY data/output/train ./data/output/train
+COPY data ./data
+COPY predict.sh run_learn.py prediction_runner.py ./
 CMD chmod -R o+r ./
 CMD chmod 777 ./scripts/train.sh
 
 CMD ["./scripts/train.sh"]
 
-ENTRYPOINT ["./predict.sh"]
+ENTRYPOINT ["/skgrid/predict.sh"]

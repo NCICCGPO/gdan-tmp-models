@@ -1,0 +1,10 @@
+input_data:
+  - class: File
+    path: ../data/src/BRCA_v12_20210228.tsv
+
+cancer:
+  - "BRCA"
+
+model:
+  - class: File
+    path: ../data/output/train/RandomForestClassifier-criterion-entropy_n_estimators-200.model

@@ -1,16 +1,18 @@
 #!/bin/bash
 
 data=${1}
-out=${2}
+cancer=${2}
 model=${3}
 
 # Example:
 # data=data/src/BRCA_v12_20210228.tsv
-# out=data/output/preds/BRCA_preds.tsv
+# cancer=BRCA
 # model=data/output/train/RandomForestClassifier-criterion-entropy_n_estimators-200.model
 
+
+
 # Predict subtypes
-python runner.py \
+python /skgrid/prediction_runner.py \
 	--data ${data} \
-	--out  ${out} \
+	--cancer  ${cancer} \
 	--trained ${model}
