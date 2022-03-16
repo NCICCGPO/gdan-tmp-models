@@ -7,4 +7,4 @@ cancer:
 
 model:
   - class: File
-    path: ../data/output/train/RandomForestClassifier-criterion-entropy_n_estimators-200.model
+    path: ../data/train/RandomForestClassifier-criterion-entropy_n_estimators-200.model
