@@ -30,7 +30,4 @@ for model in args.model:
         out[model_name] = labels
 
 df = pd.DataFrame(out)
-if args.cancer == "-":
-    df.to_csv(sys.stdout, sep="\t")
-else:
-    df.to_csv(args.cancer + '_preds.tsv', sep="\t")
+df.to_csv(args.cancer + '_preds.tsv', sep="\t")
