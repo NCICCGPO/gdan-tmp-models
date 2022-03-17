@@ -6,6 +6,9 @@ python -m venv venv
 . venv/bin/activate
 ```
 
+Install `cwl-runner` and `Docker`
+
+
 Synapse and AWS
 ```
 synapse login --remember-me
