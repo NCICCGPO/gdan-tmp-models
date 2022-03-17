@@ -20,8 +20,45 @@ aws_secret_access_key=XXX
 ```
 
 # Build Docker Images
+Snakemake must already be installed. Run `Snakefile` that builds Docker images for each method.
 
-Snakemake must already be installed. Run `Snakefile` that builds Docker images for each method (ex. Cloud Forest).
+
+# AKLIMATE
+### Build image with permissions updated
+```
+cd cloudforest
+docker build --tag aklimate2 .
+```
+### Run Model for Predicted Subtypes
+```
+# Predict subtypes
+bash RUN.sh
+```
+
+
+# SubSCOPE
+### Run Model for Predicted Subtypes
+```
+cd subscope
+bash RUN.sh
+```
+
+
+# JADBio
+### Run Model for Predicted Subtypes
+```
+cd jadbio
+bash RUN.sh
+```
+
+
+# SK Grid
+### Run Model for Predicted Subtypes
+Example for running BRCA cohort using BRCA_v12_20210228 as the dataset for predictions
+```
+cd skgrid
+bash RUN.sh
+```
 
 # Cloud Forest ML
 ### Prep
@@ -47,56 +84,3 @@ cd cloud-forest/
 bash RUN.sh
 ```
 Where the output predictions are saved as a tsv with non-named columns that are `[CaseLabel, Predicted, Actual]`
-
-
-# JADBio
-### Run Model for Predicted Subtypes
-```
-cd jadbio
-bash RUN.sh
-```
-
-
-# AKLIMATE
-### Build image with permissions updated
-```
-cd cloudforest
-docker build --tag aklimate2 .
-```
-### Run Model for Predicted Subtypes
-```
-# Predict subtypes
-bash RUN.sh
-```
-
-
-# SubSCOPE
-### Run Model for Predicted Subtypes
-```
-cd subscope
-bash RUN.sh
-```
-
-
-# WIP - Skgrid ML
-### WIP - Run Feature selection
-```
-# Build feature selection docker image
-cd skgrid/mxm
-docker image build --tag mxm .
-```
-
-
-### Build image
-Get feature list files for the top model (all data platforms) from `featureSetML_TCGA/data/figure_panel_a/best_models_BRCA.tsv` and format it into this input file `gdan-tmp-models/skgrid/data/input/featurelist.txt`
-```
-cd skgrid
-docker image build --tag skgrid .
-```
-
-
-### Run Model for Predicted Subtypes
-Example for running BRCA cohort using BRCA_v12_20210228 as the dataset for predictions
-```
-bash RUN.sh
-```
