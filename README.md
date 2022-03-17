@@ -29,7 +29,7 @@ Snakemake must already be installed. Run `Snakefile` that builds Docker images f
 # AKLIMATE
 ### Build image with permissions updated
 ```
-cd cloudforest
+cd aklimate
 docker build --tag aklimate2 .
 ```
 ### Run Model for Predicted Subtypes
