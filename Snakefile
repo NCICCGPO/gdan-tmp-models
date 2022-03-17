@@ -54,3 +54,17 @@ rule jadbio_docker_load:
         "jadbio/src/jadbio-model-exe.jar"
     shell:
         "docker build -t jadbio . && docker images | grep jadbio > jadbio.info"
+
+rule skgrid_docker:
+    output:
+        "skgrid/src/skgrid_ohsu_20220317_docker_image.tar.gz"
+    shell:
+        "synapse get -r syn27821207 --downloadLocation skgrid/src/"
+
+rule skgrid_docker_load:
+    output:
+        "skgrid.info"
+    input:
+        "skgrid/src/skgrid_ohsu_20220317_docker_image.tar.gz"
+    shell:
+        "docker load -i skgrid/src/skgrid_ohsu_20220317_docker_image.tar.gz && docker tag 0bc85665d399 skgrid:latest && docker images | grep skgrid > skgrid.info"

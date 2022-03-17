@@ -12,7 +12,7 @@ then
 	echo 'Error no model found, check user input {CANCER} and {PLATFORM} values'
 else
 	# Predict subtypes
-	echo 'best model: ' ${model}
+	echo 'Selecting best model: ' ${model}
 	python /skgrid/prediction_runner.py \
 		--data ${data} \
 		--cancer  ${cancer} \
