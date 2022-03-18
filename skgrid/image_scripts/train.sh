@@ -1,7 +1,7 @@
 #!/bin/bash
-
 cancer=${1}
 echo 'Building model library and training ML models'
+
 # Build full skgrid model library
 python image_scripts/create_grid.py \
 	--config data/src/grid.yml  \
