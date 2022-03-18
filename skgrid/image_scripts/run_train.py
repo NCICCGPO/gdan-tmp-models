@@ -74,6 +74,7 @@ if __name__ == "__main__":
     parser.add_argument('--ft_list', type=str, help="File with list of features to be used")
     parser.add_argument('--ft_file', type=str, help='Input path for feature file')
     parser.add_argument('--cancer', type=str, help='cancer cohort')
+    parser.add_argument('--platform', type=str, help='platform of wanted model (ie GEXP, CNVR, MUTA, MIR, METH)')
     parser.add_argument('--out', type=str, help="output destination")
     args = parser.parse_args()
 
@@ -84,7 +85,6 @@ if __name__ == "__main__":
         except yaml.YAMLError as exc:
             print(exc)
     model_file = modelconfig[args.cancer][args.platform]['file']
-    print(model_file)
 
     configs = []
     with open(model_file) as handle:
