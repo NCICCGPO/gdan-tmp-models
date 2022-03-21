@@ -13,4 +13,4 @@ CMD chmod 755 ./select_model.yml
 
 ENTRYPOINT ["/skgrid/image_scripts/train.sh"]
 
-ENTRYPOINT ["/skgrid/predict.sh"]
+#ENTRYPOINT ["/skgrid/predict.sh"]

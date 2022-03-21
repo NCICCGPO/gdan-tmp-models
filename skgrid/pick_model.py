@@ -14,5 +14,5 @@ with open('/skgrid/select_model.yml', 'r') as fh:
     except yaml.YAMLError as exc:
         print(exc)
 
-model = modelconfig[args.cancer][args.platform]
+model = modelconfig[args.cancer][args.platform]['model']
 print(model)

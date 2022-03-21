@@ -7,6 +7,7 @@ import numpy as np
 import pandas as pd
 import argparse
 import pickle
+import yaml
 import json
 from copy import copy
 from sklearn.inspection import permutation_importance
@@ -72,15 +73,25 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument('--ft_list', type=str, help="File with list of features to be used")
     parser.add_argument('--ft_file', type=str, help='Input path for feature file')
-    parser.add_argument('--model', type=str, help='Input path for model config (in model_library)')
+    parser.add_argument('--cancer', type=str, help='cancer cohort')
+    parser.add_argument('--platform', type=str, help='platform of wanted model (ie GEXP, CNVR, MUTA, MIR, METH)')
     parser.add_argument('--out', type=str, help="output destination")
     args = parser.parse_args()
 
+    # Pull model file name and load in model
+    with open('/skgrid/select_model.yml', 'r') as fh:
+        try:
+            modelconfig = yaml.safe_load(fh)
+        except yaml.YAMLError as exc:
+            print(exc)
+    model_file = modelconfig[args.cancer][args.platform]['file']
+
     configs = []
-    with open(args.model) as handle:
+    with open(model_file) as handle:
         for line in handle:
             configs.append( json.loads(line) )
 
+    # Train model
     for config in configs:
         name = config['name']
         params = config['params']
