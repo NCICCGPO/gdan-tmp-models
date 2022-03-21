@@ -11,6 +11,6 @@ CMD chmod -R o+r ./
 CMD chmod 777 ./image_scripts/train.sh
 CMD chmod 755 ./select_model.yml
 
-ENTRYPOINT ["/skgrid/image_scripts/train.sh"]
+#ENTRYPOINT ["/skgrid/image_scripts/train.sh"]
 
 #ENTRYPOINT ["/skgrid/predict.sh"]

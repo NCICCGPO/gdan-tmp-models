@@ -16,21 +16,21 @@ inputs:
   platform: string[]
 
 outputs:
-  predictionouts:
+  pred:
     doc: tbd
     type: File[]
     outputBinding:
       glob: "*_preds.tsv"
-    outputSource: stepskgrid/predictionouts
+    outputSource: make_preds/pred
 
 
 steps:
-  stepskgrid:
+  make_preds:
     in:
       input_data: input_data
       cancer: cancer
       platform: platform
     scatter: [input_data, cancer, platform]
     scatterMethod: dotproduct
-    out: [predictionouts]
+    out: [pred]
     run: ../tools/skgrid-pred.cwl

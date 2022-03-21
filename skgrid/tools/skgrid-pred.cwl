@@ -2,6 +2,7 @@
 
 cwlVersion: v1.0
 class: CommandLineTool
+baseCommand: ["/skgrid/predict.sh"]
 requirements:
   InitialWorkDirRequirement:
     listing:
@@ -28,7 +29,7 @@ inputs:
 
 
 outputs:
-  predictionouts:
+  pred:
     type: File
     outputBinding:
       glob: "*_preds.tsv"
