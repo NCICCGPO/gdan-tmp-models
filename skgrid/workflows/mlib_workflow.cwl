@@ -9,25 +9,21 @@ requirements:
   - class: StepInputExpressionRequirement
   - class: SubworkflowFeatureRequirement
 
-
-inputs:
-  model_config: File[]
+inputs: []
 
 outputs:
   mlib_out:
     doc: tbd
-    type: File[]
+    type:
+      type: array
+      items: File
     outputBinding:
-      glob: "*RandomForestClassifier.11"
+      glob: "Classifier.*"
     outputSource: create_mlib/mlib_out
-
 
 
 steps:
   create_mlib:
-    in:
-      model_config: model_config
-    scatter: [model_config]
-    scatterMethod: dotproduct
+    in: []
     out: [mlib_out]
     run: ../tools/skgrid-mlib.cwl

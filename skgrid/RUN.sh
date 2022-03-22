@@ -8,8 +8,7 @@ mkdir -p data/train
 
 # Create model library
 cwl-runner \
-  workflows/mlib_workflow.cwl \
-  job_inputs/skgrid-mlib-inputs.yml
+  workflows/mlib_workflow.cwl
 mv Classifier.* data/model_library
 
 

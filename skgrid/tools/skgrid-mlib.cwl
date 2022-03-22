@@ -7,16 +7,12 @@ hints:
   DockerRequirement:
     dockerPull: "skgrid"
 
-
-inputs:
-  model_config:
-    type: File
-    inputBinding:
-      position: 1
-
+inputs: []
 
 outputs:
   mlib_out:
-    type: File
+    type:
+      type: array
+      items: File
     outputBinding:
-      glob: "*RandomForestClassifier.11"
+      glob: "Classifier.*"

@@ -1,9 +1,0 @@
-model_config:
-  - class: File
-    path: ../data/src/grid.yml
-
-# cancer:
-#   - "BRCA"
-#
-# platform:
-#   - "GEXP"
