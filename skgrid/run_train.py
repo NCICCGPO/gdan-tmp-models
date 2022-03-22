@@ -75,7 +75,6 @@ if __name__ == "__main__":
     parser.add_argument('--ft_file', type=str, help='Input path for feature file')
     parser.add_argument('--cancer', type=str, help='cancer cohort')
     parser.add_argument('--platform', type=str, help='platform of wanted model (ie GEXP, CNVR, MUTA, MIR, METH)')
-    parser.add_argument('--out', type=str, help="output destination")
     args = parser.parse_args()
 
     # Pull model file name and load in model
@@ -112,4 +111,5 @@ if __name__ == "__main__":
         y = feat["Labels"]
         clf.fit(X, y)
         #clf.features_ = select_features
-        pickle.dump( clf, open( os.path.join(args.out, model_name + ".model") , "wb" ) )
+        pickle.dump( clf, open( os.path.join(model_name + ".model") , "wb" ) )
+        # pickle.dump( clf, open( os.path.join(args.out, model_name + ".model") , "wb" ) )
