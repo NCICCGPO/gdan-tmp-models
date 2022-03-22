@@ -6,16 +6,10 @@ mkdir -p data/preds
 mkdir -p data/src
 mkdir -p data/train
 
-# # run model training
-# # cwl-runner --outdir data/train \
-# cwl-runner \
-#   workflows/train_workflow.cwl \
-#   job_inputs/skgrid-train-inputs.yml
-# mv *.model data/train
-
-# COMPLETE - run predictions
+# Run model training, predictions
 # cwl-runner --outdir data/preds \
 cwl-runner \
-  workflows/ml_workflow.cwl \
-  job_inputs/skgrid-inputs.yml
+  workflows/FULL_workflow.cwl \
+  job_inputs/skgrid-FULL-inputs.yml
+mv *.model data/train
 mv *_preds.tsv data/preds
