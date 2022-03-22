@@ -41,7 +41,7 @@ classifers = {
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--config", help='path to grid config yaml file')
-parser.add_argument("--outdir", default="config")
+# parser.add_argument("--outdir", default=".")
 parser.add_argument("-n", default=1, type=int)
 args = parser.parse_args()
 
@@ -58,6 +58,7 @@ for c in config:
     if 'n' in c:
         n = c['n']
     for i, chunk in enumerate(chunks(list(ParameterGrid(c['params'])), n)):
-        with open(os.path.join(args.outdir, "%s.%d" % (base, i)), "w") as handle:
+        with open(os.path.join("Classifier.%s.%d" % (base, i)), "w") as handle:
+        # with open(os.path.join(args.outdir, "%s.%d" % (base, i)), "w") as handle:
             for job in chunk:
                 handle.write(json.dumps({"name" : c['name'], "params" : job}) + "\n")

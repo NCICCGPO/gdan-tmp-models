@@ -6,10 +6,17 @@ mkdir -p data/preds
 mkdir -p data/src
 mkdir -p data/train
 
-# Run model training, predictions
-# cwl-runner --outdir data/preds \
+# Create model library
 cwl-runner \
-  workflows/FULL_workflow.cwl \
-  job_inputs/skgrid-FULL-inputs.yml
-mv *.model data/train
-mv *_preds.tsv data/preds
+  workflows/mlib_workflow.cwl \
+  job_inputs/skgrid-mlib-inputs.yml
+mv Classifier.* data/model_library
+
+
+# # Run model training, predictions
+# # cwl-runner --outdir data/preds \
+# cwl-runner \
+#   workflows/FULL_workflow.cwl \
+#   job_inputs/skgrid-FULL-inputs.yml
+# mv *.model data/train
+# mv *_preds.tsv data/preds
