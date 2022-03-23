@@ -16,6 +16,12 @@ inputs:
   platform: string[]
 
 outputs:
+  mlib_out:
+    doc: tbd
+    type: File[]
+    outputBinding:
+      glob: "Classifier.*"
+    outputSource: create_mlib/mlib_out
   train:
     doc: tbd
     type: File[]
@@ -31,14 +37,25 @@ outputs:
 
 
 steps:
-  train_model:
+  create_mlib:
     in:
       cancer: cancer
       platform: platform
     scatter: [cancer, platform]
     scatterMethod: dotproduct
+    out: [mlib_out]
+    run: ../tools/skgrid-mlib.cwl
+
+  train_model:
+    in:
+      cancer: cancer
+      platform: platform
+      model_json: create_mlib/mlib_out
+    scatter: [cancer, platform, model_json]
+    scatterMethod: dotproduct
     out: [train]
     run: ../tools/skgrid-train.cwl
+
   make_preds:
     in:
       input_data: input_data
