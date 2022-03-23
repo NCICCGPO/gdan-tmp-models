@@ -1,4 +1,7 @@
 BRCA:
   GEXP :
     model: "RandomForestClassifier-criterion-entropy_n_estimators-200.model"
-    file: "/skgrid/data/model_library/RandomForestClassifier.11"
+    file: "/skgrid/data/model_library/Classifier.RandomForestClassifier.11"
+    # file = input of training step
+    # model = output of train step
+    # if done right then wont need the model key

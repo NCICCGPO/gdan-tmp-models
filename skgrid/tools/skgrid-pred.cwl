@@ -25,7 +25,10 @@ inputs:
     type: string
     inputBinding:
       position: 3
-
+  model:
+    type: File
+    inputBinding:
+      position: 4
 
 
 outputs:
