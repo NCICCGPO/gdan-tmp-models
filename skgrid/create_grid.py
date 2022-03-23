@@ -1,4 +1,7 @@
 #!/usr/bin/env python
+
+# Replaced by set_model_params.py
+# Kept if want to have a command to build full lib strings
 import os
 import sys
 import yaml
