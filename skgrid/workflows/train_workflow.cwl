@@ -13,6 +13,7 @@ requirements:
 inputs:
   cancer: string[]
   platform: string[]
+  model_json: File[]
 
 outputs:
   train:
@@ -29,7 +30,8 @@ steps:
     in:
       cancer: cancer
       platform: platform
-    scatter: [cancer, platform]
+      model_json: model_json
+    scatter: [cancer, platform, model_json]
     scatterMethod: dotproduct
     out: [train]
     run: ../tools/skgrid-train.cwl

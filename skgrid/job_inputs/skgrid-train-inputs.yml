@@ -3,3 +3,7 @@ cancer:
 
 platform:
   - "GEXP"
+
+model_json:
+  - class: File
+    path: "../Classifier.RandomForestClassifier.11"

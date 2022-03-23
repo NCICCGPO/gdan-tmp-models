@@ -1,9 +1,9 @@
 #!/usr/bin/env python
-
+import numpy as np
+np.random.seed(42)
 import os
 import sys
 import gzip
-import numpy as np
 import pandas as pd
 import argparse
 import pickle
@@ -11,7 +11,6 @@ import yaml
 import json
 from copy import copy
 from sklearn.inspection import permutation_importance
-
 from sklearn.ensemble import AdaBoostClassifier
 from sklearn.naive_bayes import BernoulliNB
 from sklearn.tree import DecisionTreeClassifier
@@ -26,8 +25,12 @@ from sklearn.linear_model import PassiveAggressiveClassifier
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.linear_model import SGDClassifier
 from sklearn.svm import SVC
+from sklearn.gaussian_process.kernels import RBF
+from sklearn.gaussian_process.kernels import DotProduct
+from sklearn.gaussian_process.kernels import Matern
+from sklearn.gaussian_process.kernels import RationalQuadratic
+from sklearn.gaussian_process.kernels import WhiteKernel
 
-np.random.seed(42)
 
 classifers = {
     "sklearn.ensemble.AdaBoostClassifier": AdaBoostClassifier,
@@ -46,11 +49,6 @@ classifers = {
     "sklearn.svm.SVC": SVC
 }
 
-from sklearn.gaussian_process.kernels import RBF
-from sklearn.gaussian_process.kernels import DotProduct
-from sklearn.gaussian_process.kernels import Matern
-from sklearn.gaussian_process.kernels import RationalQuadratic
-from sklearn.gaussian_process.kernels import WhiteKernel
 
 gp_kernels = {
     "sklearn.gaussian_process.kernels.RBF" : RBF,
@@ -75,18 +73,19 @@ if __name__ == "__main__":
     parser.add_argument('--ft_file', type=str, help='Input path for feature file')
     parser.add_argument('--cancer', type=str, help='cancer cohort')
     parser.add_argument('--platform', type=str, help='platform of wanted model (ie GEXP, CNVR, MUTA, MIR, METH)')
+    parser.add_argument('--model_file', type=str, help='json file of model parameter strings')
     args = parser.parse_args()
 
-    # Pull model file name and load in model
-    with open('/skgrid/select_model.yml', 'r') as fh:
-        try:
-            modelconfig = yaml.safe_load(fh)
-        except yaml.YAMLError as exc:
-            print(exc)
-    model_file = modelconfig[args.cancer][args.platform]['file']
+    # # Pull model file name and load in model
+    # with open('/skgrid/select_model.yml', 'r') as fh:
+    #     try:
+    #         modelconfig = yaml.safe_load(fh)
+    #     except yaml.YAMLError as exc:
+    #         print(exc)
+    # model_file = modelconfig[args.cancer][args.platform]['file']
 
     configs = []
-    with open(model_file) as handle:
+    with open(args.model_file) as handle:
         for line in handle:
             configs.append( json.loads(line) )
 

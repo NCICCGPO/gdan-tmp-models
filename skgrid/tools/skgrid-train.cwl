@@ -17,7 +17,10 @@ inputs:
     type: string
     inputBinding:
       position: 2
-
+  model_json:
+    type: File
+    inputBinding:
+      position: 3
 
 outputs:
   train:
