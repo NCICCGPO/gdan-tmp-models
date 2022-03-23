@@ -43,9 +43,8 @@ steps:
     in:
       input_data: input_data
       cancer: cancer
-      platform: platform
       model: train_model/train
-    scatter: [input_data, cancer, platform, model]
+    scatter: [input_data, cancer, model]
     scatterMethod: dotproduct
     out: [pred]
     run: ../tools/skgrid-pred.cwl
