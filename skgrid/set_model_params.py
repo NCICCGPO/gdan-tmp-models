@@ -51,7 +51,7 @@ classifers = {
 }
 
 # Load best model yaml
-with open('select_model.yml', 'r') as handle:
+with open('/skgrid/select_model.yml', 'r') as handle:
     top_options = yaml.load(handle, Loader=yaml.FullLoader)
 # Select best model
 selected_model = top_options[args.cancer][args.platform]['file'].strip().split('/')[-1]
@@ -73,11 +73,6 @@ for c in config:
         for i, chunk in enumerate(chunks(list(ParameterGrid(c['params']) ), n)):
             # Match i with model string n
             if sel_n==i:
-                # print(base, n, c)
-                # print()
-                # print(i, chunk)
-                # print()
-
                 # Create and write model params
                 with open(os.path.join("Classifier.%s.%d" % (base, i)), "w") as handle:
                     for job in chunk:

@@ -7,12 +7,19 @@ hints:
   DockerRequirement:
     dockerPull: "skgrid"
 
-inputs: []
+inputs:
+  cancer:
+    type: string
+    inputBinding:
+      position: 1
+  platform:
+    type: string
+    inputBinding:
+      position: 2
 
 outputs:
   mlib_out:
-    type:
-      type: array
-      items: File
+    doc: tbd
+    type: File
     outputBinding:
       glob: "Classifier.*"
