@@ -2,33 +2,28 @@
 
 cwlVersion: v1.0
 class: CommandLineTool
-baseCommand: ["/skgrid/predict.sh"]
-requirements:
-  InitialWorkDirRequirement:
-    listing:
-      - $(inputs.input_data)
+baseCommand: ["/skgrid/train.sh"]
 hints:
   DockerRequirement:
     dockerPull: "skgrid"
 
 
 inputs:
-  input_data:
-    type: File
-    inputBinding:
-      position: 1
   cancer:
     type: string
     inputBinding:
+      position: 1
+  platform:
+    type: string
+    inputBinding:
       position: 2
-  model:
+  model_json:
     type: File
     inputBinding:
       position: 3
 
-
 outputs:
-  pred:
+  train:
     type: File
     outputBinding:
-      glob: "*_preds.tsv"
+      glob: "*.model"

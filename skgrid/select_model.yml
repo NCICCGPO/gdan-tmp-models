@@ -1,4 +1,4 @@
 BRCA:
   GEXP :
-    model: "RandomForestClassifier-criterion-entropy_n_estimators-200.model"
-    file: "data/model_library/RandomForestClassifier.11"
+    # model: "RandomForestClassifier-criterion-entropy_n_estimators-200.model" #keep for future logging
+    file: "/skgrid/data/model_library/Classifier.RandomForestClassifier.11"
