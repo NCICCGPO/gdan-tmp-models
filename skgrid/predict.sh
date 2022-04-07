@@ -1,13 +1,13 @@
 #!/bin/bash
 
 data=${1}
-cancer=${2}
-# platform=${3}
+output_prefix=${2}
 model=${3}
+
 
 	# Predict subtypes
 	echo 'Selecting best model: ' ${model}
 	python /skgrid/prediction_runner.py \
 		--data ${data} \
-		--cancer  ${cancer} \
+		--output_prefix ${output_prefix} \
 		--model ${model}
