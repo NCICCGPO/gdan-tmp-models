@@ -2,7 +2,7 @@ BRCA:
   OVERALL:
     # model: "RandomForestClassifier-criterion-entropy_n_estimators-200.model" #keep for future logging
     file: "/skgrid/data/model_library/Classifier.RandomForestClassifier.11"
-  GEXP :
+  GEXP:
     file: "/skgrid/data/model_library/Classifier.RandomForestClassifier.11"
   CNVR:
     file: "/skgrid/data/model_library/Classifier.LogisticRegression.7"
