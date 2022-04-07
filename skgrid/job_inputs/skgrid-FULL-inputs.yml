@@ -1,9 +1,28 @@
 input_data:
   - class: File
     path: ../data/input/example.tsv
-
+  # - class: File
+  #   path: ../data/input/example.tsv
+  # - class: File
+  #   path: ../data/input/example.tsv
+  # - class: File
+  #   path: ../data/input/example.tsv
+  # - class: File
+  #   path: ../data/input/example.tsv
+  # - class: File
+  #   path: ../data/input/example.tsv
 cancer:
   - "BRCA"
+  # - "BRCA"
+  # - "BRCA"
+  # - "BRCA"
+  # - "BRCA"
+  # - "BRCA"
 
 platform:
-  - "GEXP"
+  # - "OVERALL"
+  - "CNVR"
+  # - "GEXP"
+  # - "METH"
+  # - "MIR"
+  # - "MUTA"
