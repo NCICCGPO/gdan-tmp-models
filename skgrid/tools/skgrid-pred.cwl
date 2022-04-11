@@ -9,7 +9,7 @@ requirements:
       - $(inputs.input_data)
 hints:
   DockerRequirement:
-    dockerPull: "skgrid"
+    dockerImageId: "skgrid"
 
 
 inputs:

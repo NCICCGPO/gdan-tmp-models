@@ -5,7 +5,7 @@ class: CommandLineTool
 baseCommand: ["/skgrid/mlib.sh"]
 hints:
   DockerRequirement:
-    dockerPull: "skgrid"
+    dockerImageId: "skgrid"
 
 inputs:
   cancer:
