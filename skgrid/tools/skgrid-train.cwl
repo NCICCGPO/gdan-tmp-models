@@ -5,7 +5,7 @@ class: CommandLineTool
 baseCommand: ["/skgrid/train.sh"]
 hints:
   DockerRequirement:
-    dockerPull: "skgrid"
+    dockerImageId: "skgrid"
 
 
 inputs:
