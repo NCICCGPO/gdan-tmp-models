@@ -4,7 +4,7 @@ cwlVersion: v1.0
 class: Workflow
 requirements:
   - class: DockerRequirement
-    dockerPull: "skgrid"
+    dockerImageId: "skgrid"
   - class: ScatterFeatureRequirement
   - class: StepInputExpressionRequirement
   - class: SubworkflowFeatureRequirement
@@ -18,19 +18,16 @@ inputs:
 
 outputs:
   mlib_out:
-    doc: tbd
     type: File[]
     outputBinding:
       glob: "Classifier.*"
     outputSource: create_mlib/mlib_out
   train:
-    doc: tbd
     type: File[]
     outputBinding:
       glob: "*.model"
     outputSource: train_model/train
   pred:
-    doc: tbd
     type: File[]
     outputBinding:
       glob: "*_preds.tsv"

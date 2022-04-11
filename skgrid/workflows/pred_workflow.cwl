@@ -4,7 +4,7 @@ cwlVersion: v1.0
 class: Workflow
 requirements:
   - class: DockerRequirement
-    dockerPull: "skgrid"
+    dockerImageId: "skgrid"
   - class: ScatterFeatureRequirement
   - class: StepInputExpressionRequirement
   - class: SubworkflowFeatureRequirement
@@ -18,7 +18,6 @@ inputs:
 
 outputs:
   pred:
-    doc: tbd
     type: File[]
     outputBinding:
       glob: "*_preds.tsv"

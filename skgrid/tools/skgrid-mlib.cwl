@@ -5,7 +5,7 @@ class: CommandLineTool
 baseCommand: ["/skgrid/mlib.sh"]
 hints:
   DockerRequirement:
-    dockerPull: "skgrid"
+    dockerImageId: "skgrid"
 
 inputs:
   cancer:
@@ -19,7 +19,6 @@ inputs:
 
 outputs:
   mlib_out:
-    doc: tbd
     type: File
     outputBinding:
       glob: "Classifier.*"

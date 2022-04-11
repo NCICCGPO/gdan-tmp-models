@@ -4,7 +4,7 @@ cwlVersion: v1.0
 class: Workflow
 requirements:
   - class: DockerRequirement
-    dockerPull: "skgrid"
+    dockerImageId: "skgrid"
   - class: ScatterFeatureRequirement
   - class: StepInputExpressionRequirement
   - class: SubworkflowFeatureRequirement
@@ -17,7 +17,6 @@ inputs:
 
 outputs:
   train:
-    doc: tbd
     type: File[]
     outputBinding:
       glob: "*.model"

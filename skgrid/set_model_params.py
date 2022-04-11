@@ -24,6 +24,7 @@ parser = argparse.ArgumentParser()
 parser.add_argument("--config", help='path to grid config yaml file')
 parser.add_argument("--cancer", help='cancer abbrev (ex. BRCA)')
 parser.add_argument("--platform", help='data platform abbrev (ex. GEXP)')
+parser.add_argument("--model_config", default='/skgrid/select_model.yml', help='yaml file of model to use for a given cancer cohort and platform (file in model_library)')
 parser.add_argument("-n", default=1, type=int)
 args = parser.parse_args()
 
@@ -51,7 +52,7 @@ classifers = {
 }
 
 # Load best model yaml
-with open('/skgrid/select_model.yml', 'r') as handle:
+with open(args.model_config, 'r') as handle:
     top_options = yaml.load(handle, Loader=yaml.FullLoader)
 # Select best model
 selected_model = top_options[args.cancer][args.platform]['file'].strip().split('/')[-1]
