@@ -1,3 +1,31 @@
+ACC:
+  OVERALL:
+    file: "/skgrid/data/model_library/Classifier.ExtraTreesClassifier.4"
+  GEXP:
+    file: "/skgrid/data/model_library/Classifier.LogisticRegression.13"
+  CNVR:
+    file: "/skgrid/data/model_library/Classifier.SGDClassifier.40"
+  METH:
+    file: "/skgrid/data/model_library/Classifier.GaussianNB.4"
+  MUTA:
+    file: "/skgrid/data/model_library/Classifier.AdaBoostClassifier.6"
+  MIR:
+    file: "/skgrid/data/model_library/Classifier.LogisticRegression.13"
+
+BLCA:
+  OVERALL:
+    file: "/skgrid/data/model_library/Classifier.LogisticRegression.0"
+  GEXP:
+    file: "/skgrid/data/model_library/Classifier.LogisticRegression.12"
+  CNVR:
+    file: "/skgrid/data/model_library/Classifier.GaussianNB.2"
+  METH:
+    file: "/skgrid/data/model_library/Classifier.LogisticRegression.1"
+  MUTA:
+    file: "/skgrid/data/model_library/Classifier.AdaBoostClassifier.6"
+  MIR:
+    file: "/skgrid/data/model_library/Classifier.LogisticRegression.6"
+
 BRCA:
   OVERALL:
     # model: "RandomForestClassifier-criterion-entropy_n_estimators-200.model" #keep for future logging
@@ -12,3 +40,325 @@ BRCA:
     file: "/skgrid/data/model_library/Classifier.BernoulliNB.2"
   MIR:
     file: "/skgrid/data/model_library/Classifier.LogisticRegression.0"
+
+CESC:
+  OVERALL:
+    file: "/skgrid/data/model_library/Classifier.LogisticRegression.0"
+  GEXP:
+    file: "/skgrid/data/model_library/Classifier.LogisticRegression.0"
+  CNVR:
+    file: "/skgrid/data/model_library/Classifier.SVC.18"
+  METH:
+    file: "/skgrid/data/model_library/Classifier.LogisticRegression.1"
+  MUTA:
+    file: "/skgrid/data/model_library/Classifier.KNeighborsClassifier.63"
+  MIR:
+    file: "/skgrid/data/model_library/Classifier.LogisticRegression.4"
+
+COADREAD:
+  OVERALL:
+    file: "/skgrid/data/model_library/Classifier.ExtraTreesClassifier.9"
+  # GEXP:
+  #   file: "/skgrid/data/model_library/"
+  # CNVR:
+  #   file: "/skgrid/data/model_library/"
+  # METH:
+  #   file: "/skgrid/data/model_library/"
+  # MUTA:
+  #   file: "/skgrid/data/model_library/"
+  # MIR:
+  #   file: "/skgrid/data/model_library/"
+
+ESCC:
+  OVERALL:
+    file: "/skgrid/data/model_library/Classifier.ExtraTreesClassifier.4"
+#   GEXP:
+#     file: "/skgrid/data/model_library/"
+#   CNVR:
+#     file: "/skgrid/data/model_library/"
+#   METH:
+#     file: "/skgrid/data/model_library/"
+#   MUTA:
+#     file: "/skgrid/data/model_library/"
+#   MIR:
+#     file: "/skgrid/data/model_library/"
+
+GEA:
+  OVERALL:
+    file: "/skgrid/data/model_library/Classifier.LogisticRegression.3"
+#   GEXP:
+#     file: "/skgrid/data/model_library/"
+#   CNVR:
+#     file: "/skgrid/data/model_library/"
+#   METH:
+#     file: "/skgrid/data/model_library/"
+#   MUTA:
+#     file: "/skgrid/data/model_library/"
+#   MIR:
+#     file: "/skgrid/data/model_library/"
+
+HNSC:
+  OVERALL:
+    file: "/skgrid/data/model_library/Classifier.LogisticRegression.9"
+#   GEXP:
+#     file: "/skgrid/data/model_library/"
+#   CNVR:
+#     file: "/skgrid/data/model_library/"
+#   METH:
+#     file: "/skgrid/data/model_library/"
+#   MUTA:
+#     file: "/skgrid/data/model_library/"
+#   MIR:
+#     file: "/skgrid/data/model_library/"
+
+KIRCKICH:
+  OVERALL:
+    file: "/skgrid/data/model_library/Classifier.SGDClassifier.22"
+#   GEXP:
+#     file: "/skgrid/data/model_library/"
+#   CNVR:
+#     file: "/skgrid/data/model_library/"
+#   METH:
+#     file: "/skgrid/data/model_library/"
+#   MUTA:
+#     file: "/skgrid/data/model_library/"
+#   MIR:
+#     file: "/skgrid/data/model_library/"
+
+KIRP:
+  OVERALL:
+    file: "/skgrid/data/model_library/Classifier.RandomForestClassifier.10"
+#   GEXP:
+#     file: "/skgrid/data/model_library/"
+#   CNVR:
+#     file: "/skgrid/data/model_library/"
+#   METH:
+#     file: "/skgrid/data/model_library/"
+#   MUTA:
+#     file: "/skgrid/data/model_library/"
+#   MIR:
+#     file: "/skgrid/data/model_library/"
+
+LGGGBM:
+  OVERALL:
+    file: "/skgrid/data/model_library/Classifier.LogisticRegression.1"
+#   GEXP:
+#     file: "/skgrid/data/model_library/"
+#   CNVR:
+#     file: "/skgrid/data/model_library/"
+#   METH:
+#     file: "/skgrid/data/model_library/"
+#   MUTA:
+#     file: "/skgrid/data/model_library/"
+#   MIR:
+#     file: "/skgrid/data/model_library/"
+
+LIHCCHOL:
+  OVERALL:
+    file: "/skgrid/data/model_library/Classifier.ExtraTreesClassifier.9"
+#   GEXP:
+#     file: "/skgrid/data/model_library/"
+#   CNVR:
+#     file: "/skgrid/data/model_library/"
+#   METH:
+#     file: "/skgrid/data/model_library/"
+#   MUTA:
+#     file: "/skgrid/data/model_library/"
+#   MIR:
+#     file: "/skgrid/data/model_library/"
+
+LUAD:
+  OVERALL:
+    file: "/skgrid/data/model_library/Classifier.LogisticRegression.8"
+#   GEXP:
+#     file: "/skgrid/data/model_library/"
+#   CNVR:
+#     file: "/skgrid/data/model_library/"
+#   METH:
+#     file: "/skgrid/data/model_library/"
+#   MUTA:
+#     file: "/skgrid/data/model_library/"
+#   MIR:
+#     file: "/skgrid/data/model_library/"
+
+LUSC:
+  OVERALL:
+    file: "/skgrid/data/model_library/Classifier.LogisticRegression.1"
+#   GEXP:
+#     file: "/skgrid/data/model_library/"
+#   CNVR:
+#     file: "/skgrid/data/model_library/"
+#   METH:
+#     file: "/skgrid/data/model_library/"
+#   MUTA:
+#     file: "/skgrid/data/model_library/"
+#   MIR:
+#     file: "/skgrid/data/model_library/"
+
+MESO:
+  OVERALL:
+    file: "/skgrid/data/model_library/Classifier.ExtraTreesClassifier.3"
+#   GEXP:
+#     file: "/skgrid/data/model_library/"
+#   CNVR:
+#     file: "/skgrid/data/model_library/"
+#   METH:
+#     file: "/skgrid/data/model_library/"
+#   MUTA:
+#     file: "/skgrid/data/model_library/"
+#   MIR:
+#     file: "/skgrid/data/model_library/"
+
+OV:
+  OVERALL:
+    file: "/skgrid/data/model_library/Classifier.LogisticRegression.12"
+#   GEXP:
+#     file: "/skgrid/data/model_library/"
+#   CNVR:
+#     file: "/skgrid/data/model_library/"
+#   METH:
+#     file: "/skgrid/data/model_library/"
+#   MUTA:
+#     file: "/skgrid/data/model_library/"
+#   MIR:
+#     file: "/skgrid/data/model_library/"
+
+PAAD:
+  OVERALL:
+    file: "/skgrid/data/model_library/Classifier.LogisticRegression.1"
+#   GEXP:
+#     file: "/skgrid/data/model_library/"
+#   CNVR:
+#     file: "/skgrid/data/model_library/"
+#   METH:
+#     file: "/skgrid/data/model_library/"
+#   MUTA:
+#     file: "/skgrid/data/model_library/"
+#   MIR:
+#     file: "/skgrid/data/model_library/"
+
+PCPG:
+  OVERALL:
+    file: "/skgrid/data/model_library/Classifier.RandomForestClassifier.3"
+#   GEXP:
+#     file: "/skgrid/data/model_library/"
+#   CNVR:
+#     file: "/skgrid/data/model_library/"
+#   METH:
+#     file: "/skgrid/data/model_library/"
+#   MUTA:
+#     file: "/skgrid/data/model_library/"
+#   MIR:
+#     file: "/skgrid/data/model_library/"
+
+PRAD:
+  OVERALL:
+    file: "/skgrid/data/model_library/Classifier.RandomForestClassifier.7"
+#   GEXP:
+#     file: "/skgrid/data/model_library/"
+#   CNVR:
+#     file: "/skgrid/data/model_library/"
+#   METH:
+#     file: "/skgrid/data/model_library/"
+#   MUTA:
+#     file: "/skgrid/data/model_library/"
+#   MIR:
+#     file: "/skgrid/data/model_library/"
+
+SARC:
+  OVERALL:
+    file: "/skgrid/data/model_library/Classifier.SVC.12"
+#   GEXP:
+#     file: "/skgrid/data/model_library/"
+#   CNVR:
+#     file: "/skgrid/data/model_library/"
+#   METH:
+#     file: "/skgrid/data/model_library/"
+#   MUTA:
+#     file: "/skgrid/data/model_library/"
+#   MIR:
+#     file: "/skgrid/data/model_library/"
+
+SKCM:
+  OVERALL:
+    file: "/skgrid/data/model_library/Classifier.DecisionTreeClassifier.23"
+#   GEXP:
+#     file: "/skgrid/data/model_library/"
+#   CNVR:
+#     file: "/skgrid/data/model_library/"
+#   METH:
+#     file: "/skgrid/data/model_library/"
+#   MUTA:
+#     file: "/skgrid/data/model_library/"
+#   MIR:
+#     file: "/skgrid/data/model_library/"
+
+TGCT:
+  OVERALL:
+    file: "/skgrid/data/model_library/Classifier.LogisticRegression.13"
+#   GEXP:
+#     file: "/skgrid/data/model_library/"
+#   CNVR:
+#     file: "/skgrid/data/model_library/"
+#   METH:
+#     file: "/skgrid/data/model_library/"
+#   MUTA:
+#     file: "/skgrid/data/model_library/"
+#   MIR:
+#     file: "/skgrid/data/model_library/"
+
+THCA:
+  OVERALL:
+    file: "/skgrid/data/model_library/Classifier.AdaBoostClassifier.6"
+#   GEXP:
+#     file: "/skgrid/data/model_library/"
+#   CNVR:
+#     file: "/skgrid/data/model_library/"
+#   METH:
+#     file: "/skgrid/data/model_library/"
+#   MUTA:
+#     file: "/skgrid/data/model_library/"
+#   MIR:
+#     file: "/skgrid/data/model_library/"
+
+THYM:
+  OVERALL:
+    file: "/skgrid/data/model_library/Classifier.GaussianNB.6"
+#   GEXP:
+#     file: "/skgrid/data/model_library/"
+#   CNVR:
+#     file: "/skgrid/data/model_library/"
+#   METH:
+#     file: "/skgrid/data/model_library/"
+#   MUTA:
+#     file: "/skgrid/data/model_library/"
+#   MIR:
+#     file: "/skgrid/data/model_library/"
+
+UCEC:
+  OVERALL:
+    file: "/skgrid/data/model_library/Classifier.ExtraTreesClassifier.3"
+#   GEXP:
+#     file: "/skgrid/data/model_library/"
+#   CNVR:
+#     file: "/skgrid/data/model_library/"
+#   METH:
+#     file: "/skgrid/data/model_library/"
+#   MUTA:
+#     file: "/skgrid/data/model_library/"
+#   MIR:
+#     file: "/skgrid/data/model_library/"
+
+UVM:
+  OVERALL:
+    file: "/skgrid/data/model_library/Classifier.RandomForestClassifier.11"
+#   GEXP:
+#     file: "/skgrid/data/model_library/"
+#   CNVR:
+#     file: "/skgrid/data/model_library/"
+#   METH:
+#     file: "/skgrid/data/model_library/"
+#   MUTA:
+#     file: "/skgrid/data/model_library/"
+#   MIR:
+#     file: "/skgrid/data/model_library/"
