@@ -4,15 +4,18 @@ import os
 import sys
 import pickle
 import pandas as pd
+import argparse
 
-input = sys.argv[1]
-output = sys.argv[2]
-models = sys.argv[3:]
+parser = argparse.ArgumentParser()
+parser.add_argument("--data", help='data to make subtype predictions')
+parser.add_argument("--cancer", help="cancer cohort used for output file naming")
+parser.add_argument("--model", nargs = '+',help="trained model pickle file")
+args = parser.parse_args()
 
-feat=pd.read_csv(input, sep="\t", index_col=0)
+feat=pd.read_csv(args.data, sep="\t", index_col=0)
 
 out = {}
-for model in models:
+for model in args.model:
     model_name = os.path.basename(model)
     obj = pickle.load(open(model, "rb"))
     X = feat[obj.feature_names_in_]
@@ -27,7 +30,4 @@ for model in models:
         out[model_name] = labels
 
 df = pd.DataFrame(out)
-if output == "-":
-    df.to_csv(sys.stdout, sep="\t")
-else:
-    df.to_csv(output, sep="\t")
+df.to_csv(args.cancer + '_preds.tsv', sep="\t")

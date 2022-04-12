@@ -5,7 +5,8 @@ rule all:
         "subscope.info",
         "aklimate.info",
         "cloudforest.info",
-        "jadbio.info"
+        "jadbio.info",
+        "skgrid.info"
 
 rule subscope_docker:
     output:
@@ -54,3 +55,17 @@ rule jadbio_docker_load:
         "jadbio/src/jadbio-model-exe.jar"
     shell:
         "docker build -t jadbio . && docker images | grep jadbio > jadbio.info"
+
+rule skgrid_docker:
+    output:
+        "skgrid/src/skgrid_ohsu_20220323_docker_image.tar.gz"
+    shell:
+        "synapse get -r syn28267280 --downloadLocation skgrid/src/"
+
+rule skgrid_docker_load:
+    output:
+        "skgrid.info"
+    input:
+        "skgrid/src/skgrid_ohsu_20220323_docker_image.tar.gz"
+    shell:
+        "docker load -i skgrid/src/skgrid_ohsu_20220323_docker_image.tar.gz && docker tag 0933ad0ece3a skgrid:latest && docker images | grep skgrid > skgrid.info"

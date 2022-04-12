@@ -6,6 +6,9 @@ python -m venv venv
 . venv/bin/activate
 ```
 
+Install `cwl-runner` and `Docker`
+
+
 Synapse and AWS
 ```
 synapse login --remember-me
@@ -20,8 +23,45 @@ aws_secret_access_key=XXX
 ```
 
 # Build Docker Images
+Snakemake must already be installed. Run `Snakefile` that builds Docker images for each method.
 
-Snakemake must already be installed. Run `Snakefile` that builds Docker images for each method (ex. Cloud Forest).
+
+# AKLIMATE
+### Build image with permissions updated
+```
+cd aklimate
+docker build --tag aklimate2 .
+```
+### Run Model for Predicted Subtypes
+```
+# Predict subtypes
+bash RUN.sh
+```
+
+
+# SubSCOPE
+### Run Model for Predicted Subtypes
+```
+cd subscope
+bash RUN.sh
+```
+
+
+# JADBio
+### Run Model for Predicted Subtypes
+```
+cd jadbio
+bash RUN.sh
+```
+
+
+# SK Grid
+### Run Model for Predicted Subtypes
+Example for running BRCA cohort using BRCA_v12_20210228 as the dataset for predictions
+```
+cd skgrid
+bash RUN.sh
+```
 
 # Cloud Forest ML
 ### Prep
@@ -47,41 +87,3 @@ cd cloud-forest/
 bash RUN.sh
 ```
 Where the output predictions are saved as a tsv with non-named columns that are `[CaseLabel, Predicted, Actual]`
-
-
-# JADBio
-### Run Model for Predicted Subtypes
-```
-cd jadbio
-bash RUN.sh
-```
-
-
-# AKLIMATE
-### Build image with permissions updated
-```
-cd cloudforest
-docker build --tag aklimate2 .
-```
-### Run Model for Predicted Subtypes
-```
-# Predict subtypes
-bash RUN.sh
-```
-
-
-# SubSCOPE
-### Run Model for Predicted Subtypes
-```
-cd subscope
-bash RUN.sh
-```
-
-
-# WIP - Skgrid ML
-### Train Models
-The scripts to do this are located in private repo https://github.com/kellrott/GDAN_TMP_classification
-
-TODO: pull relevant scripts into this repo
-
-### Run Model for Predicted Subtypes
