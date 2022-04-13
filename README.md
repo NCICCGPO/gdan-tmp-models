@@ -63,6 +63,7 @@ cd skgrid
 bash RUN.sh
 ```
 
+
 # Cloud Forest ML
 ### Prep
 Input feature matrices and a predictor forest must be already created.
@@ -87,3 +88,8 @@ cd cloud-forest/
 bash RUN.sh
 ```
 Where the output predictions are saved as a tsv with non-named columns that are `[CaseLabel, Predicted, Actual]`
+
+
+# Notes
+
+Most models return the prediction probability for each subtype, where the overall predicted subtype is the one with the highest probability for the given sample. Due to the nature of the machine learning algorithm (ex. SVC, Passive aggressive, SGD, etc.) a few that do not return prediction probabilities will return only the overall predicted subtype.

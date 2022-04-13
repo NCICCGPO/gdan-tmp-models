@@ -58,14 +58,14 @@ rule jadbio_docker_load:
 
 rule skgrid_docker:
     output:
-        "skgrid/src/skgrid_ohsu_20220323_docker_image.tar.gz"
+        "skgrid/src/skgrid_ohsu_docker_image.tar.gz"
     shell:
-        "synapse get -r syn28267280 --downloadLocation skgrid/src/"
+        "synapse get -r syn29294147 --downloadLocation skgrid/src/"
 
 rule skgrid_docker_load:
     output:
         "skgrid.info"
     input:
-        "skgrid/src/skgrid_ohsu_20220323_docker_image.tar.gz"
+        "skgrid/src/skgrid_ohsu_docker_image.tar.gz"
     shell:
-        "docker load -i skgrid/src/skgrid_ohsu_20220323_docker_image.tar.gz && docker tag 0933ad0ece3a skgrid:latest && docker images | grep skgrid > skgrid.info"
+        "docker load -i skgrid/src/skgrid_ohsu_docker_image.tar.gz && docker tag 0904b98ca996 skgrid:latest && docker images | grep skgrid > skgrid.info"
