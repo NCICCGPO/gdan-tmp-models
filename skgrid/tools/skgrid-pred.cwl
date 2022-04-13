@@ -17,7 +17,7 @@ inputs:
     type: File
     inputBinding:
       position: 1
-  cancer:
+  output_prefix:
     type: string
     inputBinding:
       position: 2

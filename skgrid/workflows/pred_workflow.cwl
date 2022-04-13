@@ -12,11 +12,12 @@ requirements:
 
 inputs:
   input_data: File[]
-  cancer: string[]
+  #cancer: string[]
+  output_prefix: string[]
+  model: File[]
 
 outputs:
   pred:
-    doc: tbd
     type: File[]
     outputBinding:
       glob: "*_preds.tsv"
@@ -27,8 +28,10 @@ steps:
   make_preds:
     in:
       input_data: input_data
-      cancer: cancer
-    scatter: [input_data, cancer]
+      #cancer: cancer
+      output_prefix: output_prefix
+      model: model
+    scatter: [input_data, output_prefix, model]
     scatterMethod: dotproduct
     out: [pred]
     run: ../tools/skgrid-pred.cwl

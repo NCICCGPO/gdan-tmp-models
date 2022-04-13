@@ -8,7 +8,8 @@ import argparse
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--data", help='data to make subtype predictions')
-parser.add_argument("--cancer", help="cancer cohort used for output file naming")
+# parser.add_argument("--cancer", help="cancer cohort used for output file naming")
+parser.add_argument("--output_prefix", help="output file prefix. will always end in _preds.tsv", default = '')
 parser.add_argument("--model", nargs = '+',help="trained model pickle file")
 args = parser.parse_args()
 
@@ -30,4 +31,4 @@ for model in args.model:
         out[model_name] = labels
 
 df = pd.DataFrame(out)
-df.to_csv(args.cancer + '_preds.tsv', sep="\t")
+df.to_csv(args.output_prefix + '_preds.tsv', sep="\t")

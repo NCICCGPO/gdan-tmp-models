@@ -15,7 +15,6 @@ inputs:
 
 outputs:
   mlib_out:
-    doc: tbd
     type: File[]
     outputBinding:
       glob: "Classifier.*"

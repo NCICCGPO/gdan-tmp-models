@@ -17,7 +17,6 @@ inputs:
 
 outputs:
   train:
-    doc: tbd
     type: File[]
     outputBinding:
       glob: "*.model"

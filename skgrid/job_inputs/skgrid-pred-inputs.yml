@@ -1,7 +1,10 @@
-# TODO update this to include a value for model in model_library
 input_data:
   - class: File
     path: ../data/input/example.tsv
 
-cancer:
-  - "BRCA"
+output_prefix:
+  - "BRCA_GEXP"
+
+model:
+  - class: File
+    path: ../data/train/RandomForestClassifier-criterion-entropy_n_estimators-200.model

@@ -1,4 +1,14 @@
 BRCA:
-  GEXP :
+  OVERALL:
     # model: "RandomForestClassifier-criterion-entropy_n_estimators-200.model" #keep for future logging
     file: "/skgrid/data/model_library/Classifier.RandomForestClassifier.11"
+  GEXP:
+    file: "/skgrid/data/model_library/Classifier.RandomForestClassifier.11"
+  CNVR:
+    file: "/skgrid/data/model_library/Classifier.LogisticRegression.7"
+  METH:
+    file: "/skgrid/data/model_library/Classifier.RandomForestClassifier.5"
+  MUTA:
+    file: "/skgrid/data/model_library/Classifier.BernoulliNB.2"
+  MIR:
+    file: "/skgrid/data/model_library/Classifier.LogisticRegression.0"
