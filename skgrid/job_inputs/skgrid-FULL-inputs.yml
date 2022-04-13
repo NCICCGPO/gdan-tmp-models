@@ -4,17 +4,17 @@
 # User Data
 input_data:
   - class: File
-    path: ../data/input/example.tsv
+    path: ../data/input/example_BRCA.tsv
   # - class: File
-  #   path: ../data/input/example.tsv
+  #   path: ../data/input/example_BRCA.tsv
   # - class: File
-  #   path: ../data/input/example.tsv
+  #   path: ../data/input/example_BRCA.tsv
   # - class: File
-  #   path: ../data/input/example.tsv
+  #   path: ../data/input/example_BRCA.tsv
   # - class: File
-  #   path: ../data/input/example.tsv
+  #   path: ../data/input/example_BRCA.tsv
   # - class: File
-  #   path: ../data/input/example.tsv
+  #   path: ../data/input/example_BRCA.tsv
 
 # TCGA Cancer cohort
 cancer:
