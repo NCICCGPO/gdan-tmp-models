@@ -64,10 +64,10 @@ COADREAD:
     file: "/skgrid/data/model_library/Classifier.LogisticRegression.7"
   METH:
     file: "/skgrid/data/model_library/Classifier.LogisticRegression.1"
-  # MUTA:
-  #   file: "/skgrid/data/model_library/"
-  # MIR:
-  #   file: "/skgrid/data/model_library/"
+  MUTA:
+    file: "/skgrid/data/model_library/Classifier.SVC.6"
+  MIR:
+    file: "/skgrid/data/model_library/Classifier.LogisticRegression.12"
 
 ESCC:
   OVERALL:
@@ -78,10 +78,10 @@ ESCC:
     file: "/skgrid/data/model_library/Classifier.SGDClassifier.28"
   METH:
     file: "/skgrid/data/model_library/Classifier.GaussianNB.2"
-#   MUTA:
-#     file: "/skgrid/data/model_library/"
-#   MIR:
-#     file: "/skgrid/data/model_library/"
+  MUTA:
+    file: "/skgrid/data/model_library/Classifier.AdaBoostClassifier.6"
+  MIR:
+    file: "/skgrid/data/model_library/Classifier.SGDClassifier.40"
 
 GEA:
   OVERALL:
@@ -92,10 +92,10 @@ GEA:
     file: "/skgrid/data/model_library/Classifier.ExtraTreesClassifier.4"
   METH:
     file: "/skgrid/data/model_library/Classifier.SVC.18"
-#   MUTA:
-#     file: "/skgrid/data/model_library/"
-#   MIR:
-#     file: "/skgrid/data/model_library/"
+  MUTA:
+    file: "/skgrid/data/model_library/Classifier.BernoulliNB.9"
+  MIR:
+    file: "/skgrid/data/model_library/Classifier.RandomForestClassifier.3"
 
 HNSC:
   OVERALL:
@@ -106,10 +106,10 @@ HNSC:
     file: "/skgrid/data/model_library/Classifier.LogisticRegression.2"
   METH:
     file: "/skgrid/data/model_library/Classifier.LogisticRegression.1"
-#   MUTA:
-#     file: "/skgrid/data/model_library/"
-#   MIR:
-#     file: "/skgrid/data/model_library/"
+  MUTA:
+    file: "/skgrid/data/model_library/Classifier.SVC.16"
+  MIR:
+    file: "/skgrid/data/model_library/Classifier.LogisticRegression.3"
 
 KIRCKICH:
   OVERALL:
@@ -120,10 +120,10 @@ KIRCKICH:
     file: "/skgrid/data/model_library/Classifier.DecisionTreeClassifier.6"
   METH:
     file: "/skgrid/data/model_library/Classifier.AdaBoostClassifier.19"
-#   MUTA:
-#     file: "/skgrid/data/model_library/"
-#   MIR:
-#     file: "/skgrid/data/model_library/"
+  MUTA:
+    file: "/skgrid/data/model_library/Classifier.AdaBoostClassifier.6"
+  MIR:
+    file: "no_model"
 
 KIRP:
   OVERALL:
@@ -134,10 +134,10 @@ KIRP:
     file: "/skgrid/data/model_library/Classifier.SVC.12"
   METH:
     file: "/skgrid/data/model_library/Classifier.LogisticRegression.1"
-#   MUTA:
-#     file: "/skgrid/data/model_library/"
-#   MIR:
-#     file: "/skgrid/data/model_library/"
+  MUTA:
+    file: "/skgrid/data/model_library/Classifier.AdaBoostClassifier.6"
+  MIR:
+    file: "/skgrid/data/model_library/Classifier.LogisticRegression.0"
 
 LGGGBM:
   OVERALL:
@@ -148,10 +148,10 @@ LGGGBM:
     file: "/skgrid/data/model_library/Classifier.ExtraTreesClassifier.8"
   METH:
     file: "/skgrid/data/model_library/Classifier.LogisticRegression.1"
-#   MUTA:
-#     file: "/skgrid/data/model_library/"
-#   MIR:
-#     file: "/skgrid/data/model_library/"
+  MUTA:
+    file: "/skgrid/data/model_library/Classifier.RandomForestClassifier.10"
+  MIR:
+    file: "no_model"
 
 LIHCCHOL:
   OVERALL:
@@ -162,10 +162,10 @@ LIHCCHOL:
     file: "/skgrid/data/model_library/Classifier.LogisticRegression.10"
   METH:
     file: "/skgrid/data/model_library/Classifier.RandomForestClassifier.5"
-#   MUTA:
-#     file: "/skgrid/data/model_library/"
-#   MIR:
-#     file: "/skgrid/data/model_library/"
+  MUTA:
+    file: "/skgrid/data/model_library/Classifier.LogisticRegression.1"
+  MIR:
+    file: "no_model"
 
 LUAD:
   OVERALL:
@@ -176,10 +176,10 @@ LUAD:
     file: "/skgrid/data/model_library/Classifier.LogisticRegression.1"
   METH:
     file: "/skgrid/data/model_library/Classifier.SGDClassifier.22"
-#   MUTA:
-#     file: "/skgrid/data/model_library/"
-#   MIR:
-#     file: "/skgrid/data/model_library/"
+  MUTA:
+    file: "/skgrid/data/model_library/Classifier.RandomForestClassifier.10"
+  MIR:
+    file: "/skgrid/data/model_library/Classifier.LogisticRegression.0"
 
 LUSC:
   OVERALL:
@@ -190,10 +190,10 @@ LUSC:
     file: "/skgrid/data/model_library/Classifier.GaussianNB.1"
   METH:
     file: "/skgrid/data/model_library/Classifier.LogisticRegression.1"
-#   MUTA:
-#     file: "/skgrid/data/model_library/"
-#   MIR:
-#     file: "/skgrid/data/model_library/"
+  MUTA:
+    file: "/skgrid/data/model_library/Classifier.AdaBoostClassifier.6"
+  MIR:
+    file: "/skgrid/data/model_library/Classifier.LogisticRegression.0"
 
 MESO:
   OVERALL:
@@ -204,10 +204,10 @@ MESO:
     file: "/skgrid/data/model_library/Classifier.KNeighborsClassifier.64"
   METH:
     file: "/skgrid/data/model_library/Classifier.RandomForestClassifier.4"
-#   MUTA:
-#     file: "/skgrid/data/model_library/"
-#   MIR:
-#     file: "/skgrid/data/model_library/"
+  MUTA:
+    file: "no_model"
+  MIR:
+    file: "/skgrid/data/model_library/Classifier.LogisticRegression.5"
 
 OV:
   OVERALL:
@@ -218,10 +218,10 @@ OV:
     file: "/skgrid/data/model_library/Classifier.SVC.8"
   METH:
     file: "/skgrid/data/model_library/Classifier.LogisticRegression.1"
-#   MUTA:
-#     file: "/skgrid/data/model_library/"
-#   MIR:
-#     file: "/skgrid/data/model_library/"
+  MUTA:
+    file: "no_model"
+  MIR:
+    file: "/skgrid/data/model_library/Classifier.LogisticRegression.2"
 
 PAAD:
   OVERALL:
@@ -232,10 +232,10 @@ PAAD:
     file: "/skgrid/data/model_library/Classifier.SGDClassifier.7"
   METH:
     file: "/skgrid/data/model_library/Classifier.SGDClassifier.4"
-#   MUTA:
-#     file: "/skgrid/data/model_library/"
-#   MIR:
-#     file: "/skgrid/data/model_library/"
+  MUTA:
+    file: "no_model"
+  MIR:
+    file: "/skgrid/data/model_library/Classifier.SVC.0"
 
 PCPG:
   OVERALL:
@@ -246,10 +246,10 @@ PCPG:
     file: "/skgrid/data/model_library/Classifier.SVC.17"
   METH:
     file: "/skgrid/data/model_library/Classifier.SVC.18"
-#   MUTA:
-#     file: "/skgrid/data/model_library/"
-#   MIR:
-#     file: "/skgrid/data/model_library/"
+  MUTA:
+    file: "/skgrid/data/model_library/Classifier.KNeighborsClassifier.192"
+  MIR:
+    file: "/skgrid/data/model_library/Classifier.LogisticRegression.7"
 
 PRAD:
   OVERALL:
@@ -260,10 +260,10 @@ PRAD:
     file: "/skgrid/data/model_library/Classifier.LogisticRegression.4"
   METH:
     file: "/skgrid/data/model_library/Classifier.SVC.16"
-#   MUTA:
-#     file: "/skgrid/data/model_library/"
-#   MIR:
-#     file: "/skgrid/data/model_library/"
+  MUTA:
+    file: "/skgrid/data/model_library/Classifier.PassiveAggressiveClassifier.0"
+  MIR:
+    file: "/skgrid/data/model_library/Classifier.LogisticRegression.0"
 
 SARC:
   OVERALL:
@@ -274,10 +274,10 @@ SARC:
     file: "/skgrid/data/model_library/Classifier.SVC.0"
   METH:
     file: "/skgrid/data/model_library/Classifier.SGDClassifier.36"
-#   MUTA:
-#     file: "/skgrid/data/model_library/"
-#   MIR:
-#     file: "/skgrid/data/model_library/"
+  MUTA:
+    file: "/skgrid/data/model_library/Classifier.BernoulliNB.0"
+  MIR:
+    file: "/skgrid/data/model_library/Classifier.LogisticRegression.9"
 
 SKCM:
   OVERALL:
@@ -288,10 +288,10 @@ SKCM:
     file: "/skgrid/data/model_library/Classifier.AdaBoostClassifier.29"
   METH:
     file: "/skgrid/data/model_library/Classifier.LogisticRegression.0"
-#   MUTA:
-#     file: "/skgrid/data/model_library/"
-#   MIR:
-#     file: "/skgrid/data/model_library/"
+  MUTA:
+    file: "/skgrid/data/model_library/Classifier.DecisionTreeClassifier.23"
+  MIR:
+    file: "/skgrid/data/model_library/Classifier.RandomForestClassifier.0"
 
 TGCT:
   OVERALL:
@@ -302,10 +302,10 @@ TGCT:
     file: "/skgrid/data/model_library/Classifier.SGDClassifier.45"
   METH:
     file: "/skgrid/data/model_library/Classifier.SGDClassifier.12"
-#   MUTA:
-#     file: "/skgrid/data/model_library/"
-#   MIR:
-#     file: "/skgrid/data/model_library/"
+  MUTA:
+    file: "/skgrid/data/model_library/Classifier.GaussianProcessClassifier.2"
+  MIR:
+    file: "/skgrid/data/model_library/Classifier.PassiveAggressiveClassifier.0"
 
 THCA:
   OVERALL:
@@ -316,10 +316,10 @@ THCA:
     file: "/skgrid/data/model_library/Classifier.LogisticRegression.2"
   METH:
     file: "/skgrid/data/model_library/Classifier.RandomForestClassifier.9"
-#   MUTA:
-#     file: "/skgrid/data/model_library/"
-#   MIR:
-#     file: "/skgrid/data/model_library/"
+  MUTA:
+    file: "/skgrid/data/model_library/Classifier.AdaBoostClassifier.6"
+  MIR:
+    file: "/skgrid/data/model_library/Classifier.RandomForestClassifier.3"
 
 THYM:
   OVERALL:
@@ -330,10 +330,10 @@ THYM:
     file: "/skgrid/data/model_library/Classifier.SGDClassifier.33"
   METH:
     file: "/skgrid/data/model_library/Classifier.LogisticRegression.2"
-#   MUTA:
-#     file: "/skgrid/data/model_library/"
-#   MIR:
-#     file: "/skgrid/data/model_library/"
+  MUTA:
+    file: "/skgrid/data/model_library/Classifier.BernoulliNB.0"
+  MIR:
+    file: "/skgrid/data/model_library/Classifier.GaussianNB.6"
 
 UCEC:
   OVERALL:
@@ -344,10 +344,10 @@ UCEC:
     file: "/skgrid/data/model_library/Classifier.RandomForestClassifier.10"
   METH:
     file: "/skgrid/data/model_library/Classifier.LogisticRegression.4"
-#   MUTA:
-#     file: "/skgrid/data/model_library/"
-#   MIR:
-#     file: "/skgrid/data/model_library/"
+  MUTA:
+    file: "/skgrid/data/model_library/Classifier.BernoulliNB.0"
+  MIR:
+    file: "/skgrid/data/model_library/Classifier.LogisticRegression.2"
 
 UVM:
   OVERALL:
@@ -358,7 +358,7 @@ UVM:
     file: "/skgrid/data/model_library/Classifier.SGDClassifier.18"
   METH:
     file: "/skgrid/data/model_library/Classifier.LogisticRegression.1"
-#   MUTA:
-#     file: "/skgrid/data/model_library/"
-#   MIR:
-#     file: "/skgrid/data/model_library/"
+  MUTA:
+    file: "/skgrid/data/model_library/Classifier.LogisticRegression.1"
+  MIR:
+    file: "/skgrid/data/model_library/Classifier.KNeighborsClassifier.1"
