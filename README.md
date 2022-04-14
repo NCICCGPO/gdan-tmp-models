@@ -55,6 +55,15 @@ If using example data use `bash tools/run_transform.sh user-transformed-data/cbi
 Snakemake must already be installed. Run `Snakefile` that builds Docker images for each method.
 
 
+# SK Grid
+### Run Model for Predicted Subtypes
+Example for running BRCA cohort using BRCA_v12_20210228 as the dataset for predictions
+```
+cd skgrid
+bash RUN.sh
+```
+
+
 # AKLIMATE
 ### Build image with permissions updated
 ```
@@ -80,15 +89,6 @@ bash RUN.sh
 ### Run Model for Predicted Subtypes
 ```
 cd jadbio
-bash RUN.sh
-```
-
-
-# SK Grid
-### Run Model for Predicted Subtypes
-Example for running BRCA cohort using BRCA_v12_20210228 as the dataset for predictions
-```
-cd skgrid
 bash RUN.sh
 ```
 

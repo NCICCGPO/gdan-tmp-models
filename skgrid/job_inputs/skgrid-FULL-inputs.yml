@@ -4,41 +4,18 @@
 # User Data
 input_data:
   - class: File
-    path: ../data/input/example_BRCA.tsv
-  # - class: File
-  #   path: ../data/input/example_BRCA.tsv
-  # - class: File
-  #   path: ../data/input/example_BRCA.tsv
-  # - class: File
-  #   path: ../data/input/example_BRCA.tsv
-  # - class: File
-  #   path: ../data/input/example_BRCA.tsv
-  # - class: File
-  #   path: ../data/input/example_BRCA.tsv
+    path: ../../user-transformed-data/transformed-data.tsv
 
 # TCGA Cancer cohort
 cancer:
   - "BRCA"
-  # - "BRCA"
-  # - "BRCA"
-  # - "BRCA"
-  # - "BRCA"
-  # - "BRCA"
 
 # Data Platform (SK Grid top model)
+# Options: OVERALL, CNVR, GEXP, METH, MIR, MUTA
 platform:
-  - "OVERALL"
-  # - "CNVR"
-  # - "GEXP"
-  # - "METH"
-  # - "MIR"
-  # - "MUTA"
+  - "GEXP"
 
 # Subtype Prediction File Prefix
+# Options: BRCA_OVERALL, BRCA_CNVR, BRCA_GEXP, BRCA_METH, BRCA_MIR, BRCA_MUTA
 output_prefix:
-  - "BRCA_OVERALL"
-  # - "BRCA_CNVR"
-  # - "BRCA_GEXP"
-  # - "BRCA_METH"
-  # - "BRCA_MIR"
-  # - "BRCA_MUTA"
+  - "BRCA_GEXP"
