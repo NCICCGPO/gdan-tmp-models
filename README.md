@@ -42,7 +42,7 @@ python tools/convert.py
 
 
 # Data Preprocessing
-Data will be transformed with a quantile rescale prior to running machine learning algorithms
+Data will be transformed with a quantile rescale prior to running machine learning algorithms. Outputs `user-transformed-data/transformed-data.tsv`
 
 ```
 bash run_transform.sh <user-data>
