@@ -22,8 +22,46 @@ aws_access_key_id=XXX
 aws_secret_access_key=XXX
 ```
 
+# Data Requirements
+User input data must be in tab separated format.
+
+# Example User Data
+An example BRCA user data can be used. If running with different data then skip this step.
+
+This step requires wget to be installed already.
+```
+wget  https://cbioportal-datahub.s3.amazonaws.com/brca_metabric.tar.gz
+tar -xf brca_metabric.tar.gz brca_metabric/data_mrna_agilent_microarray.txt
+rm brca_metabric.tar.gz
+```
+
+Convert feature ID's to TMP feature IDs and format to samples x features. Outputs file `user-transformed-data/cbioportal_BRCA_GEXP.tsv`
+```
+python tools/convert.py
+```
+
+
+# Data Preprocessing
+Data will be transformed with a quantile rescale prior to running machine learning algorithms. Outputs `user-transformed-data/transformed-data.tsv`
+
+```
+bash run_transform.sh <user-data>
+```
+
+If using example data use `bash tools/run_transform.sh user-transformed-data/cbioportal_BRCA_GEXP.tsv`
+
+
 # Build Docker Images
 Snakemake must already be installed. Run `Snakefile` that builds Docker images for each method.
+
+
+# SK Grid
+### Run Model for Predicted Subtypes
+Example for running BRCA cohort using BRCA_v12_20210228 as the dataset for predictions
+```
+cd skgrid
+bash RUN.sh
+```
 
 
 # AKLIMATE
@@ -51,15 +89,6 @@ bash RUN.sh
 ### Run Model for Predicted Subtypes
 ```
 cd jadbio
-bash RUN.sh
-```
-
-
-# SK Grid
-### Run Model for Predicted Subtypes
-Example for running BRCA cohort using BRCA_v12_20210228 as the dataset for predictions
-```
-cd skgrid
 bash RUN.sh
 ```
 
