@@ -16,9 +16,9 @@ def quantileRescale(src,dst):
 if __name__ == "__main__":
 
     parser = argparse.ArgumentParser()
-    parser.add_argument("src")
-    parser.add_argument("dst")
-    parser.add_argument("out")
+    parser.add_argument("--src")
+    parser.add_argument("--dst")
+    parser.add_argument("--out")
 
     args = parser.parse_args()
 
