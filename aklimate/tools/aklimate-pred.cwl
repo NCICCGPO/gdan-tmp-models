@@ -8,7 +8,7 @@ requirements:
       - $(inputs.input_data)
 hints:
   DockerRequirement:
-    dockerPull: "aklimate2"
+    dockerImageId: "aklimate-tmp"
 
 
 inputs:
@@ -16,11 +16,14 @@ inputs:
     type: string
     inputBinding:
       position: 1
-
+  platform:
+    type: string
+    inputBinding:
+      position: 2
   input_data:
     type: File
     inputBinding:
-      position: 2
+      position: 3
 
 
 outputs:

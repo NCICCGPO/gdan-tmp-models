@@ -24,17 +24,17 @@ rule subscope_docker_load:
 
 rule aklimate_docker:
     output:
-        "aklimate/src/stuartlab_tmp_aklimate_20210714_docker_image.tar.gz"
+        "aklimate/src/stuartlab_tmp_aklimate_20220407_docker_image.tar.gz"
     shell:
-        "synapse get -r syn25982821 --downloadLocation aklimate/src/"
+        "synapse get -r syn29280221 --downloadLocation aklimate/src/"
 
 rule aklimate_docker_load:
     output:
         "aklimate.info"
     input:
-        "aklimate/src/stuartlab_tmp_aklimate_20210714_docker_image.tar.gz"
+        "aklimate/src/stuartlab_tmp_aklimate_20220407_docker_image.tar.gz"
     shell:
-        "docker load -i aklimate/src/stuartlab_tmp_aklimate_20210714_docker_image.tar.gz && docker tag 4befea59cb3b aklimate-tmp:latest && docker images | grep aklimate > aklimate.info"
+        "docker load -i aklimate/src/stuartlab_tmp_aklimate_20220407_docker_image.tar.gz && docker tag 881bb86c6cfd aklimate-tmp:latest && docker images | grep aklimate > aklimate.info"
 
 rule cloudforest:
     output:
