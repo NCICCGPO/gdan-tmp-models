@@ -1,26 +1,42 @@
+# Introduction
+A collection of machine learning models that make predictions of cancer molecular subtypes. Users can run predictions on their molecular data. Data platforms supported are gene expression, DNA methylation, miRNA, copy number, and/or mutation calls.
+
+These tools were created from the GDAN-TMP group where minimal molecular markers were used to accurately predict 26 different cancer cohorts and 106 subtypes. Of the 1000's of models ran, the models with high predictive accuracy are made available to the public here.
+
++ For the publication of this work, visit:  <ADD LINK>
+
++ For the publication page, visit: <ADD LINK>
+
+
+# Requirements
+The following are required:
+
++ (Python 3+)[https://www.python.org/downloads/]
++ (Docker or Docker Desktop)[https://www.docker.com/]
++ (cwl-runner)[https://github.com/common-workflow-language/cwltool]
++ (Synapse client)[https://help.synapse.org/docs/Installing-Synapse-API-Clients.1985249668.html] and create an account
++ (AWS)[https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html]
+
+
 # Setup
-
-Create environment and setup
+Create an environment and install dependencies
 ```
-python -m venv venv
+python3 -m venv venv
 . venv/bin/activate
+pip install -r requirements.text
 ```
 
-Install `cwl-runner` and `Docker`
-
-
-Synapse and AWS
+Setup for Synapse and AWS
 ```
 synapse login --remember-me
 ```
-
-create `~/.aws/credentials`
-
+And create `~/.aws/credentials`
 ```
 [default]
 aws_access_key_id=XXX
 aws_secret_access_key=XXX
 ```
+
 
 # Data Requirements
 User input data must be in tab separated format.
@@ -120,3 +136,9 @@ Where the output predictions are saved as a tsv with non-named columns that are 
 # Notes
 
 Most models return the prediction probability for each subtype, where the overall predicted subtype is the one with the highest probability for the given sample. Due to the nature of the machine learning algorithm (ex. SVC, Passive aggressive, SGD, etc.) a few that do not return prediction probabilities will return only the overall predicted subtype.
+
+# Maintainers
+
+Current maintainers:
+
++ Jordan A. Lee 
