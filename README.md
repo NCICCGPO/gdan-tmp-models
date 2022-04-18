@@ -7,8 +7,10 @@ These tools were created from the GDAN-TMP group where minimal molecular markers
 
 + For the publication page, visit: <ADD LINK>
 
-Subtype predictions can be made for the following TCGA cohorts [TCGA Study Abbrev.](https://gdc.cancer.gov/resources-tcga-users/tcga-code-tables/tcga-study-abbreviations):
+Subtype predictions can be made for the following TCGA cohorts [TCGA Study Abbrev](https://gdc.cancer.gov/resources-tcga-users/tcga-code-tables/tcga-study-abbreviations):
+```
 ACC, BLCA, BRCA, CESC, COADREAD, ESCC, GEA, HNSC, KIRCKICH, KIRP, LGGGBM, LIHCCHOL, LUAD, LUSC, MESO, OV, PAAD, PCPG, PRAD, SARC, SKCM, TGCT, THCA, THYM, UCEC, UVM
+```
 
 # Requirements
 The following are required:
@@ -55,12 +57,15 @@ There are five methods (SK Grid, AKLIMATE, CloudForst, JADBio, and SubSCOPE) and
 5. Best `METH` only model - highest performing model using only DNA methylation features
 6. Best `MIR` only model - highest performing model using only miRNA features
 
-Snakemake must already be installed. Run `Snakefile` that builds Docker images for each method.
+Build Docker images of these methods
+```
+snakemake --cores 1
+```
 
 
 # SK Grid
 ### Run Model for Predicted Subtypes
-Example for running BRCA cohort using BRCA_v12_20210228 as the dataset for predictions
+Most models return the prediction probability for each subtype, where the overall predicted subtype is the one with the highest probability for the given sample. Due to the nature of the machine learning algorithm (ex. SVC, Passive aggressive, SGD, etc.) a few that do not return prediction probabilities will return only the overall predicted subtype.
 ```
 cd skgrid
 bash RUN.sh
@@ -118,11 +123,6 @@ cd cloud-forest/
 bash RUN.sh
 ```
 Where the output predictions are saved as a tsv with non-named columns that are `[CaseLabel, Predicted, Actual]`
-
-
-# Notes
-
-Most models return the prediction probability for each subtype, where the overall predicted subtype is the one with the highest probability for the given sample. Due to the nature of the machine learning algorithm (ex. SVC, Passive aggressive, SGD, etc.) a few that do not return prediction probabilities will return only the overall predicted subtype.
 
 
 # Acknowledgment and Funding
