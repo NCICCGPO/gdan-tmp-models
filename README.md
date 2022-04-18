@@ -56,7 +56,7 @@ There are five methods (SK Grid, AKLIMATE, CloudForst, JADBio, and SubSCOPE) and
 5. Best `METH` only model - highest performing model using only DNA methylation features
 6. Best `MIR` only model - highest performing model using only miRNA features
 
-Build Docker images of these methods
+Build Docker images of these methods from `Snakefile`.
 ```
 snakemake --cores 1
 ```
