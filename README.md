@@ -41,21 +41,6 @@ aws_secret_access_key=XXX
 # Data Requirements
 User input data must be in tab separated format.
 
-# Example User Data
-An example BRCA user data can be used. If running with different data then skip this step.
-
-This step requires wget to be installed already.
-```
-wget  https://cbioportal-datahub.s3.amazonaws.com/brca_metabric.tar.gz
-tar -xf brca_metabric.tar.gz brca_metabric/data_mrna_agilent_microarray.txt
-rm brca_metabric.tar.gz
-```
-
-Convert feature ID's to TMP feature IDs and format to samples x features. Outputs file `user-transformed-data/cbioportal_BRCA_GEXP.tsv`
-```
-python tools/convert.py
-```
-
 
 # Data Preprocessing
 Data will be transformed with a quantile rescale prior to running machine learning algorithms. Outputs `user-transformed-data/transformed-data.tsv`
@@ -136,6 +121,10 @@ Where the output predictions are saved as a tsv with non-named columns that are 
 # Notes
 
 Most models return the prediction probability for each subtype, where the overall predicted subtype is the one with the highest probability for the given sample. Due to the nature of the machine learning algorithm (ex. SVC, Passive aggressive, SGD, etc.) a few that do not return prediction probabilities will return only the overall predicted subtype.
+
+
+# Acknowledgment and Funding
+We would like to thank the National Cancer Institute for the support.
 
 # Maintainers
 
