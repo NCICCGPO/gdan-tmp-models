@@ -43,13 +43,7 @@ User input data must be in tab separated format.
 
 
 # Data Preprocessing
-Data will be transformed with a quantile rescale prior to running machine learning algorithms. Outputs `user-transformed-data/transformed-data.tsv`
 
-```
-bash run_transform.sh <user-data>
-```
-
-If using example data use `bash tools/run_transform.sh user-transformed-data/cbioportal_BRCA_GEXP.tsv`
 
 
 # Build Docker Images
