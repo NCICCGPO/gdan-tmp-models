@@ -7,6 +7,8 @@ These tools were created from the GDAN-TMP group where minimal molecular markers
 
 + For the publication page, visit: <ADD LINK>
 
+Subtype predictions can be made for the following TCGA cohorts [TCGA Study Abbrev.](https://gdc.cancer.gov/resources-tcga-users/tcga-code-tables/tcga-study-abbreviations):
+ACC, BLCA, BRCA, CESC, COADREAD, ESCC, GEA, HNSC, KIRCKICH, KIRP, LGGGBM, LIHCCHOL, LUAD, LUSC, MESO, OV, PAAD, PCPG, PRAD, SARC, SKCM, TGCT, THCA, THYM, UCEC, UVM
 
 # Requirements
 The following are required:
@@ -16,6 +18,7 @@ The following are required:
 + cwl-runner https://github.com/common-workflow-language/cwltool
 + Synapse client https://help.synapse.org/docs/Installing-Synapse-API-Clients.1985249668.html and create an account
 + AWS https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
++ Snakemake https://snakemake.readthedocs.io/en/stable/getting_started/installation.html
 
 
 # Setup
@@ -42,11 +45,16 @@ aws_secret_access_key=XXX
 User input data must be in tab separated format.
 
 
-# Data Preprocessing
-
-
-
 # Build Docker Images
+There are five methods (SK Grid, AKLIMATE, CloudForst, JADBio, and SubSCOPE) and each ran tens to thousands of models. The top performing models of each method, for each of the 26 cancer cohorts have been made available, and include:
+
+1. Best `OVERALL` model - highest performing model
+2. Best `GEXP` only model - highest performing model using only gene expression features
+3. Best `CNVR` only model - highest performing model using only copy number features
+4. Best `MUTA` only model - highest performing model using only mutation features
+5. Best `METH` only model - highest performing model using only DNA methylation features
+6. Best `MIR` only model - highest performing model using only miRNA features
+
 Snakemake must already be installed. Run `Snakefile` that builds Docker images for each method.
 
 
