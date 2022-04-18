@@ -1,7 +1,24 @@
+## Select one or more for each section ##
+
+# TCGA Cancer cohort
+# Options: ACC, BLCA, BRCA, CESC, COADREAD, ESCC,
+#GEA, HNSC, KIRCKICH, KIRP, LGGGBM, LIHCCHOL, LUAD, LUSC,
+#MESO, OV, PAAD, PCPG, PRAD, SARC, SKCM, TGCT, THCA, THYM,
+#UCEC, UVM.
 cancer:
   - "BRCA"
 
 
+# Data Platform (top model)
+# Options: GEXP, CNVR, METH, MULTI, TOP.
+#TOP will select the model with the highest prediction performance in 5-fold cross validation.
+platform:
+  - "TOP"
+
+
+# User Data
+#First row gives feature IDs.
+#First column gives sample IDs.
 input_data:
   - class: File
-    path: ../data/input/metabric_tmprescale.tsv
+    path: ../../example_inputs_cancers/example_BRCA.tsv

@@ -65,14 +65,12 @@ bash RUN.sh
 
 
 # AKLIMATE
-### Build image with permissions updated
-```
-cd aklimate
-docker build --tag aklimate2 .
-```
+Allowed platform types: TOP, MULTI, GEXP, CNVR, or METH
+No models for MIR or MUTA for any cancer cohorts. No models for ACC GEXP, BRCA METH, OV MULTI, PAAD GEXP, SKCM CNVR, or UVM GEXP.
+
 ### Run Model for Predicted Subtypes
 ```
-# Predict subtypes
+cd aklimate
 bash RUN.sh
 ```
 
