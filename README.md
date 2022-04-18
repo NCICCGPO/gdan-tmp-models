@@ -11,11 +11,11 @@ These tools were created from the GDAN-TMP group where minimal molecular markers
 # Requirements
 The following are required:
 
-+ (Python 3+)[https://www.python.org/downloads/]
-+ (Docker or Docker Desktop)[https://www.docker.com/]
-+ (cwl-runner)[https://github.com/common-workflow-language/cwltool]
-+ (Synapse client)[https://help.synapse.org/docs/Installing-Synapse-API-Clients.1985249668.html] and create an account
-+ (AWS)[https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html]
++ Python 3+ https://www.python.org/downloads/
++ Docker or Docker Desktop https://www.docker.com/
++ cwl-runner https://github.com/common-workflow-language/cwltool
++ Synapse client https://help.synapse.org/docs/Installing-Synapse-API-Clients.1985249668.html and create an account
++ AWS https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
 
 
 # Setup
@@ -141,4 +141,5 @@ Most models return the prediction probability for each subtype, where the overal
 
 Current maintainers:
 
-+ Jordan A. Lee 
++ Jordan A. Lee (GitHub jordan2lee)
++ Kyle Ellrott (GitHub kellrott)
