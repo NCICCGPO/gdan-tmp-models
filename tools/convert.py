@@ -18,7 +18,7 @@ df = df.iloc[:, 1:]
 df = df.dropna()
 
 # Open conversion file and convert
-with open('tools/entrez2tmp.json', 'r') as fh:
+with open('tools/entrez2tmp_BRCA_GEXP.json', 'r') as fh:
     entrez2tmp = json.load(fh)
 
 tmp = []
