@@ -6,7 +6,7 @@ import json
 
 ### Hardcoded
 cancer = 'BRCA'
-out = 'user-transformed-data/TEST_cbioportal_BRCA_GEXP.tsv'
+out = 'user-transformed-data/cbioportal_BRCA_GEXP.tsv'
 ###
 
 # From cbioportal data - convert to TMP-ft-id and format
