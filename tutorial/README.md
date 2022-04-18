@@ -3,7 +3,7 @@
 For this tutorial, we will be predicting breast invasive carcinoma subtypes using the best gene expression machine learning model from SK Grid. The METABRIC gene expression dataset is freely available to the public at cBioPortal.
 
 ## Data Download
-Be sure to follow the README sections `Requirements` and `Setup`.
+Be sure to follow the [README](../README.md) sections `Requirements` and `Setup`.
 
 This step requires `wget` to be installed already.
 ```
