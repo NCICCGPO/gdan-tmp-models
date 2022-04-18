@@ -1,9 +1,11 @@
-# Tutorial: Predict Breast Cancer Subtypes
+# Tutorial: Breast Cancer Subtype Predictions
 
-### Introduction
+## Introduction
+---
 For this tutorial, we will be predicting breast invasive carcinoma subtypes using the best gene expression machine learning model from SK Grid. The METABRIC gene expression dataset is freely available to the public at cBioPortal.
 
-### Data Download
+## Data Download
+---
 Be sure to follow the README sections `Requirements` and `Setup`.
 
 This step requires `wget` to be installed already.
@@ -16,7 +18,8 @@ rm brca_metabric.tar.gz
 
 We will be predicting subtypes for `data_mrna_agilent_microarray.txt`.
 
-### Pre-Processing
+## Pre-Processing
+---
 First, machine learning models need to be able to match genes to GDAN-TMP specific gene IDs. We will convert from Entrez gene IDs and reformat into a sample x feature matrix. The output file can be found at `user-transformed-data/cbioportal_BRCA_GEXP.tsv`.
 ```
 # Rename and format data_mrna_agilent_microarray.txt
