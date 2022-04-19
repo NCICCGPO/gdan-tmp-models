@@ -47,14 +47,16 @@ snakemake --cores 1
 ```
 
 # Predict Sample Subtypes
-Run SK Grid machine learning model on our dataset using `bash RUN_MODEL.sh <method>` where we can use any of the five methods (`skgrid`, `aklimate`, `jadbio`, `cloudforest`, `subscope`). Here we will run `skgrid`:
+Run SK Grid machine learning model on our dataset using `bash RUN_MODEL.sh <method>` where we can use any of the five methods (`skgrid`, `aklimate`, `jadbio`, `cloudforest`, or `subscope`).
+
+Here we will run the `skgrid` method:
 ```
 bash RUN_MODEL.sh skgrid
 ```
 
-Our molecular matrix with subtype predictions for each sample is located in `skgrid/data/preds/`. The columns include sampleID, predicted subtype, and followed by the probability for each cancer cohort subtype. As we can see, the subtype with the highest probability is the predicted subtype in the second column.
+Our molecular matrix with subtype predictions for each sample is located in the method's prediction directory `skgrid/data/preds/`. The columns include sampleID, predicted subtype, and followed by the probability for each cancer cohort subtype. As we can see, the subtype with the highest probability is the predicted subtype in the second column.
 
-| .  | Model | Model:Subtype1 | Model:Subtype2 | ... | Model:SubtypeN |
+|   | Model | Model:Subtype1 | Model:Subtype2 | ... | Model:SubtypeN |
 |----|---|---| ---| ---| ---|
 | Sample1 | Subtype1 | 0.93 | 0.08 | ... | 0.03 |
 | Sample2  | Subtype3 | 0.21 | 0.11 | ... | 0.44
