@@ -123,6 +123,8 @@ bash RUN.sh
 ```
 Where the output predictions are saved as a tsv with non-named columns that are `[CaseLabel, Predicted, Actual]`
 
+# Tutorial
+An example of how to run the prediction workflow is shown [here](tutorial/README.md) using SK Grid best performing gene expression model on a breast cacner cBioPortal dataset.
 
 # Acknowledgment and Funding
 We would like to thank the National Cancer Institute for the support.
