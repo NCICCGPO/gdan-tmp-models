@@ -54,11 +54,11 @@ bash RUN_MODEL.sh skgrid
 
 Our molecular matrix with subtype predictions for each sample is located in `skgrid/data/preds/`. The columns include sampleID, predicted subtype, and followed by the probability for each cancer cohort subtype. As we can see, the subtype with the highest probability is the predicted subtype in the second column.
 
-| .  | Model | Model:Subtype1 | ... | Model:SubtypeN |
-|----|---|---| ---| ---|
-| Sample1 | Subtype1 | 0.93 | ... | 0.03 |
-| Sample2  | Subtype3 | 0.21 | ... | 0.44
-| ...  | ... | ... | ... | ... |
-| SampleN | Subtype2 | 0.44 | ... | 0.18 |
+| .  | Model | Model:Subtype1 | Model:Subtype2 | ... | Model:SubtypeN |
+|----|---|---| ---| ---| ---|
+| Sample1 | Subtype1 | 0.93 | 0.08 | ... | 0.03 |
+| Sample2  | Subtype3 | 0.21 | 0.11 | ... | 0.44
+| ...  | ... | ... | ... | ... | ... |
+| SampleN | Subtype2 | 0.44 | 0.87 | ... | 0.18 |
 
 Our analysis is now complete!
