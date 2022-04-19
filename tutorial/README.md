@@ -32,3 +32,33 @@ bash run_transform.sh user-transformed-data/cbioportal_BRCA_GEXP.tsv
 
 
 # Build Docker Images
+There are five methods (SK Grid, AKLIMATE, CloudForst, JADBio, and SubSCOPE) and each ran tens to thousands of models. The top performing models of each method, for each of the 26 cancer cohorts have been made available, and include:
+
+1. Best `OVERALL` model - highest performing model
+2. Best `GEXP` only model - highest performing model using only gene expression features
+3. Best `CNVR` only model - highest performing model using only copy number features
+4. Best `MUTA` only model - highest performing model using only mutation features
+5. Best `METH` only model - highest performing model using only DNA methylation features
+6. Best `MIR` only model - highest performing model using only miRNA features
+
+Here we will build the `SK Grid` method to make predictions on our breast cancer dataset.
+```
+snakemake --cores 1
+```
+
+# Predict Sample Subtypes
+Run SK Grid machine learning model on our dataset using `bash RUN_MODEL.sh <method>` where we can use any of the five methods (`skgrid`, `aklimate`, `jadbio`, `cloudforest`, `subscope`). Here we will run `skgrid`:
+```
+bash RUN_MODEL.sh skgrid
+```
+
+Our molecular matrix with subtype predictions for each sample is located in `skgrid/data/preds/`. The columns include sampleID, predicted subtype, and followed by the probability for each cancer cohort subtype. As we can see, the subtype with the highest probability is the predicted subtype in the second column.
+
+| .  | Model | Model:Subtype1 | ... | Model:SubtypeN |
+|----|---|---| ---| ---|
+| Sample1 | Subtype1 | 0.93 | ... | 0.03 |
+| Sample2  | Subtype3 | 0.21 | ... | 0.44
+| ...  | ... | ... | ... | ... |
+| SampleN | Subtype2 | 0.44 | ... | 0.18 |
+
+Our analysis is now complete!
