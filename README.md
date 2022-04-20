@@ -63,6 +63,7 @@ Simple command to call one of the five methods. This will predict the molecular 
 bash RUN_MODEL.sh <method-name>
 ```
 Available methods are `skgrid`, `aklimate`, `cloudforest`, `jadbio`, and `subscope`.
+
 For example, to run the SK Grid method use `bash RUN_MODEL.sh skgrid`.
 
 
