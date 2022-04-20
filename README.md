@@ -30,7 +30,6 @@ The following are required:
 + cwl-runner https://github.com/common-workflow-language/cwltool
 + Synapse client https://help.synapse.org/docs/Installing-Synapse-API-Clients.1985249668.html and create an account
 + AWS https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
-+ Snakemake https://snakemake.readthedocs.io/en/stable/getting_started/installation.html
 
 
 # Setup
