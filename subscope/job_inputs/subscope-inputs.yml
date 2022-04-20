@@ -5,4 +5,4 @@ platform:
   - "GEXP"
 input_data:
   - class: File
-    path: ../../user-transformed-data/transformed-data.tsv
+    path: ../../example_inputs_cancers/example_BRCA.tsv
