@@ -5,4 +5,4 @@ platform:
   - "GEXP"
 input_data:
   - class: File
-    path: ../data/input/metabric_tmprescale.tsv
+    path: ../../example_inputs_cancers/example_BRCA.tsv

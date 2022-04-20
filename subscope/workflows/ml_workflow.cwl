@@ -4,7 +4,7 @@ cwlVersion: v1.0
 class: Workflow
 requirements:
   - class: DockerRequirement
-    dockerPull: "subscope"
+    dockerPull: docker.synapse.org/syn29568296/subs
     dockerOutputDirectory: "/data/results"
   - class: ScatterFeatureRequirement
   - class: StepInputExpressionRequirement

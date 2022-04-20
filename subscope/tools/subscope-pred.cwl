@@ -8,7 +8,7 @@ requirements:
       - $(inputs.input_data)
 hints:
   DockerRequirement:
-    dockerPull: "subscope"
+    dockerPull: docker.synapse.org/syn29568296/subs
     dockerOutputDirectory: "/data/results"
 
 

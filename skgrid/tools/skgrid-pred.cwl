@@ -9,7 +9,7 @@ requirements:
       - $(inputs.input_data)
 hints:
   DockerRequirement:
-    dockerImageId: "skgrid"
+    dockerPull: docker.synapse.org/syn29568296/sk_grid
 
 
 inputs:
