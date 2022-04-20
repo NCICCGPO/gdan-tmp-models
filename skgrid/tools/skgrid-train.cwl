@@ -5,7 +5,7 @@ class: CommandLineTool
 baseCommand: ["/skgrid/train.sh"]
 hints:
   DockerRequirement:
-    dockerImageId: docker.synapse.org/syn29568296/sk_grid
+    dockerPull: docker.synapse.org/syn29568296/sk_grid
 
 
 inputs:
