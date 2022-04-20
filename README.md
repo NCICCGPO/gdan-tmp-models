@@ -11,6 +11,17 @@ Subtype predictions can be made for the following [TCGA cohorts](https://gdc.can
 
 `ACC, BLCA, BRCA, CESC, COADREAD, ESCC, GEA, HNSC, KIRCKICH, KIRP, LGGGBM, LIHCCHOL, LUAD, LUSC, MESO, OV, PAAD, PCPG, PRAD, SARC, SKCM, TGCT, THCA, THYM, UCEC, UVM`
 
+### Model Library Available
+There are five methods (SK Grid, AKLIMATE, CloudForst, JADBio, and SubSCOPE) and each ran tens to thousands of models. The top performing models of each method, for each of the 26 cancer cohorts have been made available, and include:
+
+1. Best `OVERALL` model - highest performing model
+2. Best `GEXP` only model - highest performing model using only gene expression features
+3. Best `CNVR` only model - highest performing model using only copy number features
+4. Best `MUTA` only model - highest performing model using only mutation features
+5. Best `METH` only model - highest performing model using only DNA methylation features
+6. Best `MIR` only model - highest performing model using only miRNA features
+
+
 # Requirements
 The following are required:
 
@@ -19,7 +30,6 @@ The following are required:
 + cwl-runner https://github.com/common-workflow-language/cwltool
 + Synapse client https://help.synapse.org/docs/Installing-Synapse-API-Clients.1985249668.html and create an account
 + AWS https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
-+ Snakemake https://snakemake.readthedocs.io/en/stable/getting_started/installation.html
 
 
 # Setup
@@ -46,92 +56,25 @@ aws_secret_access_key=XXX
 User input data must be in tab separated format.
 
 
-# Build Docker Images
-There are five methods (SK Grid, AKLIMATE, CloudForst, JADBio, and SubSCOPE) and each ran tens to thousands of models. The top performing models of each method, for each of the 26 cancer cohorts have been made available, and include:
-
-1. Best `OVERALL` model - highest performing model
-2. Best `GEXP` only model - highest performing model using only gene expression features
-3. Best `CNVR` only model - highest performing model using only copy number features
-4. Best `MUTA` only model - highest performing model using only mutation features
-5. Best `METH` only model - highest performing model using only DNA methylation features
-6. Best `MIR` only model - highest performing model using only miRNA features
-
-Build Docker images of these methods from `Snakefile`.
+# Analyze: Run Machine Learning Models to Predict Cancer Subtypes
+Simple command to call one of the five methods. This will predict the molecular subtype for each sample.
 ```
-snakemake --cores 1
+bash RUN_MODEL.sh <method-name>
 ```
+Available methods are `skgrid`, `aklimate`, `cloudforest`, `jadbio`, and `subscope`.
 
+For example, to run the SK Grid method use `bash RUN_MODEL.sh skgrid`.
 
-# SK Grid
-### Run Model for Predicted Subtypes
-Most models return the prediction probability for each subtype, where the overall predicted subtype is the one with the highest probability for the given sample. Due to the nature of the machine learning algorithm (ex. SVC, Passive aggressive, SGD, etc.) a few that do not return prediction probabilities will return only the overall predicted subtype.
-```
-cd skgrid
-bash RUN.sh
-```
-
-
-# AKLIMATE
-Allowed platform types: TOP, MULTI, GEXP, CNVR, or METH
-No models for MIR or MUTA for any cancer cohorts. No models for ACC GEXP, BRCA METH, OV MULTI, PAAD GEXP, SKCM CNVR, or UVM GEXP.
-
-### Run Model for Predicted Subtypes
-```
-cd aklimate
-bash RUN.sh
-```
-
-
-# SubSCOPE
-### Run Model for Predicted Subtypes
-```
-cd subscope
-bash RUN.sh
-```
-There are several files on the details for the predictions. The best subtype predictions are included in `subscope/data/preds/<platfrom>-subscope-results.txt`.
-
-
-# JADBio
-### Run Model for Predicted Subtypes
-```
-cd jadbio
-bash RUN.sh
-```
-
-
-# Cloud Forest ML
-### Prep
-Input feature matrices and a predictor forest must be already created.
-
-Feature matrices must be placed in `cloudforest/CF_For_Docker/KIRCKICH/FM/` with the format:
-| .  | tes3 | tes6 | ... |
-|----|---|---| ---|
-| B:0 | 1 | 1 | ... |
-| feature1  | 0.037816 | 0.056716 | ... |
-| feature2  | 0.059439 | 0.088822 | ... |
-| ... | ... | ... | ... |
-
-Predictor forests must be placed in `cloudforest/CF_For_Docker/KIRCKICH/SF/`
-
-Output folder for predictions should already exist `cloudforest/CF_For_Docker/KIRCKICH/CL/`
-
-
-### Run Model For Predicted Subtypes
-Cloud forest machine learning model can be ran as a CWL workflow. Run ML and saves predictions in `CL/`
-```
-cd cloud-forest/
-bash RUN.sh
-```
-Where the output predictions are saved as a tsv with non-named columns that are `[CaseLabel, Predicted, Actual]`
 
 # Tutorial
 An example of how to run the prediction workflow is shown [here](tutorial/README.md) using SK Grid best performing gene expression model on a breast cacner cBioPortal dataset.
 
+
 # Acknowledgment and Funding
 We would like to thank the National Cancer Institute for the support.
 
-# Maintainers
 
+# Maintainers
 Current maintainers:
 
 + Jordan A. Lee (GitHub jordan2lee)

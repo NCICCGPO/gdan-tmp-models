@@ -1,10 +1,2 @@
-# Note to developing SK Grid Docker Image
-
-If creating SK Grid feature lists from scratch
-```
-cd src
-python src_file_prep.sh
-```
-
-However, this requires access to GDAN TMP `classifier_metrics_20210821` tarball. The output files of `src_file_prep.sh` 
-are already included in the Docker image under `data/src/training_data/` so users will not need to run these scripts
+# Predicted Subtype Probabilities
+Most models return the prediction probability for each subtype, where the overall predicted subtype is the one with the highest probability for the given sample. Due to the nature of the machine learning algorithm (ex. SVC, Passive aggressive, SGD, etc.) a few that do not return prediction probabilities will return only the overall predicted subtype.
