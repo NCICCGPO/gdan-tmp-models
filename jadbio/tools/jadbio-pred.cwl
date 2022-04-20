@@ -7,7 +7,7 @@ requirements:
   InlineJavascriptRequirement: {}
 hints:
   DockerRequirement:
-    dockerPull: "jadbio"
+    dockerPull: docker.synapse.org/syn29568296/jad
 
 
 inputs:

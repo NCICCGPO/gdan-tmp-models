@@ -88,6 +88,7 @@ bash RUN.sh
 cd subscope
 bash RUN.sh
 ```
+There are several files on the details for the predictions. The best subtype predictions are included in `subscope/data/preds/<platfrom>-subscope-results.txt`.
 
 
 # JADBio
