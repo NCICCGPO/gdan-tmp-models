@@ -4,7 +4,7 @@ cwlVersion: v1.0
 class: Workflow
 requirements:
   - class: DockerRequirement
-    dockerImageId: docker.synapse.org/syn29568296/aklimate
+    dockerPull: docker.synapse.org/syn29568296/aklimate
   - class: ScatterFeatureRequirement
   - class: StepInputExpressionRequirement
   - class: SubworkflowFeatureRequirement

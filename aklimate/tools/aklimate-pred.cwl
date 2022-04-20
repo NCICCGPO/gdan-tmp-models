@@ -8,7 +8,7 @@ requirements:
       - $(inputs.input_data)
 hints:
   DockerRequirement:
-    dockerImageId: docker.synapse.org/syn29568296/aklimate
+    dockerPull: docker.synapse.org/syn29568296/aklimate
 
 
 inputs:
