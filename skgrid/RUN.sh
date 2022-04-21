@@ -9,7 +9,7 @@ mkdir -p data/train
 # # cwl-runner --outdir data/preds \
 cwl-runner \
   workflows/FULL_workflow.cwl \
-  ../user-job-ymls/skgrid.yml
+  ../user-job-ymls/skgrid-inputs.yml
 
 # Clean up
 mv Classifier.* data/model_library
