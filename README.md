@@ -56,6 +56,11 @@ aws_secret_access_key=XXX
 # Data Requirements
 User input data must be in tab separated format.
 
+# Model Selection and Input Specifications
+Edit the file in `user-job-ymls/` that is associated with the method. Available methods are `skgrid`, `aklimate`, `cloudforest`, `jadbio`, and `subscope`.
+
+Each method file is slightly different, but all will require selection of at least the input dataset, cancer model, and data platform. Available values are noted in each method's yaml file.
+
 
 # Analyze: Run Machine Learning Models to Predict Cancer Subtypes
 Simple command to call one of the five methods. This will predict the molecular subtype for each sample.
