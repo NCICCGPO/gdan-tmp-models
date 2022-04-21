@@ -1,9 +1,5 @@
 #!/usr/bin/bash
 
-# specify input file
-# cancer
-# model platform
-
 method=${1}
 
 if [[ ${method} == 'jadbio' ]]
