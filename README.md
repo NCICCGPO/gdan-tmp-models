@@ -63,7 +63,7 @@ Edit the file in `user-job-ymls/` that is associated with the method.
 
 Each method file is slightly different, but all will require selection of at least the input dataset, cancer model, and data platform. Available values are noted in each method's yaml file.
 
-Certain model platforms have a specific method name, see below:
+Model platform name differs for each method, see below:
 
 + SK Grid options: `OVERALL, CNVR, GEXP, METH, MIR, or MUTA` where OVERALL is the highest performing model regardless of platform (can be single data platform type or a combination).
 
