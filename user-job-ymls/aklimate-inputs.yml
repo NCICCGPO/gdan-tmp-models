@@ -1,5 +1,6 @@
 ## Select one or more for each section ##
 
+
 # TCGA Cancer cohort
 # Options: ACC, BLCA, BRCA, CESC, COADREAD, ESCC,
 #GEA, HNSC, KIRCKICH, KIRP, LGGGBM, LIHCCHOL, LUAD, LUSC,
@@ -8,13 +9,11 @@
 cancer:
   - "BRCA"
 
-
 # Data Platform (top model)
 # Options: GEXP, CNVR, METH, MULTI, TOP.
 #TOP will select the model with the highest prediction performance in 5-fold cross validation.
 platform:
   - "TOP"
-
 
 # User Data
 #First row gives feature IDs.
