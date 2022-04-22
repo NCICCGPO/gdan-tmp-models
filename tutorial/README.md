@@ -2,6 +2,7 @@
 ## Introduction
 For this tutorial, we will be predicting breast invasive carcinoma subtypes using the best gene expression machine learning model from SK Grid. The METABRIC gene expression dataset is freely available to the public at cBioPortal.
 
+> Here we will build the `SK Grid` method to make predictions on our breast cancer dataset.
 
 ## Data Download
 Be sure to follow the [README](../README.md) sections `Requirements` and `Setup`.
@@ -41,13 +42,36 @@ There are five methods (SK Grid, AKLIMATE, CloudForst, JADBio, and SubSCOPE) and
 5. Best `METH` only model - highest performing model using only DNA methylation features
 6. Best `MIR` only model - highest performing model using only miRNA features
 
-Here we will build the `SK Grid` method to make predictions on our breast cancer dataset.
-```
-snakemake --cores 1
-```
 
 # Predict Sample Subtypes
-Run SK Grid machine learning model on our dataset using `bash RUN_MODEL.sh <method>` where we can use any of the five methods (`skgrid`, `aklimate`, `jadbio`, `cloudforest`, or `subscope`).
+We can pick from any of the five methods `SK Grid`, `AKLIMATE`, `JADBio`, `CloudForest`, or `SubSCOPE`. We also will want to pick which of the 6 model we want to use to make our subtype predictions (see the six models listed in Tutorial section "Build Docker Images").
+
+We will prepare for running SK Grid by editing job input file associated with the method that is in `user-job-ymls/`. This file will tell the method how to run. Below is the content of `user-job-ymls/skgrid-inputs.yml` where we want to predict subtypes on our data "transformed-data.tsv" using the breast cancer model for gene expression only and the output file will have the prefix BRCA_GEXP.
+```
+## Select one or more for each section ##
+
+
+# User Data to Predict Subtypes (ex. transformed-data.tsv)
+input_data:
+  - class: File
+    path: ../user-transformed-data/transformed-data.tsv
+
+# TCGA Cancer cohort
+cancer:
+  - "BRCA"
+
+# Data Platform (SK Grid top model)
+# Options: OVERALL, CNVR, GEXP, METH, MIR, MUTA
+platform:
+  - "GEXP"
+
+# Subtype Prediction File Prefix
+# Options: BRCA_OVERALL, BRCA_CNVR, BRCA_GEXP, BRCA_METH, BRCA_MIR, BRCA_MUTA
+output_prefix:
+  - "BRCA_GEXP"
+```
+
+Now we are ready to run the model. Run SK Grid machine learning model on our dataset using `bash RUN_MODEL.sh <method>` where we can use any of the five methods (`skgrid`, `aklimate`, `jadbio`, `cloudforest`, or `subscope`) - note all are a single lowercase name.
 
 Here we will run the `skgrid` method:
 ```

@@ -9,7 +9,7 @@ These tools were created from the GDAN-TMP group where minimal molecular markers
 
 Subtype predictions can be made for the following [TCGA cohorts](https://gdc.cancer.gov/resources-tcga-users/tcga-code-tables/tcga-study-abbreviations):
 
-`ACC, BLCA, BRCA, CESC, COADREAD, ESCC, GEA, HNSC, KIRCKICH, KIRP, LGGGBM, LIHCCHOL, LUAD, LUSC, MESO, OV, PAAD, PCPG, PRAD, SARC, SKCM, TGCT, THCA, THYM, UCEC, UVM`
+> ACC, BLCA, BRCA, CESC, COADREAD, ESCC, GEA, HNSC, KIRCKICH, KIRP, LGGGBM, LIHCCHOL, LUAD, LUSC, MESO, OV, PAAD, PCPG, PRAD, SARC, SKCM, TGCT, THCA, THYM, UCEC, UVM`
 
 ### Model Library Available
 There are five methods (SK Grid, AKLIMATE, CloudForst, JADBio, and SubSCOPE) and each ran tens to thousands of models. The top performing models of each method, for each of the 26 cancer cohorts have been made available, and include:
@@ -56,13 +56,20 @@ aws_secret_access_key=XXX
 # Data Requirements
 User input data must be in tab separated format.
 
+# Model Selection and Input Specifications
+Edit the file in `user-job-ymls/` that is associated with the method.
+
+> Available methods are `skgrid`, `aklimate`, `cloudforest`, `jadbio`, and `subscope`.
+
+Each method file is slightly different, but all will require selection of at least the input dataset, cancer model, and data platform. Available values are noted in each method's yaml file.
+
 
 # Analyze: Run Machine Learning Models to Predict Cancer Subtypes
 Simple command to call one of the five methods. This will predict the molecular subtype for each sample.
 ```
 bash RUN_MODEL.sh <method-name>
 ```
-Available methods are `skgrid`, `aklimate`, `cloudforest`, `jadbio`, and `subscope`.
+> Available methods are `skgrid`, `aklimate`, `cloudforest`, `jadbio`, and `subscope`.
 
 For example, to run the SK Grid method use `bash RUN_MODEL.sh skgrid`.
 

@@ -1,10 +1,10 @@
 ## Select one or more for each section ##
 
 
-# User Data
+# User Data to Predict Subtypes (ex. transformed-data.tsv)
 input_data:
   - class: File
-    path: ../../user-transformed-data/transformed-data.tsv
+    path: ../user-transformed-data/transformed-data.tsv
 
 # TCGA Cancer cohort
 cancer:
