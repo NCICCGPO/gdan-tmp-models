@@ -16,4 +16,4 @@ platform:
 #First column gives sample IDs
 input_data:
   - class: File
-    path: ../example_inputs_cancers/example_BRCA.tsv
+    path: ../user-transformed-data/your-data.tsv
