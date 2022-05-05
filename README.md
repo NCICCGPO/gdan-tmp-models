@@ -63,6 +63,18 @@ Edit the file in `user-job-ymls/` that is associated with the method.
 
 Each method file is slightly different, but all will require selection of at least the input dataset, cancer model, and data platform. Available values are noted in each method's yaml file.
 
+Model platform name differs for each method, see below:
+
++ SK Grid options: `OVERALL, CNVR, GEXP, METH, MIR, or MUTA` where OVERALL is the highest performing model regardless of platform (can be single data platform type or a combination).
+
++ AKLIMATE options: `TOP, GEXP, CNVR, METH, or MULTI` where TOP is the highest performing model regardless of platform (can be single data platform type or a combination). MULTI is a combination of multiple data platform types.
+
++ JADBio options:
+
++ CloudForest options:
+
++ SubSCOPE options: `CNV, GEXP, METH, MIR, MUTA`. Note there requires the use of `CNV` not CNVR.
+
 
 # Analyze: Run Machine Learning Models to Predict Cancer Subtypes
 Simple command to call one of the five methods. This will predict the molecular subtype for each sample.
