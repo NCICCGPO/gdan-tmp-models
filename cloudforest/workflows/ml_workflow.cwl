@@ -33,7 +33,7 @@ outputs:
     doc: tbd
     type: File[]
     outputBinding:
-      glob: "rf_*.cl"
+      glob: "*.tsv"
     outputSource: stepcloudforest/predictionouts
 
 

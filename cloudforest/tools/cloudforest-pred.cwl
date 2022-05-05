@@ -33,4 +33,4 @@ outputs:
   predictionouts:
     type: File
     outputBinding:
-      glob: "rf_*.cl"
+      glob: "*.tsv"
