@@ -2,7 +2,7 @@
 
 cwlVersion: v1.0
 class: CommandLineTool
-baseCommand: [applyforest, -fm, -rfpred, -preds, ./] # name of command to run
+baseCommand: [applyforest, -rfpred, -fm, -preds, ./] # name of command to run
 requirements:
   InlineJavascriptRequirement: {}
 hints:
@@ -11,17 +11,17 @@ hints:
 
 
 inputs:
-  fm_input:
-    type: File
-    inputBinding:
-      position: 1
-      prefix: -fm
-
   rfpred_input:
     type: File
     inputBinding:
-      position: 2
+      position: 1
       prefix: -rfpred
+
+  fm_input:
+    type: File
+    inputBinding:
+      position: 2
+      prefix: -fm
 
   preds_input:
     type: string
@@ -33,4 +33,4 @@ outputs:
   predictionouts:
     type: File
     outputBinding:
-      glob: "rf_*.cl"
+      glob: "*.tsv"

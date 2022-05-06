@@ -9,44 +9,26 @@ requirements:
   - class: StepInputExpressionRequirement
   - class: SubworkflowFeatureRequirement
 
-
-
-
-
 inputs:
-  fm_input: File[]
-    #doc: tbd
-    #type: File
   rfpred_input: File[]
-    #doc: tbd
-    #type: File
+  fm_input: File[]
   preds_input: string[]
-    #doc: tbd
-    #type: string
-
-
-
-
 
 outputs:
   predictionouts:
     doc: tbd
     type: File[]
     outputBinding:
-      glob: "rf_*.cl"
+      glob: "*.tsv"
     outputSource: stepcloudforest/predictionouts
-
-
-
-
 
 steps:
   stepcloudforest:
     in:
-      fm_input: fm_input
       rfpred_input: rfpred_input
+      fm_input: fm_input
       preds_input: preds_input
-    scatter: [fm_input, rfpred_input, preds_input]
+    scatter: [rfpred_input, fm_input, preds_input]
     scatterMethod: dotproduct
     out: [predictionouts]
     run: ../tools/cloudforest-pred.cwl

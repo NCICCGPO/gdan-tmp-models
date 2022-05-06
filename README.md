@@ -21,6 +21,8 @@ There are five methods (SK Grid, AKLIMATE, CloudForst, JADBio, and SubSCOPE) and
 5. Best `METH` only model - highest performing model using only DNA methylation features
 6. Best `MIR` only model - highest performing model using only miRNA features
 
+There are a few **exceptions** to models provided by certain methods, see **"Model Selection and Input Specifications"** section below.
+
 Docker images for each model are pulled automatically in workflow shown in the "Analyze" section below. Docker images are stored in [CCG_TMP_Public Synapse Space](https://www.synapse.org/#!Synapse:syn29568296/docker/).
 
 # Requirements
@@ -71,7 +73,7 @@ Model platform name differs for each method, see below:
 
 + JADBio options:
 
-+ CloudForest options:
++ CloudForest options: `MULTI, ALL, or OVERALL` where `OVERALL` is the best model for the cancer cohort. `MULTI` stands for using all available data types. **Not all cancer cohorts have a MULTI model** this only occurs if it is the highest performing model (of all models) is a non-single data platform model. 
 
 + SubSCOPE options: `CNV, GEXP, METH, MIR, MUTA`. Note there requires the use of `CNV` not CNVR.
 

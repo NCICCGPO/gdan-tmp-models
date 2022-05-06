@@ -1,12 +1,8 @@
 fm_input:
   - class: File
-    path:  ../cloudforest/CF_For_Docker/KIRCKICH/FM/TE_1_4_1_1_3.fm
-
-
+    path: ../user-transformed-data/transformed-data.tsv
 rfpred_input:
   - class: File
-    path: ../cloudforest/CF_For_Docker/KIRCKICH/SF/rf_1_4_1_1_3.sf
-
-
+    path: ../cloudforest/data/BRCA/GEXP/GEXP_50_R4_F1.sf
 preds_input:
-  - "rf_1_4_1_1_3.cl"
+  - BRCA_GEXP_cloudforest_preds.tsv
