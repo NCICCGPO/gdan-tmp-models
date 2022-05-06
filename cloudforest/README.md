@@ -25,3 +25,5 @@ all data for one datatype like gene expression.
 An `OVERALL` folder was added in each cohort folder, which has the best model
 for the cohort. When the `OVERALL` best was `MULTI` type, there will be a `MULTI`
 folder in that tissue folder.
+
+**Meaning that not all cancer cohorts have a MULTI model** this only occurs if it is the best overall for that particular cancer cohort.
