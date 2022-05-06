@@ -9,18 +9,10 @@ requirements:
   - class: StepInputExpressionRequirement
   - class: SubworkflowFeatureRequirement
 
-
-
-
-
 inputs:
   rfpred_input: File[]
   fm_input: File[]
   preds_input: string[]
-
-
-
-
 
 outputs:
   predictionouts:
@@ -29,10 +21,6 @@ outputs:
     outputBinding:
       glob: "*.tsv"
     outputSource: stepcloudforest/predictionouts
-
-
-
-
 
 steps:
   stepcloudforest:

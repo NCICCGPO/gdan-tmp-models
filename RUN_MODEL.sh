@@ -1,12 +1,13 @@
 #!/usr/bin/bash
 
-# bash RUN_model.sh cloudforest user-transformed-data/transformed-data.tsv
-method=${1}
-data=${2}
-
+# Example: bash RUN_model.sh BRCA GEXP cloudforest user-transformed-data/transformed-data.tsv
+cancer=${1}
+platform=${2}
+method=${3}
+data=${4}
 
 # Create cwl job yaml - WIP only for cloudforest for now
-python tools/create_jobs.py --method ${method} --data ${data} --rfpred 'cloudforest/data/BRCA/GEXP/GEXP_50_R4_F1.sf' --outname 'BRCA_GEXP_cloudforest_preds.tsv'
+python tools/create_jobs.py --cancer ${cancer} --platform ${platform} --method ${method} --data ${data}  --outname ${cancer}'_'${platform}'_'${method}'_preds.tsv'
 
 
 if [[ ${method} == 'jadbio' ]]
