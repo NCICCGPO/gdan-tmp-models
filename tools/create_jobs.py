@@ -32,3 +32,13 @@ if args.method == 'cloudforest':
         fh.write('    path: ../{}\n'.format(rf_file))
         fh.write('preds_input:\n')
         fh.write('  - {}\n'.format(args.outname))
+elif args.method == 'aklimate':
+    # Write job file
+    with open('user-job-ymls/aklimate-inputs.yml', 'w') as fh:
+        fh.write('cancer:\n')
+        fh.write('  - {}\n'.format(args.cancer))
+        fh.write('platform:\n')
+        fh.write('  - {}\n'.format(args.platform))
+        fh.write('input_data:\n')
+        fh.write('  - class: File\n')
+        fh.write('    path: ../{}\n'.format(args.data))
