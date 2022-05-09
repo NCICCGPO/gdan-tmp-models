@@ -22,7 +22,6 @@ if args.method == 'cloudforest':
         print('The specified cancer or platform is not avaible for CloudForest')
     else:
         print('ERROR multiple files found')
-    # Write job file
     with open('user-job-ymls/cloudforest-inputs.yml', 'w') as fh:
         fh.write('fm_input:\n')
         fh.write('  - class: File\n')
@@ -32,8 +31,8 @@ if args.method == 'cloudforest':
         fh.write('    path: ../{}\n'.format(rf_file))
         fh.write('preds_input:\n')
         fh.write('  - {}_preds.tsv\n'.format(args.outname))
+
 elif args.method == 'aklimate':
-    # Write job file
     with open('user-job-ymls/aklimate-inputs.yml', 'w') as fh:
         fh.write('cancer:\n')
         fh.write('  - {}\n'.format(args.cancer))
@@ -42,8 +41,8 @@ elif args.method == 'aklimate':
         fh.write('input_data:\n')
         fh.write('  - class: File\n')
         fh.write('    path: ../{}\n'.format(args.data))
+
 elif args.method == 'skgrid':
-    # Write job file
     with open('user-job-ymls/skgrid-inputs.yml', 'w') as fh:
         fh.write('cancer:\n')
         fh.write('  - {}\n'.format(args.cancer))
@@ -54,3 +53,14 @@ elif args.method == 'skgrid':
         fh.write('    path: ../{}\n'.format(args.data))
         fh.write('output_prefix:\n')
         fh.write('  - {}\n'.format(args.outname))
+
+elif args.method == 'subscope':
+    print('starting to write subscope output')
+    with open('user-job-ymls/subscope-inputs.yml', 'w') as fh:
+        fh.write('cancer:\n')
+        fh.write('  - {}\n'.format(args.cancer))
+        fh.write('platform:\n')
+        fh.write('  - {}\n'.format(args.platform))
+        fh.write('input_data:\n')
+        fh.write('  - class: File\n')
+        fh.write('    path: ../{}\n'.format(args.data))
