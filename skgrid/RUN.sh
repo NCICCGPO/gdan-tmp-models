@@ -16,7 +16,7 @@ mv Classifier.* data/model_library
 mv *.model data/train
 mv *_preds.tsv data/preds
 echo '###'
-echo 'ML model parameters saved in data/model_library/'
-echo 'Trained ML model pickle saved in data/train/'
-echo 'Prediction file saved in data/preds/'
+echo 'ML model parameters saved in skgrid/data/model_library/'
+echo 'Trained ML model pickle saved in skgrid/data/train/'
+echo 'Prediction file saved in skgrid/data/preds/'
 echo '###'

@@ -2,6 +2,9 @@
 
 # Example: bash RUN_model.sh BRCA GEXP cloudforest user-transformed-data/transformed-data.tsv
 # Example: bash RUN_MODEL.sh BRCA TOP aklimate example_inputs_cancers/example_BRCA.tsv
+# Example: bash RUN_MODEL.sh BRCA GEXP skgrid user-transformed-data/transformed-data.tsv
+
+
 cancer=${1}
 platform=${2}
 method=${3}
@@ -13,7 +16,7 @@ if [[ ${method} == 'aklimate' ]]
 then
 	python tools/create_jobs.py --cancer ${cancer} --platform ${platform} --method ${method} --data ${data}
 else
- python tools/create_jobs.py --cancer ${cancer} --platform ${platform} --method ${method} --data ${data}  --outname ${cancer}'_'${platform}'_'${method}'_preds.tsv'
+ python tools/create_jobs.py --cancer ${cancer} --platform ${platform} --method ${method} --data ${data}  --outname ${cancer}'_'${platform}'_'${method}
 fi
 
 

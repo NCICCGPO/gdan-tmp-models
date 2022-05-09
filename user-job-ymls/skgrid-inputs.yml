@@ -1,21 +1,9 @@
-## Select one or more for each section ##
-
-
-# User Data to Predict Subtypes (ex. transformed-data.tsv)
+cancer:
+  - BRCA
+platform:
+  - GEXP
 input_data:
   - class: File
     path: ../user-transformed-data/transformed-data.tsv
-
-# TCGA Cancer cohort
-cancer:
-  - "BRCA"
-
-# Data Platform (SK Grid top model)
-# Options: OVERALL, CNVR, GEXP, METH, MIR, MUTA
-platform:
-  - "GEXP"
-
-# Subtype Prediction File Prefix
-# Options: BRCA_OVERALL, BRCA_CNVR, BRCA_GEXP, BRCA_METH, BRCA_MIR, BRCA_MUTA
 output_prefix:
-  - "BRCA_GEXP"
+  - BRCA_GEXP_skgrid
