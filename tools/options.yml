@@ -1,3 +1,180 @@
+skgrid:
+  ACC:
+    - OVERALL
+    - GEXP
+    - CNVR
+    - METH
+    - MUTA
+    - MIR
+  BLCA:
+    - OVERALL
+    - GEXP
+    - CNVR
+    - METH
+    - MUTA
+    - MIR
+  BRCA:
+    - OVERALL
+    - GEXP
+    - CNVR
+    - METH
+    - MUTA
+    - MIR
+  CESC:
+    - OVERALL
+    - GEXP
+    - CNVR
+    - METH
+    - MUTA
+    - MIR
+  COADREAD:
+    - OVERALL
+    - GEXP
+    - CNVR
+    - METH
+    - MUTA
+    - MIR
+  ESCC:
+    - OVERALL
+    - GEXP
+    - CNVR
+    - METH
+    - MUTA
+    - MIR
+  GEA:
+    - OVERALL
+    - GEXP
+    - CNVR
+    - METH
+    - MUTA
+    - MIR
+  HNSC:
+    - OVERALL
+    - GEXP
+    - CNVR
+    - METH
+    - MUTA
+    - MIR
+  KIRCKICH:
+    - OVERALL
+    - GEXP
+    - CNVR
+    - METH
+    - MUTA
+  KIRP:
+    - OVERALL
+    - GEXP
+    - CNVR
+    - METH
+    - MUTA
+    - MIR
+  LGGGBM:
+    - OVERALL
+    - GEXP
+    - CNVR
+    - METH
+    - MUTA
+  LIHCCHOL:
+    - OVERALL
+    - GEXP
+    - CNVR
+    - METH
+    - MUTA
+  LUAD:
+    - OVERALL
+    - GEXP
+    - CNVR
+    - METH
+    - MUTA
+    - MIR
+  LUSC:
+    - OVERALL
+    - GEXP
+    - CNVR
+    - METH
+    - MUTA
+    - MIR
+  MESO:
+    - OVERALL
+    - GEXP
+    - CNVR
+    - METH
+    - MIR
+  OV:
+    - OVERALL
+    - GEXP
+    - CNVR
+    - METH
+    - MIR
+  PAAD:
+    - OVERALL
+    - GEXP
+    - CNVR
+    - METH
+    - MIR
+  PCPG:
+    - OVERALL
+    - GEXP
+    - CNVR
+    - METH
+    - MUTA
+    - MIR
+  PRAD:
+    - OVERALL
+    - GEXP
+    - CNVR
+    - METH
+    - MUTA
+    - MIR
+  SARC:
+    - OVERALL
+    - GEXP
+    - CNVR
+    - METH
+    - MUTA
+    - MIR
+  SKCM:
+    - OVERALL
+    - GEXP
+    - CNVR
+    - METH
+    - MUTA
+    - MIR
+  TGCT:
+    - OVERALL
+    - GEXP
+    - CNVR
+    - METH
+    - MUTA
+    - MIR
+  THCA:
+    - OVERALL
+    - GEXP
+    - CNVR
+    - METH
+    - MUTA
+    - MIR
+  THYM:
+    - OVERALL
+    - GEXP
+    - CNVR
+    - METH
+    - MUTA
+    - MIR
+  UCEC:
+    - OVERALL
+    - GEXP
+    - CNVR
+    - METH
+    - MUTA
+    - MIR
+  UVM:
+    - OVERALL
+    - GEXP
+    - CNVR
+    - METH
+    - MUTA
+    - MIR
 cloudforest:
   ACC:
   - CNVR

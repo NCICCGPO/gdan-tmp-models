@@ -19,21 +19,18 @@ with open('tools/options.yml', 'r') as fh:
 
 if args.method == 'skgrid':
     # Test if user inputs valid
-    if args.platform not in ['OVERALL', 'CNVR', 'GEXP', 'METH', 'MIR', 'MUTA']:
-        print('Error: recieved platform {} --- platform must be OVERALL, CNVR, GEXP, METH, MIR, or MUTA for SK Grid'.format(args.platform))
-        exit
-    else:
-        # Generate cwl job input file
-        with open('user-job-ymls/skgrid-inputs.yml', 'w') as fh:
-            fh.write('cancer:\n')
-            fh.write('  - {}\n'.format(args.cancer))
-            fh.write('platform:\n')
-            fh.write('  - {}\n'.format(args.platform))
-            fh.write('input_data:\n')
-            fh.write('  - class: File\n')
-            fh.write('    path: ../{}\n'.format(args.data))
-            fh.write('output_prefix:\n')
-            fh.write('  - {}\n'.format(args.outname))
+    assert args.platform in method_options[args.method][args.cancer], 'Invalid input combination, see options in tools/options.yml'
+    # Generate cwl job input file
+    with open('user-job-ymls/skgrid-inputs.yml', 'w') as fh:
+        fh.write('cancer:\n')
+        fh.write('  - {}\n'.format(args.cancer))
+        fh.write('platform:\n')
+        fh.write('  - {}\n'.format(args.platform))
+        fh.write('input_data:\n')
+        fh.write('  - class: File\n')
+        fh.write('    path: ../{}\n'.format(args.data))
+        fh.write('output_prefix:\n')
+        fh.write('  - {}\n'.format(args.outname))
 
 elif args.method == 'aklimate':
     # Test if user inputs valid
@@ -53,7 +50,7 @@ elif args.method == 'aklimate':
 
 elif args.method == 'cloudforest':
     # Test if user inputs valid
-    assert args.platform in method_options[args.method][args.cancer], 'Invalid input combination, see options with python tools/print_options.py'
+    assert args.platform in method_options[args.method][args.cancer], 'Invalid input combination, see options in tools/options.yml'
     # Pull CF file name specific to inputs
     files = glob.glob('cloudforest/data/{}/{}/*.sf'.format(args.cancer, args.platform))
     if len(files)==1:
