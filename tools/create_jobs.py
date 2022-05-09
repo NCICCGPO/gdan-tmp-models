@@ -34,19 +34,16 @@ if args.method == 'skgrid':
 
 elif args.method == 'aklimate':
     # Test if user inputs valid
-    if args.platform not in ['TOP', 'GEXP', 'CNVR', 'METH', 'MULTI']:
-        print('Error: recieved platform {} --- platform must be TOP, GEXP, CNVR, METH, or MULTI for AKLIMATE'.format(args.platform))
-        exit
-    else:
-        # Generate cwl job input file
-        with open('user-job-ymls/aklimate-inputs.yml', 'w') as fh:
-            fh.write('cancer:\n')
-            fh.write('  - {}\n'.format(args.cancer))
-            fh.write('platform:\n')
-            fh.write('  - {}\n'.format(args.platform))
-            fh.write('input_data:\n')
-            fh.write('  - class: File\n')
-            fh.write('    path: ../{}\n'.format(args.data))
+    assert args.platform in method_options[args.method][args.cancer], 'Invalid input combination, see options in tools/options.yml'
+    # Generate cwl job input file
+    with open('user-job-ymls/aklimate-inputs.yml', 'w') as fh:
+        fh.write('cancer:\n')
+        fh.write('  - {}\n'.format(args.cancer))
+        fh.write('platform:\n')
+        fh.write('  - {}\n'.format(args.platform))
+        fh.write('input_data:\n')
+        fh.write('  - class: File\n')
+        fh.write('    path: ../{}\n'.format(args.data))
 
 elif args.method == 'cloudforest':
     # Test if user inputs valid
@@ -72,16 +69,13 @@ elif args.method == 'cloudforest':
 
 elif args.method == 'subscope':
     # Test if user inputs valid
-    if args.platform not in ['CNV', 'GEXP', 'METH', 'MIR', 'MUTA']:
-        print('Error: recieved platform {} --- platform must be CNV, GEXP, METH, MIR, or MUTA for SubSCOPE'.format(args.platform))
-        exit
-    else:
-        # Generate cwl job input file
-        with open('user-job-ymls/subscope-inputs.yml', 'w') as fh:
-            fh.write('cancer:\n')
-            fh.write('  - {}\n'.format(args.cancer))
-            fh.write('platform:\n')
-            fh.write('  - {}\n'.format(args.platform))
-            fh.write('input_data:\n')
-            fh.write('  - class: File\n')
-            fh.write('    path: ../{}\n'.format(args.data))
+    assert args.platform in method_options[args.method][args.cancer], 'Invalid input combination, see options in tools/options.yml'
+    # Generate cwl job input file
+    with open('user-job-ymls/subscope-inputs.yml', 'w') as fh:
+        fh.write('cancer:\n')
+        fh.write('  - {}\n'.format(args.cancer))
+        fh.write('platform:\n')
+        fh.write('  - {}\n'.format(args.platform))
+        fh.write('input_data:\n')
+        fh.write('  - class: File\n')
+        fh.write('    path: ../{}\n'.format(args.data))

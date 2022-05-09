@@ -175,6 +175,157 @@ skgrid:
     - METH
     - MUTA
     - MIR
+aklimate:
+  ACC:
+  - TOP
+  - MULTI
+  - CNVR
+  - METH
+  BLCA:
+  - TOP
+  - MULTI
+  - GEXP
+  - CNVR
+  - METH
+  BRCA:
+  - TOP
+  - MULTI
+  - GEXP
+  - CNVR
+  CESC:
+  - TOP
+  - MULTI
+  - GEXP
+  - CNVR
+  - METH
+  COADREAD:
+  - TOP
+  - MULTI
+  - GEXP
+  - CNVR
+  - METH
+  ESCC:
+  - TOP
+  - MULTI
+  - GEXP
+  - CNVR
+  - METH
+  GEA:
+  - TOP
+  - MULTI
+  - GEXP
+  - CNVR
+  - METH
+  HNSC:
+  - TOP
+  - MULTI
+  - GEXP
+  - CNVR
+  - METH
+  KIRCKICH:
+  - TOP
+  - MULTI
+  - GEXP
+  - CNVR
+  - METH
+  KIRP:
+  - TOP
+  - MULTI
+  - GEXP
+  - CNVR
+  - METH
+  LGGGBM:
+  - TOP
+  - MULTI
+  - GEXP
+  - CNVR
+  - METH
+  LIHCCHOL:
+  - TOP
+  - MULTI
+  - GEXP
+  - CNVR
+  - METH
+  LUAD:
+  - TOP
+  - MULTI
+  - GEXP
+  - CNVR
+  - METH
+  LUSC:
+  - TOP
+  - MULTI
+  - GEXP
+  - CNVR
+  - METH
+  MESO:
+  - TOP
+  - MULTI
+  - GEXP
+  - CNVR
+  - METH
+  OV:
+  - TOP
+  - GEXP
+  - CNVR
+  - METH
+  PAAD:
+  - TOP
+  - MULTI
+  - CNVR
+  - METH
+  PCPG:
+  - TOP
+  - MULTI
+  - GEXP
+  - CNVR
+  - METH
+  PRAD:
+  - TOP
+  - MULTI
+  - GEXP
+  - CNVR
+  - METH
+  SARC:
+  - TOP
+  - MULTI
+  - GEXP
+  - CNVR
+  - METH
+  SKCM:
+  - TOP
+  - MULTI
+  - GEXP
+  - METH
+  TGCT:
+  - TOP
+  - MULTI
+  - GEXP
+  - CNVR
+  - METH
+  THCA:
+  - TOP
+  - MULTI
+  - GEXP
+  - CNVR
+  - METH
+  THYM:
+  - TOP
+  - MULTI
+  - GEXP
+  - CNVR
+  - METH
+  UCEC:
+  - TOP
+  - MULTI
+  - GEXP
+  - CNVR
+  - METH
+  UVM:
+  - TOP
+  - MULTI
+  - CNVR
+  - METH
 cloudforest:
   ACC:
   - CNVR
@@ -368,3 +519,160 @@ cloudforest:
   - MULTI
   - MUTA
   - OVERALL
+subscope:
+  ACC:
+  - CNV
+  - GEXP
+  - METH
+  - MIR
+  - MUTA
+  BLCA:
+  - CNV
+  - GEXP
+  - METH
+  - MIR
+  - MUTA
+  BRCA:
+  - CNV
+  - GEXP
+  - METH
+  - MIR
+  - MUTA
+  CESC:
+  - CNV
+  - GEXP
+  - METH
+  - MIR
+  - MUTA
+  COADREAD:
+  - CNV
+  - GEXP
+  - METH
+  - MIR
+  - MUTA
+  ESCC:
+  - CNV
+  - GEXP
+  - METH
+  - MIR
+  - MUTA
+  GEA:
+  - CNV
+  - GEXP
+  - METH
+  - MIR
+  - MUTA
+  HNSC:
+  - CNV
+  - GEXP
+  - METH
+  - MIR
+  - MUTA
+  KIRCKICH:
+  - CNV
+  - GEXP
+  - METH
+  - MIR
+  - MUTA
+  KIRP:
+  - CNV
+  - GEXP
+  - METH
+  - MIR
+  - MUTA
+  LGGGBM:
+  - CNV
+  - GEXP
+  - METH
+  - MIR
+  - MUTA
+  LIHCCHOL:
+  - CNV
+  - GEXP
+  - METH
+  - MIR
+  - MUTA
+  LUAD:
+  - CNV
+  - GEXP
+  - METH
+  - MIR
+  - MUTA
+  LUSC:
+  - CNV
+  - GEXP
+  - METH
+  - MIR
+  - MUTA
+  MESO:
+  - CNV
+  - GEXP
+  - METH
+  - MIR
+  - MUTA
+  OV:
+  - CNV
+  - GEXP
+  - METH
+  - MIR
+  - MUTA
+  PAAD:
+  - CNV
+  - GEXP
+  - METH
+  - MIR
+  - MUTA
+  PCPG:
+  - CNV
+  - GEXP
+  - METH
+  - MIR
+  - MUTA
+  PRAD:
+  - CNV
+  - GEXP
+  - METH
+  - MIR
+  - MUTA
+  SARC:
+  - CNV
+  - GEXP
+  - METH
+  - MIR
+  - MUTA
+  SKCM:
+  - CNV
+  - GEXP
+  - METH
+  - MIR
+  - MUTA
+  TGCT:
+  - CNV
+  - GEXP
+  - METH
+  - MIR
+  - MUTA
+  THCA:
+  - CNV
+  - GEXP
+  - METH
+  - MIR
+  - MUTA
+  THYM:
+  - CNV
+  - GEXP
+  - METH
+  - MIR
+  - MUTA
+  UCEC:
+  - CNV
+  - GEXP
+  - METH
+  - MIR
+  - MUTA
+  UVM:
+  - CNV
+  - GEXP
+  - METH
+  - MIR
+  - MUTA
