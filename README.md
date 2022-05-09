@@ -73,7 +73,7 @@ Model platform name differs for each method, see below:
 
 + CloudForest options: `OVERALL, MULTI, CNVR, GEXP, METH, MIR, or MUTA` where `OVERALL` is the best model for the cancer cohort. `MULTI` stands for using all available data types. **Not all cancer cohorts have a MULTI model** this only occurs if it is the highest performing model (of all models) is a non-single data platform model.
 
-+ SubSCOPE options: `CNV, GEXP, METH, MIR, MUTA`. Note there requires the use of `CNV` not CNVR.
++ SubSCOPE options: `CNV, GEXP, METH, MIR, MUTA`. Note this method **requires** the use of `CNV` not CNVR.
 
 + JADBio options:
 
