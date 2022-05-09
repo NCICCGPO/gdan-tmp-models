@@ -78,13 +78,20 @@ Model platform name differs for each method, see below:
 + JADBio options:
 
 # Analyze: Run Machine Learning Models to Predict Cancer Subtypes
-Simple command to call one of the five methods. This will predict the molecular subtype for each sample.
-```
-bash RUN_MODEL.sh <method-name>
-```
+Simple command to call one of the five methods. This will predict the molecular subtype for each sample `bash RUN_MODEL.sh <arguments>`
+
 > Available methods are `skgrid`, `aklimate`, `cloudforest`, `jadbio`, and `subscope`.
 
-For example, to run the SK Grid method use `bash RUN_MODEL.sh skgrid`.
+Specifically:
+```
+bash RUN_model.sh <cancer> <platform> <method> <your-data>
+```
+
+Examples for BRCA cancer cohorts are:
++ bash RUN_model.sh BRCA GEXP cloudforest user-transformed-data/transformed-data.tsv
++ bash RUN_MODEL.sh BRCA TOP aklimate example_inputs_cancers/example_BRCA.tsv
++ bash RUN_MODEL.sh BRCA GEXP skgrid user-transformed-data/transformed-data.tsv
++ bash RUN_MODEL.sh BRCA GEXP subscope example_inputs_cancers/example_BRCA.tsv
 
 
 # Tutorial
