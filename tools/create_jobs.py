@@ -18,10 +18,12 @@ with open('tools/options.yml', 'r') as fh:
     method_options = yaml.safe_load(fh)
 
 if args.method == 'skgrid':
+    # Test if user inputs valid
     if args.platform not in ['OVERALL', 'CNVR', 'GEXP', 'METH', 'MIR', 'MUTA']:
         print('Error: recieved platform {} --- platform must be OVERALL, CNVR, GEXP, METH, MIR, or MUTA for SK Grid'.format(args.platform))
         exit
     else:
+        # Generate cwl job input file
         with open('user-job-ymls/skgrid-inputs.yml', 'w') as fh:
             fh.write('cancer:\n')
             fh.write('  - {}\n'.format(args.cancer))
@@ -34,10 +36,12 @@ if args.method == 'skgrid':
             fh.write('  - {}\n'.format(args.outname))
 
 elif args.method == 'aklimate':
+    # Test if user inputs valid
     if args.platform not in ['TOP', 'GEXP', 'CNVR', 'METH', 'MULTI']:
         print('Error: recieved platform {} --- platform must be TOP, GEXP, CNVR, METH, or MULTI for AKLIMATE'.format(args.platform))
         exit
     else:
+        # Generate cwl job input file
         with open('user-job-ymls/aklimate-inputs.yml', 'w') as fh:
             fh.write('cancer:\n')
             fh.write('  - {}\n'.format(args.cancer))
@@ -48,33 +52,34 @@ elif args.method == 'aklimate':
             fh.write('    path: ../{}\n'.format(args.data))
 
 elif args.method == 'cloudforest':
-    if args.platform not in method_options['cloudforest'][args.cancer]:
-        print('Error: recieved platform {} --- platform must be OVERALL, MULTI, CNVR, GEXP, METH, MIR, or MUTA for CloudForest'.format(args.platform))
-        exit
+    # Test if user inputs valid
+    assert args.platform in method_options[args.method][args.cancer], 'Invalid input combination, see options with python tools/print_options.py'
+    # Pull CF file name specific to inputs
+    files = glob.glob('cloudforest/data/{}/{}/*.sf'.format(args.cancer, args.platform))
+    if len(files)==1:
+        rf_file = files[0]
+    elif len(files)==0:
+        print('The specified cancer or platform is not avaible for CloudForest')
     else:
-        # Pull CF file name specific to inputs
-        files = glob.glob('cloudforest/data/{}/{}/*.sf'.format(args.cancer, args.platform))
-        if len(files)==1:
-            rf_file = files[0]
-        elif len(files)==0:
-            print('The specified cancer or platform is not avaible for CloudForest')
-        else:
-            print('ERROR multiple files found')
-        with open('user-job-ymls/cloudforest-inputs.yml', 'w') as fh:
-            fh.write('fm_input:\n')
-            fh.write('  - class: File\n')
-            fh.write('    path: ../{}\n'.format(args.data))
-            fh.write('rfpred_input:\n')
-            fh.write('  - class: File\n')
-            fh.write('    path: ../{}\n'.format(rf_file))
-            fh.write('preds_input:\n')
-            fh.write('  - {}_preds.tsv\n'.format(args.outname))
+        print('ERROR multiple files found')
+    # Generate cwl job input file
+    with open('user-job-ymls/cloudforest-inputs.yml', 'w') as fh:
+        fh.write('fm_input:\n')
+        fh.write('  - class: File\n')
+        fh.write('    path: ../{}\n'.format(args.data))
+        fh.write('rfpred_input:\n')
+        fh.write('  - class: File\n')
+        fh.write('    path: ../{}\n'.format(rf_file))
+        fh.write('preds_input:\n')
+        fh.write('  - {}_preds.tsv\n'.format(args.outname))
 
 elif args.method == 'subscope':
+    # Test if user inputs valid
     if args.platform not in ['CNV', 'GEXP', 'METH', 'MIR', 'MUTA']:
         print('Error: recieved platform {} --- platform must be CNV, GEXP, METH, MIR, or MUTA for SubSCOPE'.format(args.platform))
         exit
     else:
+        # Generate cwl job input file
         with open('user-job-ymls/subscope-inputs.yml', 'w') as fh:
             fh.write('cancer:\n')
             fh.write('  - {}\n'.format(args.cancer))

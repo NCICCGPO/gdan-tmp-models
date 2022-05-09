@@ -5,6 +5,7 @@
 # Example: bash RUN_MODEL.sh BRCA GEXP skgrid user-transformed-data/transformed-data.tsv
 # Example: bash RUN_MODEL.sh BRCA GEXP subscope example_inputs_cancers/example_BRCA.tsv
 
+set -e
 cancer=${1}
 platform=${2}
 method=${3}
