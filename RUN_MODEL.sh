@@ -10,8 +10,7 @@ platform=${2}
 method=${3}
 data=${4}
 
-# Create cwl job yaml - WIP only for cloudforest for now
-
+# Create cwl job yaml
 if [[ ${method} == 'aklimate' || ${method} == 'subscope' ]]
 then
 	python tools/create_jobs.py --cancer ${cancer} --platform ${platform} --method ${method} --data ${data}
@@ -19,16 +18,14 @@ else
  python tools/create_jobs.py --cancer ${cancer} --platform ${platform} --method ${method} --data ${data}  --outname ${cancer}'_'${platform}'_'${method}
 fi
 
-
-
+# Format prep
 if [[ ${method} == 'jadbio' ]]
 then
 	tr '\t' ',' < example_inputs_cancers/example_BRCA.tsv > example_inputs_cancers/example_BRCA.csv
 fi
 
-
+# Run cwl workflow
 if [[ ${method} == 'cloudforest' ]]
-# TODO update this for all methods
 then
 	cd ${method}
 	bash RUN.sh ${data}
