@@ -71,21 +71,27 @@ Model platform name differs for each method, see below:
 
 + AKLIMATE options: `TOP, GEXP, CNVR, METH, or MULTI` where TOP is the highest performing model regardless of platform (can be single data platform type or a combination). MULTI is a combination of multiple data platform types.
 
++ CloudForest options: `OVERALL, MULTI, CNVR, GEXP, METH, MIR, or MUTA` where `OVERALL` is the best model for the cancer cohort. `MULTI` stands for using all available data types. **Not all cancer cohorts have a MULTI model** this only occurs if it is the highest performing model (of all models) is a non-single data platform model.
+
++ SubSCOPE options: `CNV, GEXP, METH, MIR, MUTA`. Note this method **requires** the use of `CNV` not CNVR.
+
 + JADBio options:
 
-+ CloudForest options: `MULTI, ALL, or OVERALL` where `OVERALL` is the best model for the cancer cohort. `MULTI` stands for using all available data types. **Not all cancer cohorts have a MULTI model** this only occurs if it is the highest performing model (of all models) is a non-single data platform model. 
-
-+ SubSCOPE options: `CNV, GEXP, METH, MIR, MUTA`. Note there requires the use of `CNV` not CNVR.
-
-
 # Analyze: Run Machine Learning Models to Predict Cancer Subtypes
-Simple command to call one of the five methods. This will predict the molecular subtype for each sample.
-```
-bash RUN_MODEL.sh <method-name>
-```
+Simple command to call one of the five methods. This will predict the molecular subtype for each sample `bash RUN_MODEL.sh <arguments>`
+
 > Available methods are `skgrid`, `aklimate`, `cloudforest`, `jadbio`, and `subscope`.
 
-For example, to run the SK Grid method use `bash RUN_MODEL.sh skgrid`.
+Specifically:
+```
+bash RUN_model.sh <cancer> <platform> <method> <your-data>
+```
+
+Examples for BRCA cancer cohorts are:
++ bash RUN_model.sh BRCA GEXP cloudforest user-transformed-data/transformed-data.tsv
++ bash RUN_MODEL.sh BRCA TOP aklimate user-transformed-data/transformed-data.tsv
++ bash RUN_MODEL.sh BRCA GEXP skgrid user-transformed-data/transformed-data.tsv
++ bash RUN_MODEL.sh BRCA GEXP subscope user-transformed-data/transformed-data.tsv
 
 
 # Tutorial

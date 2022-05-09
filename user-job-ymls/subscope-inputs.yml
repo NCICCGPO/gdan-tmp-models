@@ -1,19 +1,7 @@
-## Select one or more for each section ##
-
-
-# TCGA Cancer cohort
 cancer:
-  - "BRCA"
-
-# Data Platform (top model)
-# Options: CNV, GEXP, METH, MIR, MUTA
-# Note this method requires CNV not CNVR
+  - BRCA
 platform:
-  - "GEXP"
-
-# User Data
-#First row gives feature IDs
-#First column gives sample IDs
+  - GEXP
 input_data:
   - class: File
-    path: ../user-transformed-data/your-data.tsv
+    path: ../example_inputs_cancers/example_BRCA.tsv
