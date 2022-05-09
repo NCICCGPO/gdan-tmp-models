@@ -3,6 +3,7 @@
 # Create cwl job yaml
 import argparse
 import glob
+import yaml
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--method", help="method (ex. cloudforest, jadbio, skgrid, subscope, aklimate)")
@@ -11,6 +12,10 @@ parser.add_argument("--cancer", help="cancer cohort of the skgrid model to use")
 parser.add_argument("--platform", help="data platform (i.e. GEXP, MUTA, MIR, CNVR, METH, etc)")
 parser.add_argument("--outname",required = False, help="name of output prediction file")
 args = parser.parse_args()
+
+# Allowed input combos
+with open('tools/options.yml', 'r') as fh:
+    method_options = yaml.safe_load(fh)
 
 if args.method == 'skgrid':
     if args.platform not in ['OVERALL', 'CNVR', 'GEXP', 'METH', 'MIR', 'MUTA']:
@@ -43,7 +48,7 @@ elif args.method == 'aklimate':
             fh.write('    path: ../{}\n'.format(args.data))
 
 elif args.method == 'cloudforest':
-    if args.platform not in ['OVERALL', 'MULTI', 'CNVR', 'GEXP', 'METH', 'MIR', 'MUTA']:
+    if args.platform not in method_options['cloudforest'][args.cancer]:
         print('Error: recieved platform {} --- platform must be OVERALL, MULTI, CNVR, GEXP, METH, MIR, or MUTA for CloudForest'.format(args.platform))
         exit
     else:
