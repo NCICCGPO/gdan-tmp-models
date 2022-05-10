@@ -7,7 +7,7 @@ requirements:
   InlineJavascriptRequirement: {}
 hints:
   DockerRequirement:
-    dockerPull: docker.synapse.org/syn29568296/cf
+    dockerPull: docker.synapse.org/syn29568296/cloudforest_all
 
 
 inputs:
