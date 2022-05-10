@@ -46,37 +46,12 @@ There are five methods (SK Grid, AKLIMATE, CloudForst, JADBio, and SubSCOPE) and
 # Predict Sample Subtypes
 We can pick from any of the five methods `SK Grid`, `AKLIMATE`, `JADBio`, `CloudForest`, or `SubSCOPE`. We also will want to pick which of the 6 model we want to use to make our subtype predictions (see the six models listed in Tutorial section "Build Docker Images").
 
-We will prepare for running SK Grid by editing job input file associated with the method that is in `user-job-ymls/`. This file will tell the method how to run. Below is the content of `user-job-ymls/skgrid-inputs.yml` where we want to predict subtypes on our data "transformed-data.tsv" using the breast cancer model for gene expression only and the output file will have the prefix BRCA_GEXP.
+To run any model, execute `bash RUN_MODEL.sh <cancer> <platform> <method> <user-data>`. We will run the full pipeline to make predictions for our dataset using SK Grid's best GEXP only model (model that was trained using the TCGA BRCA cancer cohort as its training data).
 ```
-## Select one or more for each section ##
-
-
-# User Data to Predict Subtypes (ex. transformed-data.tsv)
-input_data:
-  - class: File
-    path: ../user-transformed-data/transformed-data.tsv
-
-# TCGA Cancer cohort
-cancer:
-  - "BRCA"
-
-# Data Platform (SK Grid top model)
-# Options: OVERALL, CNVR, GEXP, METH, MIR, MUTA
-platform:
-  - "GEXP"
-
-# Subtype Prediction File Prefix
-# Options: BRCA_OVERALL, BRCA_CNVR, BRCA_GEXP, BRCA_METH, BRCA_MIR, BRCA_MUTA
-output_prefix:
-  - "BRCA_GEXP"
+bash RUN_MODEL.sh BRCA GEXP skgrid user-transformed-data/transformed-data.tsv
 ```
 
-Now we are ready to run the model. Run SK Grid machine learning model on our dataset using `bash RUN_MODEL.sh <method>` where we can use any of the five methods (`skgrid`, `aklimate`, `jadbio`, `cloudforest`, or `subscope`) - note all are a single lowercase name.
-
-Here we will run the `skgrid` method:
-```
-bash RUN_MODEL.sh skgrid
-```
+The above line will 1) generate the CWL input file and 2) run the machine learning model inside a Docker container using CWL.
 
 Our molecular matrix with subtype predictions for each sample is located in the method's prediction directory `skgrid/data/preds/`. The columns include sampleID, predicted subtype, and followed by the probability for each cancer cohort subtype. As we can see, the subtype with the highest probability is the predicted subtype in the second column.
 
@@ -88,3 +63,22 @@ Our molecular matrix with subtype predictions for each sample is located in the 
 | SampleN | Subtype2 | 0.44 | 0.87 | ... | 0.18 |
 
 Our analysis is now complete!
+
+
+# Understanding RUN_MODEL.sh
+The **first step** called by `RUN_MODEL.sh` is to automatically generate the CWL input file and can be viewed in `user-job-ymls/`. This file will tell the method how to run.
+
+Below is the content of `user-job-ymls/skgrid-inputs.yml` where we want to predict subtypes on our data "transformed-data.tsv" using the breast cancer model for gene expression only and the output file will have the prefix BRCA_GEXP_skgrid.
+```
+cancer:
+  - BRCA
+platform:
+  - GEXP
+input_data:
+  - class: File
+    path: ../user-transformed-data/transformed-data.tsv
+output_prefix:
+  - BRCA_GEXP_skgrid
+```
+
+The **second step** called by `RUN_MODEL.sh` will run the machine learning model. Models are will make sample level subtype predictions for our dataset. This is ran in a Docker container that is created by a CWL workflow. Certain methods have multiple steps (executed as tools), for instance SK Grid will generate a large library of different machine learning models, train models using TCGA data then save trained models as pickles, and predict subtypes for each sample in our dataset.
