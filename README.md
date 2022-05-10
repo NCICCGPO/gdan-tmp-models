@@ -95,7 +95,7 @@ Examples for BRCA cancer cohorts are:
 
 
 # Tutorial
-An example of how to run the prediction workflow is shown [here](tutorial/README.md) using SK Grid best performing gene expression model on a breast cacner cBioPortal dataset.
+An example of how to run the prediction workflow is shown [here](tutorial/README.md) using SK Grid best performing gene expression model on a breast cancer cBioPortal dataset.
 
 
 # Acknowledgment and Funding
