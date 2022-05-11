@@ -62,10 +62,9 @@ Our molecular matrix with subtype predictions for each sample is located in the 
 | ...  | ... | ... | ... | ... | ... |
 | SampleN | Subtype2 | 0.44 | 0.87 | ... | 0.18 |
 
+**Our analysis is now complete!**
 
 All five methods (SK Grid, AKLIMATE, CloudForest, SubSCOPE, and JADBio) are ran the same way. However, the output format of the prediction file(s) is specific to each method - view each method's README.md for details.
-
-**Our analysis is now complete!**
 
 
 # Understanding RUN_MODEL.sh
