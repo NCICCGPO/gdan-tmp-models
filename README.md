@@ -63,7 +63,7 @@ Edit the file in `user-job-ymls/` that is associated with the method.
 
 > Available methods are `skgrid`, `aklimate`, `cloudforest`, `jadbio`, and `subscope`.
 
-Each method file is slightly different, but all will require selection of at least the input dataset, cancer model, and data platform. Available values are noted in each the [tools/options.yml file](tools/options.yml).
+Each method file is slightly different, but all will require selection of at least the input dataset, cancer model, and data platform. Available values are noted in [tools/options.yml](tools/options.yml).
 
 Model platform name differs for each method, see below:
 
