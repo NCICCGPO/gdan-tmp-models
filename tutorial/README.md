@@ -44,7 +44,7 @@ There are five methods (SK Grid, AKLIMATE, CloudForst, JADBio, and SubSCOPE) and
 
 
 # Predict Sample Subtypes
-We can pick from any of the five methods `SK Grid`, `AKLIMATE`, `JADBio`, `CloudForest`, or `SubSCOPE`. We also will want to pick which of the 6 model we want to use to make our subtype predictions (see the six models listed in Tutorial section "Build Docker Images").
+We can pick from any of the five methods `SK Grid`, `AKLIMATE`, `JADBio`, `CloudForest`, or `SubSCOPE`. We also will want to pick which of the 6 models we want to use to make our subtype predictions (see the six models listed in Tutorial section "Platform Options").
 
 To run any model, execute `bash RUN_MODEL.sh <cancer> <platform> <method> <user-data>`. We will run the full pipeline to make predictions for our dataset using SK Grid's best GEXP only model (model that was trained using the TCGA BRCA cancer cohort as its training data).
 ```
@@ -62,7 +62,10 @@ Our molecular matrix with subtype predictions for each sample is located in the 
 | ...  | ... | ... | ... | ... | ... |
 | SampleN | Subtype2 | 0.44 | 0.87 | ... | 0.18 |
 
-Our analysis is now complete!
+
+All five methods (SK Grid, AKLIMATE, CloudForest, SubSCOPE, and JADBio) are ran the same way. However, the output format of the prediction file(s) is specific to each method - view each method's README.md for details.
+
+**Our analysis is now complete!**
 
 
 # Understanding RUN_MODEL.sh
