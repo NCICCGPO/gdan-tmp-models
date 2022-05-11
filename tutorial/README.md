@@ -32,7 +32,7 @@ bash run_transform.sh user-transformed-data/cbioportal_BRCA_GEXP.tsv
 ```
 
 
-# Build Docker Images
+# Platform Options
 There are five methods (SK Grid, AKLIMATE, CloudForst, JADBio, and SubSCOPE) and each ran tens to thousands of models. The top performing models of each method, for each of the 26 cancer cohorts have been made available, and include:
 
 1. Best `OVERALL` model - highest performing model
