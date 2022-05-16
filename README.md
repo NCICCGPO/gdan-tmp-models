@@ -58,6 +58,14 @@ aws_secret_access_key=XXX
 # Data Requirements
 User input data must be in tab separated format.
 
+# Download Method Model Data
+Certain methods require large files to run models. These files are available for download from the Publication page or through Synapse directly.
+
+> Required step: download associated model data for certain methods
+
+**CloudForest download** of model data: download data.tar.gz (`syn30564146`) into the directory `cloudforest/`, and decompress.
+
+
 # Model Selection and Input Specifications
 Edit the file in `user-job-ymls/` that is associated with the method.
 

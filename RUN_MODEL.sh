@@ -30,12 +30,12 @@ else
 	python tools/create_jobs.py --cancer ${cancer} --platform ${platform} --method ${method} --data ${data}  --outname ${cancer}'_'${platform}'_'${method}
 fi
 
-# # Format prep
-# echo 'Checking if field separation required'
-# if [[ ${method} == 'jadbio' ]]
-# then
-# 	tr '\t' ',' < example_inputs_cancers/example_BRCA.tsv > example_inputs_cancers/example_BRCA.csv
-# fi
+# Format prep
+echo 'Checking if field separation required'
+if [[ ${method} == 'jadbio' ]]
+then
+	tr '\t' ',' < example_inputs_cancers/example_BRCA.tsv > example_inputs_cancers/example_BRCA.csv
+fi
 
 # Run cwl workflow
 echo 'Starting machine learning job'
