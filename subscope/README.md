@@ -15,6 +15,6 @@ User Data Format:
 ### Job Outputs  
 Two files are generated at `subscope/data/preds/`. The best subtype predictions are included in `subscope/data/preds/<platform>-subscope-results.txt`.    
 Note that both outputs will be pre-filtered for only the Cohort of interest, if you specified a TCGA Cancer cohort.  
-+ <platform>-subscope-results.txt : First column is sample IDs, Second column is the best prediction.    
++ `<platform>-subscope-results.txt` : First column is sample IDs, Second column is the best prediction.    
 
-+ <platform>-subscope-confidence.txt : First column is sample IDs, subsequent columns are confidence values for each of the prediction classes.     
++ `<platform>-subscope-confidence.txt` : First column is sample IDs, subsequent columns are confidence values for each of the prediction classes.     
