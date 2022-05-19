@@ -105,7 +105,7 @@ Examples for BRCA cancer cohorts are:
 # Tutorial
 An example of how to run the prediction workflow is shown [here](tutorial/README.md) using SK Grid best performing gene expression model on a breast cancer cBioPortal dataset.
 
-# Alternative Image Pull
+# Alternative Model Download (Optional)
 Docker images for methods are automatically pulled and built by CWL workflows and tools from the public Synapse repository. Alternatively, Docker images can be manually downloaded and built using:
 ```
 synapse get <synapse-ID>
