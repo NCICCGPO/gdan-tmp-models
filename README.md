@@ -109,10 +109,10 @@ An example of how to run the prediction workflow is shown [here](tutorial/README
 Docker images for methods are automatically pulled and built by CWL workflows and tools from the public Synapse repository. Alternatively, Docker images can be manually downloaded and built using:
 ```
 synapse get <synapse-ID>
-docker load -i <image.tar.gz>
+docker load -i <imagefile.tar.gz>
 ```
 
-| SynapseID | Name |
+| SynapseID | ImageFile |
 |----|---|
 | syn29658355  | sk_grid.tar.gz |
 | syn29659459  | aklimate.tar.gz |
