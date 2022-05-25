@@ -19,13 +19,11 @@ inputs:
 
 outputs:
   combined_results:
-    doc: tbd
     type: File[]
     outputBinding:
       glob: "*results.txt"
     outputSource: stepsubscope/combined_results
   combined_confidence:
-    doc: tbd
     type: File[]
     outputBinding:
       glob: "*confidence.txt"
