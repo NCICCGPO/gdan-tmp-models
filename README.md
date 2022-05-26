@@ -58,6 +58,14 @@ aws_secret_access_key=XXX
 # Data Requirements
 User input data must be in tab separated format.
 
+# Download Method Model Data
+Certain methods require large files to run models. These files are available for download from the Publication page or through Synapse directly.
+
+> Required step: download associated model data for certain methods
+
+**CloudForest download** of model data: download data.tar.gz (`syn30564146`) into the directory `cloudforest/`, and decompress.
+
+
 # Model Selection and Input Specifications
 Edit the file in `user-job-ymls/` that is associated with the method.
 
@@ -100,11 +108,27 @@ Examples for BRCA cancer cohorts are:
 + bash RUN_model.sh BRCA GEXP cloudforest user-transformed-data/transformed-data.tsv
 + bash RUN_MODEL.sh BRCA TOP aklimate user-transformed-data/transformed-data.tsv
 + bash RUN_MODEL.sh BRCA GEXP skgrid user-transformed-data/transformed-data.tsv
++ bash RUN_MODEL.sh BRCA GEXP jadbio user-transformed-data/transformed-data.tsv
 + bash RUN_MODEL.sh BRCA GEXP subscope user-transformed-data/transformed-data.tsv
 
 
 # Tutorial
 An example of how to run the prediction workflow is shown [here](tutorial/README.md) using SK Grid best performing gene expression model on a breast cancer cBioPortal dataset.
+
+# Alternative Model Download (Optional)
+Docker images for methods are automatically pulled and built by CWL workflows and tools from the public Synapse repository. Alternatively, Docker images can be manually downloaded and built using:
+```
+synapse get <synapse-ID>
+docker load -i <imagefile.tar.gz>
+```
+
+| SynapseID | ImageFile |
+|----|---|
+| syn29658355  | sk_grid.tar.gz |
+| syn29659459  | aklimate.tar.gz |
+| syn30267068  | cloudforest.tar.gz |
+| SYNID  | JADBIOIMAGE |
+| syn30993770 | subscope.tar.gz |
 
 
 # Acknowledgment and Funding
