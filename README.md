@@ -99,6 +99,7 @@ Examples for BRCA cancer cohorts are:
 + bash RUN_model.sh BRCA GEXP cloudforest user-transformed-data/transformed-data.tsv
 + bash RUN_MODEL.sh BRCA TOP aklimate user-transformed-data/transformed-data.tsv
 + bash RUN_MODEL.sh BRCA GEXP skgrid user-transformed-data/transformed-data.tsv
++ bash RUN_MODEL.sh BRCA GEXP jadbio user-transformed-data/transformed-data.tsv
 + bash RUN_MODEL.sh BRCA GEXP subscope user-transformed-data/transformed-data.tsv
 
 
