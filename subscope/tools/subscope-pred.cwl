@@ -8,9 +8,8 @@ requirements:
       - $(inputs.input_data)
 hints:
   DockerRequirement:
-    dockerPull: docker.synapse.org/syn29568296/subs
+    dockerPull: docker.synapse.org/syn29568296/subscope
     dockerOutputDirectory: "/data/results"
-
 
 inputs:
   cancer:

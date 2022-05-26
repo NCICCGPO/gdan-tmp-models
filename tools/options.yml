@@ -676,3 +676,158 @@ subscope:
   - METH
   - MIR
   - MUTA
+subscope:
+  ACC:
+    - GEXP
+    - CNVR
+    - METH
+    - MUTA
+    - MIR
+  BLCA:
+    - GEXP
+    - CNVR
+    - METH
+    - MUTA
+    - MIR
+  BRCA:
+    - GEXP
+    - CNVR
+    - METH
+    - MUTA
+    - MIR
+  CESC:
+    - GEXP
+    - CNVR
+    - METH
+    - MUTA
+    - MIR
+  COADREAD:
+    - GEXP
+    - CNVR
+    - METH
+    - MUTA
+    - MIR
+  ESCC:
+    - GEXP
+    - CNVR
+    - METH
+    - MUTA
+    - MIR
+  GEA:
+    - GEXP
+    - CNVR
+    - METH
+    - MUTA
+    - MIR
+  HNSC:
+    - GEXP
+    - CNVR
+    - METH
+    - MUTA
+    - MIR
+  KIRCKICH:
+    - GEXP
+    - CNVR
+    - METH
+    - MUTA
+  KIRP:
+    - GEXP
+    - CNVR
+    - METH
+    - MUTA
+    - MIR
+  LGGGBM:
+    - GEXP
+    - CNVR
+    - METH
+    - MUTA
+    - MIR
+  LIHCCHOL:
+    - GEXP
+    - CNVR
+    - METH
+    - MUTA
+  LUAD:
+    - GEXP
+    - CNVR
+    - METH
+    - MUTA
+    - MIR
+  LUSC:
+    - GEXP
+    - CNVR
+    - METH
+    - MUTA
+    - MIR
+  MESO:
+    - GEXP
+    - CNVR
+    - METH
+    - MUTA
+    - MIR
+  OV:
+    - GEXP
+    - CNVR
+    - METH
+    - MUTA
+    - MIR
+  PAAD:
+    - GEXP
+    - CNVR
+    - METH
+    - MUTA
+    - MIR
+  PCPG:
+    - GEXP
+    - CNVR
+    - METH
+    - MUTA
+    - MIR
+  PRAD:
+    - GEXP
+    - CNVR
+    - METH
+    - MUTA
+    - MIR
+  SARC:
+    - GEXP
+    - CNVR
+    - METH
+    - MUTA
+    - MIR
+  SKCM:
+    - GEXP
+    - CNVR
+    - METH
+    - MUTA
+    - MIR
+  TGCT:
+    - GEXP
+    - CNVR
+    - METH
+    - MUTA
+    - MIR
+  THCA:
+    - GEXP
+    - CNVR
+    - METH
+    - MUTA
+    - MIR
+  THYM:
+    - GEXP
+    - CNVR
+    - METH
+    - MUTA
+    - MIR
+  UCEC:
+    - GEXP
+    - CNVR
+    - METH
+    - MUTA
+    - MIR
+  UVM:
+    - GEXP
+    - CNVR
+    - METH
+    - MUTA
+    - MIR

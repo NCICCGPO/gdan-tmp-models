@@ -81,7 +81,7 @@ Model platform name differs for each method, see below:
 
 + CloudForest options: `OVERALL, MULTI, CNVR, GEXP, METH, MIR, or MUTA` where `OVERALL` is the best model for the cancer cohort. `MULTI` stands for using all available data types. **Not all cancer cohorts have a MULTI model** this only occurs if it is the highest performing model (of all models) is a non-single data platform model.
 
-+ SubSCOPE options: `CNV, GEXP, METH, MIR, MUTA`. Note this method **requires** the use of `CNV` not CNVR.
++ SubSCOPE options: `CNVR, GEXP, METH, MIR, MUTA`
 
 + JADBio options:
 
@@ -99,11 +99,27 @@ Examples for BRCA cancer cohorts are:
 + bash RUN_model.sh BRCA GEXP cloudforest user-transformed-data/transformed-data.tsv
 + bash RUN_MODEL.sh BRCA TOP aklimate user-transformed-data/transformed-data.tsv
 + bash RUN_MODEL.sh BRCA GEXP skgrid user-transformed-data/transformed-data.tsv
++ bash RUN_MODEL.sh BRCA GEXP jadbio user-transformed-data/transformed-data.tsv
 + bash RUN_MODEL.sh BRCA GEXP subscope user-transformed-data/transformed-data.tsv
 
 
 # Tutorial
 An example of how to run the prediction workflow is shown [here](tutorial/README.md) using SK Grid best performing gene expression model on a breast cancer cBioPortal dataset.
+
+# Alternative Model Download (Optional)
+Docker images for methods are automatically pulled and built by CWL workflows and tools from the public Synapse repository. Alternatively, Docker images can be manually downloaded and built using:
+```
+synapse get <synapse-ID>
+docker load -i <imagefile.tar.gz>
+```
+
+| SynapseID | ImageFile |
+|----|---|
+| syn29658355  | sk_grid.tar.gz |
+| syn29659459  | aklimate.tar.gz |
+| syn30267068  | cloudforest.tar.gz |
+| SYNID  | JADBIOIMAGE |
+| syn30993770 | subscope.tar.gz |
 
 
 # Acknowledgment and Funding

@@ -4,7 +4,7 @@ cwlVersion: v1.0
 class: Workflow
 requirements:
   - class: DockerRequirement
-    dockerPull: docker.synapse.org/syn29568296/subs
+    dockerPull: docker.synapse.org/syn29568296/subscope
     dockerOutputDirectory: "/data/results"
   - class: ScatterFeatureRequirement
   - class: StepInputExpressionRequirement
@@ -19,13 +19,11 @@ inputs:
 
 outputs:
   combined_results:
-    doc: tbd
     type: File[]
     outputBinding:
       glob: "*results.txt"
     outputSource: stepsubscope/combined_results
   combined_confidence:
-    doc: tbd
     type: File[]
     outputBinding:
       glob: "*confidence.txt"
