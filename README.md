@@ -71,19 +71,28 @@ Edit the file in `user-job-ymls/` that is associated with the method.
 
 > Available methods are `skgrid`, `aklimate`, `cloudforest`, `jadbio`, and `subscope`.
 
-Each method file is slightly different, but all will require selection of at least the input dataset, cancer model, and data platform. Available values are noted in each method's yaml file.
+Each method file is slightly different, but all will require selection of at least the input dataset, cancer model, and data platform. Available values are noted in [tools/options.yml](tools/options.yml).
 
 Model platform name differs for each method, see below:
 
-+ SK Grid options: `OVERALL, CNVR, GEXP, METH, MIR, or MUTA` where OVERALL is the highest performing model regardless of platform (can be single data platform type or a combination).
+### SK Grid options
++ Model options: `OVERALL, CNVR, GEXP, METH, MIR, or MUTA` where OVERALL is the highest performing model regardless of platform (can be single data platform type or a combination).
++ Additional method details found in [SK Grid README](skgrid/README.md)
 
-+ AKLIMATE options: `TOP, GEXP, CNVR, METH, or MULTI` where TOP is the highest performing model regardless of platform (can be single data platform type or a combination). MULTI is a combination of multiple data platform types.
+### AKLIMATE options
++ Model options: `TOP, GEXP, CNVR, METH, or MULTI` where TOP is the highest performing model regardless of platform (can be single data platform type or a combination). MULTI is a combination of multiple data platform types.
++ Additional method details found in [AKLIMATE README](aklimate/README.md)
 
-+ CloudForest options: `OVERALL, MULTI, CNVR, GEXP, METH, MIR, or MUTA` where `OVERALL` is the best model for the cancer cohort. `MULTI` stands for using all available data types. **Not all cancer cohorts have a MULTI model** this only occurs if it is the highest performing model (of all models) is a non-single data platform model.
+### CloudForest options
++ Model options: `OVERALL, MULTI, CNVR, GEXP, METH, MIR, or MUTA` where `OVERALL` is the best model for the cancer cohort. `MULTI` stands for using all available data types. **Not all cancer cohorts have a MULTI model** this only occurs if it is the highest performing model (of all models) is a non-single data platform model.
++ Additional method details found in [CloudForest README](cloudforest/README.md)
 
-+ SubSCOPE options: `CNVR, GEXP, METH, MIR, MUTA`
+### SubSCOPE options
++ Model options: `CNV, GEXP, METH, MIR, MUTA`
++ Additional method details found in [SubSCOPE README](subscope/README.md)
 
-+ JADBio options:
+### JADBio options
+> TBD
 
 # Analyze: Run Machine Learning Models to Predict Cancer Subtypes
 Simple command to call one of the five methods. This will predict the molecular subtype for each sample `bash RUN_MODEL.sh <arguments>`
