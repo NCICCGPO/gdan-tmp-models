@@ -2,7 +2,8 @@
 ### Job Input Platform Options   
 
 Allowed platform types (Required input):   
-+ MIR, MUTA, GEXP, CNVR, or METH   
++ MIR, MUTA, GEXP, CNVR, or METH
++ Note: MIR is not available for KIRCKICH and LIHCCHOL
 
 Allowed TCGA Cancer cohort (Optional input):   
 + ACC, BLCA, BRCA, CESC, COADREAD, ESCC, GEA, HNSC, KIRCKICH, KIRP, LGGGBM, LIHCCHOL, LUAD, LUSC, MESO, OV, PAAD, PCPG, PRAD, SARC, SKCM, TGCT, THCA, THYM, UCEC, UVM   
