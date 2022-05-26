@@ -80,7 +80,7 @@ Model platform name differs for each method, see below:
 + Additional method details found in [CloudForest README](cloudforest/README.md)
 
 ### SubSCOPE options
-+ Model options: `CNV, GEXP, METH, MIR, MUTA`. Note this method **requires** the use of `CNV` not CNVR.
++ Model options: `CNV, GEXP, METH, MIR, MUTA`
 + Additional method details found in [SubSCOPE README](subscope/README.md)
 
 ### JADBio options
