@@ -119,7 +119,7 @@ docker load -i <imagefile.tar.gz>
 | syn29659459  | aklimate.tar.gz |
 | syn30267068  | cloudforest.tar.gz |
 | SYNID  | JADBIOIMAGE |
-| syn26284209 | dockerimage-subscope-ccg-tmp.tar.gz |
+| syn30993770 | subscope.tar.gz |
 
 
 # Acknowledgment and Funding
