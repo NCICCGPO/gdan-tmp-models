@@ -1,56 +1,56 @@
 model:
   # - class: File
-  #   path:  ../jadbio/data/models/ACC_GEXP_model.bin
+  #   path:  ../jadbio/data/models_jadbio/ACC_GEXP_model.bin
   # - class: File
-  #   path:  ../jadbio/data/models/BLCA_v8_20200203_model.bin
+  #   path:  ../jadbio/data/models_jadbio/BLCA_v8_20200203_model.bin
   - class: File
-    path:  ../jadbio/data/models/BRCA_GEXP_model.bin
+    path:  ../jadbio/data/models_jadbio/BRCA_GEXP_model.bin
 #   - class: File
-#     path:  ../jadbio/data/models/CESC_GEXP_model.bin
+#     path:  ../jadbio/data/models_jadbio/CESC_GEXP_model.bin
 #   - class: File
-#     path:  ../jadbio/data/models/COADREAD_v8_20200203_model.bin
+#     path:  ../jadbio/data/models_jadbio/COADREAD_v8_20200203_model.bin
 #   - class: File
-#     path:  ../jadbio/data/models/ESCC_GEXP_model.bin
+#     path:  ../jadbio/data/models_jadbio/ESCC_GEXP_model.bin
 #   - class: File
-#     path:  ../jadbio/data/models/GEA_v8_20200203_model.bin
+#     path:  ../jadbio/data/models_jadbio/GEA_v8_20200203_model.bin
 #   - class: File
-#     path:  ../jadbio/data/models/HNSC_GEXP_model.bin
+#     path:  ../jadbio/data/models_jadbio/HNSC_GEXP_model.bin
 #   - class: File
-#     path:  ../jadbio/data/models/KIRCKICH_GEXP_model.bin
+#     path:  ../jadbio/data/models_jadbio/KIRCKICH_GEXP_model.bin
 #   - class: File
-#     path:  ../jadbio/data/models/KIRP_v8_20200203_model.bin
+#     path:  ../jadbio/data/models_jadbio/KIRP_v8_20200203_model.bin
 #   - class: File
-#     path:  ../jadbio/data/models/LGGGBM_v8_20200203_model.bin
+#     path:  ../jadbio/data/models_jadbio/LGGGBM_v8_20200203_model.bin
 #   - class: File
-#     path:  ../jadbio/data/models/LIHCCHOL_v12_20210228_model.bin
+#     path:  ../jadbio/data/models_jadbio/LIHCCHOL_v12_20210228_model.bin
 #   - class: File
-#     path:  ../jadbio/data/models/LUAD_GEXP_model.bin
+#     path:  ../jadbio/data/models_jadbio/LUAD_GEXP_model.bin
 #   - class: File
-#     path:  ../jadbio/data/models/LUSC_v8_20200203_model.bin
+#     path:  ../jadbio/data/models_jadbio/LUSC_v8_20200203_model.bin
 #   - class: File
-#     path:  ../jadbio/data/models/MESO_v8_20200203_model.bin
+#     path:  ../jadbio/data/models_jadbio/MESO_v8_20200203_model.bin
 #   - class: File
-#     path:  ../jadbio/data/models/OV_GEXP_model.bin
+#     path:  ../jadbio/data/models_jadbio/OV_GEXP_model.bin
 #   - class: File
-#     path:  ../jadbio/data/models/PAAD_GEXP_model.bin
+#     path:  ../jadbio/data/models_jadbio/PAAD_GEXP_model.bin
 #   - class: File
-#     path:  ../jadbio/data/models/PCPG_GEXP_model.bin
+#     path:  ../jadbio/data/models_jadbio/PCPG_GEXP_model.bin
 #   - class: File
-#     path:  ../jadbio/data/models/PRAD_v8_20200203_model.bin
+#     path:  ../jadbio/data/models_jadbio/PRAD_v8_20200203_model.bin
 #   - class: File
-#     path:  ../jadbio/data/models/SARC_GEXP_model.bin
+#     path:  ../jadbio/data/models_jadbio/SARC_GEXP_model.bin
 #   - class: File
-#     path:  ../jadbio/data/models/SKCM_MUTA_model.bin
+#     path:  ../jadbio/data/models_jadbio/SKCM_MUTA_model.bin
 #   - class: File
-#     path:  ../jadbio/data/models/TGCT_v8_20200203_model.bin
+#     path:  ../jadbio/data/models_jadbio/TGCT_v8_20200203_model.bin
 #   - class: File
-#     path:  ../jadbio/data/models/THCA_v8_20200203_model.bin
+#     path:  ../jadbio/data/models_jadbio/THCA_v8_20200203_model.bin
 #   - class: File
-#     path:  ../jadbio/data/models/THYM_MIR_model.bin
+#     path:  ../jadbio/data/models_jadbio/THYM_MIR_model.bin
 #   - class: File
-#     path:  ../jadbio/data/models/UCEC_v8_20200203_model.bin
+#     path:  ../jadbio/data/models_jadbio/UCEC_v8_20200203_model.bin
 #   - class: File
-#     path:  ../jadbio/data/models/UVM_v8_20200203_model.bin
+#     path:  ../jadbio/data/models_jadbio/UVM_v8_20200203_model.bin
 #
 input_data:
   - class: File
