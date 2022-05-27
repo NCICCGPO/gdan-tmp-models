@@ -59,11 +59,15 @@ aws_secret_access_key=XXX
 User input data must be in tab separated format.
 
 # Download Method Model Data
-Certain methods require large files to run models. These files are available for download from the Publication page or through Synapse directly.
+Certain methods require large or source files to run models. These files are available for download from the Publication page or through Synapse directly.
 
 > Required step: download associated model data for certain methods
 
-**CloudForest download** of model data: download data.tar.gz (`syn30564146`) into the directory `cloudforest/`, and decompress.
+## TODO: update name of CloudForest data file model to be more informative
+
+**CloudForest download** of model data: download from Publication Page the data.tar.gz (`syn30564146`) into the directory `cloudforest/`, and decompress.
+
+**JADBio download** of model data: download from Publication Page the models_jadbio.tar.gz (`syn31110725`) into the directory `jadbio/data/`, and decompress (`tar -xvf models_jadbio.tar.gz`).
 
 
 # Model Selection and Input Specifications
