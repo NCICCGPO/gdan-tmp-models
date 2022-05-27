@@ -67,9 +67,9 @@ Certain methods require large or source files to run models. These files are ava
 
 ## TODO: update name of CloudForest data file model to be more informative
 
-**CloudForest download** of model data: download from *the publication page* the data.tar.gz (`syn30564146`) into the directory `cloudforest/` and decompress.
+**CloudForest download** of model data: download from *the publication page* the `data.tar.gz` (Synapse ID syn30564146) into the directory `cloudforest/` and decompress.
 
-**JADBio download** of model data: download from *the publication page* the models_jadbio.tar.gz (`syn31110725`) into the directory `jadbio/data/` and decompress.
+**JADBio download** of model data: download from *the publication page* the `models_jadbio.tar.gz` (Synapse ID syn31110725) into the directory `jadbio/data/` and decompress.
 
 ```
 # Decompress
