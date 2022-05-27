@@ -88,11 +88,8 @@ Model platform name differs for each method, see below:
 + Additional method details found in [CloudForest README](cloudforest/README.md)
 
 ### SubSCOPE options
-+ Model options: `CNV, GEXP, METH, MIR, MUTA`
++ Model options: `CNVR, GEXP, METH, MIR, MUTA`
 + Additional method details found in [SubSCOPE README](subscope/README.md)
-
-### JADBio options
-> TBD
 
 # Analyze: Run Machine Learning Models to Predict Cancer Subtypes
 Simple command to call one of the five methods. This will predict the molecular subtype for each sample `bash RUN_MODEL.sh <arguments>`
