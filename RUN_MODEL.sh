@@ -4,6 +4,7 @@
 # Example: bash RUN_MODEL.sh BRCA TOP aklimate example_inputs_cancers/example_BRCA.tsv
 # Example: bash RUN_MODEL.sh BRCA GEXP skgrid user-transformed-data/transformed-data.tsv
 # Example: bash RUN_MODEL.sh BRCA GEXP subscope example_inputs_cancers/example_BRCA.tsv
+# Example: bash RUN_MODEL.sh BRCA GEXP jadbio example_inputs_cancers/example_BRCA.tsv
 
 set -e
 cancer=${1}
@@ -18,6 +19,14 @@ then
 	data_transposed=$(python tools/transpose.py --input ${data})
 fi
 
+# Format prep
+echo 'Checking if field separation required'
+if [[ ${method} == 'jadbio' ]]
+then
+	tdata_name=$(echo ${data} | sed "s/.tsv/.csv/g")
+	tr '\t' ',' < ${data} > ${tdata_name}
+fi
+
 # Create cwl job yaml
 echo 'Creating cwl job yaml'
 if [[ ${method} == 'aklimate' || ${method} == 'subscope' ]]
@@ -26,16 +35,14 @@ then
 elif [[ ${method} == 'cloudforest' ]]
 then
 	python tools/create_jobs.py --cancer ${cancer} --platform ${platform} --method ${method} --data ${data_transposed}  --outname ${cancer}'_'${platform}'_'${method}
+elif [[ ${method} == 'jadbio' ]]
+then
+	python tools/create_jobs.py --cancer ${cancer} --platform ${platform} --method ${method} --data ${tdata_name}  --outname ${cancer}'_'${platform}'_'${method}
 else
 	python tools/create_jobs.py --cancer ${cancer} --platform ${platform} --method ${method} --data ${data}  --outname ${cancer}'_'${platform}'_'${method}
 fi
 
-# Format prep
-echo 'Checking if field separation required'
-if [[ ${method} == 'jadbio' ]]
-then
-	tr '\t' ',' < example_inputs_cancers/example_BRCA.tsv > example_inputs_cancers/example_BRCA.csv
-fi
+
 
 # Run cwl workflow
 echo 'Starting machine learning job'
