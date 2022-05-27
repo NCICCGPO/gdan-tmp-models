@@ -7,6 +7,8 @@ These tools were created from the GDAN-TMP group where minimal molecular markers
 
 + For the publication page, visit: <ADD LINK>
 
+> Model data downloads from publication page are required to run certain models
+
 Subtype predictions can be made for the following [TCGA cohorts](https://gdc.cancer.gov/resources-tcga-users/tcga-code-tables/tcga-study-abbreviations):
 
 > ACC, BLCA, BRCA, CESC, COADREAD, ESCC, GEA, HNSC, KIRCKICH, KIRP, LGGGBM, LIHCCHOL, LUAD, LUSC, MESO, OV, PAAD, PCPG, PRAD, SARC, SKCM, TGCT, THCA, THYM, UCEC, UVM`
@@ -65,9 +67,9 @@ Certain methods require large or source files to run models. These files are ava
 
 ## TODO: update name of CloudForest data file model to be more informative
 
-**CloudForest download** of model data: download from Publication Page the data.tar.gz (`syn30564146`) into the directory `cloudforest/`, and decompress.
+**CloudForest download** of model data: download from *the publication page* the data.tar.gz (`syn30564146`) into the directory `cloudforest/`, and decompress.
 
-**JADBio download** of model data: download from Publication Page the models_jadbio.tar.gz (`syn31110725`) into the directory `jadbio/data/`, and decompress (`tar -xvf models_jadbio.tar.gz`).
+**JADBio download** of model data: download from *the publication page* the models_jadbio.tar.gz (`syn31110725`) into the directory `jadbio/data/`, and decompress (`tar -xvf models_jadbio.tar.gz`).
 
 
 # Model Selection and Input Specifications
