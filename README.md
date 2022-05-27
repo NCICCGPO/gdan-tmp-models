@@ -138,7 +138,7 @@ docker load -i <imagefile.tar.gz>
 | syn29658355  | sk_grid.tar.gz |
 | syn29659459  | aklimate.tar.gz |
 | syn30267068  | cloudforest.tar.gz |
-| SYNID  | JADBIOIMAGE |
+| syn31114207  | jadbio.tar.gz |
 | syn30993770 | subscope.tar.gz |
 
 
