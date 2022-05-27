@@ -91,6 +91,10 @@ Model platform name differs for each method, see below:
 + Model options: `CNVR, GEXP, METH, MIR, MUTA`
 + Additional method details found in [SubSCOPE README](subscope/README.md)
 
+### JADBio options
++ Model options: `MULTI, CNVR, GEXP, METH, MIR, MUTA`
++ Additional method details found in [JADBio README](jadbio/README.md)
+
 # Analyze: Run Machine Learning Models to Predict Cancer Subtypes
 Simple command to call one of the five methods. This will predict the molecular subtype for each sample `bash RUN_MODEL.sh <arguments>`
 
