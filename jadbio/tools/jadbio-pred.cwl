@@ -9,7 +9,6 @@ hints:
   DockerRequirement:
     dockerPull: docker.synapse.org/syn29568296/jad
 
-
 inputs:
   model:
     type: File

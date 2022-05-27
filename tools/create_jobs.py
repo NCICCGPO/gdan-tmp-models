@@ -79,3 +79,17 @@ elif args.method == 'subscope':
         fh.write('input_data:\n')
         fh.write('  - class: File\n')
         fh.write('    path: ../{}\n'.format(args.data))
+
+elif args.method == 'jadbio':
+    # Test if user inputs valid
+    assert args.platform in method_options[args.method][args.cancer], 'Invalid input combination, see options in tools/options.yml'
+    # Generate cwl job input file
+    with open('user-job-ymls/jadbio-inputs.yml', 'w') as fh:
+        fh.write('model:\n')
+        fh.write('  - class: File\n')
+        fh.write('    path: ../jadbio/data/models_jadbio/{}_{}_model.bin\n'.format(args.cancer, args.platform))
+        fh.write('input_data:\n')
+        fh.write('  - class: File\n')
+        fh.write('    path: ../{}\n'.format(args.data))
+        fh.write('out:\n')
+        fh.write('  - {}_preds.csv\n'.format(args.outname))

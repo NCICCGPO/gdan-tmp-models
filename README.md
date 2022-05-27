@@ -7,6 +7,8 @@ These tools were created from the GDAN-TMP group where minimal molecular markers
 
 + For the publication page, visit: <ADD LINK>
 
+> Model data downloads from publication page are required to run certain models
+
 Subtype predictions can be made for the following [TCGA cohorts](https://gdc.cancer.gov/resources-tcga-users/tcga-code-tables/tcga-study-abbreviations):
 
 > ACC, BLCA, BRCA, CESC, COADREAD, ESCC, GEA, HNSC, KIRCKICH, KIRP, LGGGBM, LIHCCHOL, LUAD, LUSC, MESO, OV, PAAD, PCPG, PRAD, SARC, SKCM, TGCT, THCA, THYM, UCEC, UVM`
@@ -59,12 +61,20 @@ aws_secret_access_key=XXX
 User input data must be in tab separated format.
 
 # Download Method Model Data
-Certain methods require large files to run models. These files are available for download from the Publication page or through Synapse directly.
+Certain methods require large or source files to run models. These files are available for download from the Publication page or through Synapse directly.
 
 > Required step: download associated model data for certain methods
 
-**CloudForest download** of model data: download data.tar.gz (`syn30564146`) into the directory `cloudforest/`, and decompress.
+## TODO: update name of CloudForest data file model to be more informative
 
+**CloudForest download** of model data: download from the *publication page* `data.tar.gz` (SynapseID syn30564146) into the directory `cloudforest/` and decompress.
+
+**JADBio download** of model data: download from the *publication page* `models_jadbio.tar.gz` (SynapseID syn31110725) into the directory `jadbio/data/` and decompress.
+
+```
+# Decompress
+tar -xvf <file.tar.gz>
+```
 
 # Model Selection and Input Specifications
 Edit the file in `user-job-ymls/` that is associated with the method.
@@ -88,11 +98,12 @@ Model platform name differs for each method, see below:
 + Additional method details found in [CloudForest README](cloudforest/README.md)
 
 ### SubSCOPE options
-+ Model options: `CNV, GEXP, METH, MIR, MUTA`
++ Model options: `CNVR, GEXP, METH, MIR, MUTA`
 + Additional method details found in [SubSCOPE README](subscope/README.md)
 
 ### JADBio options
-> TBD
++ Model options: `MULTI, CNVR, GEXP, METH, MIR, MUTA`
++ Additional method details found in [JADBio README](jadbio/README.md)
 
 # Analyze: Run Machine Learning Models to Predict Cancer Subtypes
 Simple command to call one of the five methods. This will predict the molecular subtype for each sample `bash RUN_MODEL.sh <arguments>`
@@ -127,7 +138,7 @@ docker load -i <imagefile.tar.gz>
 | syn29658355  | sk_grid.tar.gz |
 | syn29659459  | aklimate.tar.gz |
 | syn30267068  | cloudforest.tar.gz |
-| SYNID  | JADBIOIMAGE |
+| syn31114207  | jadbio.tar.gz |
 | syn30993770 | subscope.tar.gz |
 
 

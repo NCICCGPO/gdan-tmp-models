@@ -9,7 +9,6 @@ requirements:
   - class: StepInputExpressionRequirement
   - class: SubworkflowFeatureRequirement
 
-
 inputs:
   model: File[]
   input_data: File[]
