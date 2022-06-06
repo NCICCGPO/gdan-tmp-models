@@ -67,14 +67,12 @@ Certain methods require large or source files to run models. These files are ava
 
 > Required step: download associated model data for certain methods
 
-## TODO: update name of CloudForest data file model to be more informative
-
-**CloudForest download** of model data: download from the *publication page* `data.tar.gz` (SynapseID syn30564146) into the directory `cloudforest/` and decompress.
+**CloudForest download** of model data: download from the *publication page* `models_cf.tar.gz` (SynapseID syn31752640) into the directory `cloudforest/data/` and decompress.
 
 **JADBio download** of model data: download from the *publication page* `models_jadbio.tar.gz` (SynapseID syn31110725) into the directory `jadbio/data/` and decompress.
 
 ```
-# Decompress
+# In the data dir - Decompress
 tar -xvf <file.tar.gz>
 ```
 
