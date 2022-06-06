@@ -47,9 +47,10 @@ elif args.method == 'aklimate':
 
 elif args.method == 'cloudforest':
     # Test if user inputs valid
+    print(method_options[args.method][args.cancer], args.platform)
     assert args.platform in method_options[args.method][args.cancer], 'Invalid input combination, see options in tools/options.yml'
     # Pull CF file name specific to inputs
-    files = glob.glob('cloudforest/data/{}/{}/*.sf'.format(args.cancer, args.platform))
+    files = glob.glob('cloudforest/data/models_cf/{}/{}/*.sf'.format(args.cancer, args.platform))
     if len(files)==1:
         rf_file = files[0]
     elif len(files)==0:

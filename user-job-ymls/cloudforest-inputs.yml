@@ -3,6 +3,6 @@ fm_input:
     path: ../user-transformed-data/transformed-data.transposed.tsv
 rfpred_input:
   - class: File
-    path: ../cloudforest/data/BRCA/GEXP/GEXP_50_R4_F1.sf
+    path: ../cloudforest/data/models_cf/BRCA/GEXP/GEXP_50_R4_F1.sf
 preds_input:
   - BRCA_GEXP_cloudforest_preds.tsv
