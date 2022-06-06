@@ -3,22 +3,25 @@
 import pandas as pd
 import numpy as np
 import json
+import argparse
 
-### Hardcoded
-cancer = 'BRCA'
-out = 'user-transformed-data/cbioportal_BRCA_GEXP.tsv'
-###
+parser = argparse.ArgumentParser()
+parser.add_argument("--cancer", help="cancer cohort")
+parser.add_argument("--data", help="input data to be transformed, must be tsv")
+parser.add_argument("--conversion_file", default='tools/entrez2tmp_BRCA_GEXP.json', help="conversion file to map input fts to TMP feature names. default value ideal for most cases")
+parser.add_argument("--out", help="name of output file")
+args = parser.parse_args()
+
 
 # From cbioportal data - convert to TMP-ft-id and format
-file = 'brca_metabric/data_mrna_agilent_microarray.txt'
-df = pd.read_csv(file, sep='\t')
+df = pd.read_csv(args.data, sep='\t')
 
 # Filter out  extra info and nan
 df = df.iloc[:, 1:]
 df = df.dropna()
 
 # Open conversion file and convert
-with open('tools/entrez2tmp_BRCA_GEXP.json', 'r') as fh:
+with open(args.conversion_file, 'r') as fh:
     entrez2tmp = json.load(fh)
 
 tmp = []
@@ -30,11 +33,11 @@ for a in df['Entrez_Gene_Id']:
         tmp.append(np.nan)
 
 # Filter
-df.insert(1, cancer, tmp)
+df.insert(1, args.cancer, tmp)
 df = df.iloc[:,1:]
 df = df.dropna()
-df.index=df[cancer]
+df.index=df[args.cancer]
 df= df.iloc[:,1:]
 df = df.transpose()
 
-df.to_csv(out, sep='\t')
+df.to_csv(args.out, sep='\t')
