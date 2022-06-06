@@ -32,7 +32,6 @@ The following are required:
 
 + Python 3+ https://www.python.org/downloads/
 + Docker or Docker Desktop https://www.docker.com/
-+ cwl-runner https://github.com/common-workflow-language/cwltool
 + Synapse client https://help.synapse.org/docs/Installing-Synapse-API-Clients.1985249668.html and create an account
 + AWS https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
 
@@ -42,18 +41,21 @@ Create an environment and install dependencies
 ```
 python3 -m venv venv
 . venv/bin/activate
+pip install --upgrade pip
 pip install -r requirements.text
 ```
 
+Log into Docker (if not already), with username and password.
+```
+docker login
+```
 Setup for Synapse and AWS
 ```
 synapse login --remember-me
 ```
-And create `~/.aws/credentials`
+Log into the Synapse to access the Docker images stored on Synapse.
 ```
-[default]
-aws_access_key_id=XXX
-aws_secret_access_key=XXX
+docker login -u <synapse-username> docker.synapse.org
 ```
 
 
