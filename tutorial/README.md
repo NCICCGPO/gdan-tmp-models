@@ -19,16 +19,20 @@ We will be predicting subtypes for `data_mrna_agilent_microarray.txt`.
 
 
 ## Pre-Processing
-First, machine learning models need to be able to match genes to GDAN-TMP specific gene IDs. We will convert from Entrez gene IDs and reformat into a sample x feature matrix. The output file can be found at `user-transformed-data/cbioportal_BRCA_GEXP.tsv`.
+First, machine learning models need to be able to match genes to GDAN-TMP specific gene IDs. We will convert `brca_metabric/data_mrna_agilent_microarray.txt` Entrez gene IDs and reformat into a sample x feature matrix. The output file can be found at `user-transformed-data/cbioportal_BRCA_GEXP.tsv`.
 ```
 # Rename and format data_mrna_agilent_microarray.txt
-python tools/convert.py
+python tools/convert.py \
+	--data brca_metabric/data_mrna_agilent_microarray.txt \
+	--out user-transformed-data/cbioportal_BRCA_GEXP.tsv \
+	--cancer BRCA
 ```
 
 Second, data must be transformed with a quantile rescale prior to running machine learning algorithms. The output file can be found at `user-transformed-data/transformed-data.tsv`
 ```
 # Quantile Rescale
-bash tools/run_transform.sh user-transformed-data/cbioportal_BRCA_GEXP.tsv
+bash tools/run_transform.sh \
+  user-transformed-data/cbioportal_BRCA_GEXP.tsv
 ```
 
 
