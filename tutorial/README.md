@@ -28,7 +28,7 @@ python tools/convert.py
 Second, data must be transformed with a quantile rescale prior to running machine learning algorithms. The output file can be found at `user-transformed-data/transformed-data.tsv`
 ```
 # Quantile Rescale
-bash run_transform.sh user-transformed-data/cbioportal_BRCA_GEXP.tsv
+bash tools/run_transform.sh user-transformed-data/cbioportal_BRCA_GEXP.tsv
 ```
 
 
