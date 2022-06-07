@@ -12,8 +12,3 @@ cwl-runner --outdir preds \
 # Clean up
 mv preds/Classifier.* data/model_library
 mv preds/*.model data/train
-echo '###'
-echo 'ML model parameters saved in skgrid/data/model_library/'
-echo 'Trained ML model pickle saved in skgrid/data/train/'
-echo 'Prediction file saved in skgrid/preds/'
-echo '###'

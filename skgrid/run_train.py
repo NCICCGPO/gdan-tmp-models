@@ -31,41 +31,19 @@ from sklearn.gaussian_process.kernels import Matern
 from sklearn.gaussian_process.kernels import RationalQuadratic
 from sklearn.gaussian_process.kernels import WhiteKernel
 
-
-classifers = {
-    "sklearn.ensemble.AdaBoostClassifier": AdaBoostClassifier,
-    "sklearn.naive_bayes.BernoulliNB": BernoulliNB,
-    "sklearn.tree.DecisionTreeClassifier": DecisionTreeClassifier,
-    "sklearn.ensemble.ExtraTreesClassifier": ExtraTreesClassifier,
-    "sklearn.naive_bayes.GaussianNB": GaussianNB,
-    "sklearn.gaussian_process.GaussianProcessClassifier": GaussianProcessClassifier,
-    "sklearn.neighbors.KNeighborsClassifier": KNeighborsClassifier,
-    "sklearn.linear_model.LogisticRegression": LogisticRegression,
-    "sklearn.neural_network.MLPClassifier": MLPClassifier,
-    "sklearn.naive_bayes.MultinomialNB": MultinomialNB,
-    "sklearn.linear_model.PassiveAggressiveClassifier": PassiveAggressiveClassifier,
-    "sklearn.ensemble.RandomForestClassifier": RandomForestClassifier,
-    "sklearn.linear_model.SGDClassifier": SGDClassifier,
-    "sklearn.svm.SVC": SVC
-}
-
-
-gp_kernels = {
-    "sklearn.gaussian_process.kernels.RBF" : RBF,
-    "sklearn.gaussian_process.kernels.DotProduct": DotProduct,
-    "sklearn.gaussian_process.kernels.Matern": Matern,
-    "sklearn.gaussian_process.kernels.RationalQuadratic": RationalQuadratic,
-    "sklearn.gaussian_process.kernels.WhiteKernel": WhiteKernel
-}
-
-
+# def get_classifier(name, params):
+#     if name == "sklearn.gaussian_process.GaussianProcessClassifier":
+#         d = copy(params)
+#         d['kernel'] = classifier_config['gp_kernels'][params['kernel']]()
+#         params = d
+#     return classifier_config['classifiers'][name](**params)
 def get_classifier(name, params):
     if name == "sklearn.gaussian_process.GaussianProcessClassifier":
         d = copy(params)
-        d['kernel'] = gp_kernels[params['kernel']]()
+        # d['kernel'] = classifier_config['gp_kernels'][params['kernel']]()
+        d['kernel'] = eval(classifier_config['gp_kernels'][d['kernel']])()
         params = d
-    return classifers[name](**params)
-
+    return eval(classifier_config['classifiers'][name])(**params)
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
@@ -80,6 +58,9 @@ if __name__ == "__main__":
     with open(args.model_file) as handle:
         for line in handle:
             configs.append( json.loads(line) )
+
+    with open("/skgrid/config_classifier.json", 'r') as fh:
+        classifier_config = json.load(fh)
 
     # Train model
     for config in configs:
@@ -103,4 +84,3 @@ if __name__ == "__main__":
         clf.fit(X, y)
         #clf.features_ = select_features
         pickle.dump( clf, open( os.path.join(model_name + ".model") , "wb" ) )
-        # pickle.dump( clf, open( os.path.join(args.out, model_name + ".model") , "wb" ) )
