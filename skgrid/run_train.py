@@ -31,16 +31,9 @@ from sklearn.gaussian_process.kernels import Matern
 from sklearn.gaussian_process.kernels import RationalQuadratic
 from sklearn.gaussian_process.kernels import WhiteKernel
 
-# def get_classifier(name, params):
-#     if name == "sklearn.gaussian_process.GaussianProcessClassifier":
-#         d = copy(params)
-#         d['kernel'] = classifier_config['gp_kernels'][params['kernel']]()
-#         params = d
-#     return classifier_config['classifiers'][name](**params)
 def get_classifier(name, params):
     if name == "sklearn.gaussian_process.GaussianProcessClassifier":
         d = copy(params)
-        # d['kernel'] = classifier_config['gp_kernels'][params['kernel']]()
         d['kernel'] = eval(classifier_config['gp_kernels'][d['kernel']])()
         params = d
     return eval(classifier_config['classifiers'][name])(**params)
