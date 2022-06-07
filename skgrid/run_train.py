@@ -76,14 +76,6 @@ if __name__ == "__main__":
     parser.add_argument('--model_file', type=str, help='json file of model parameter strings')
     args = parser.parse_args()
 
-    # # Pull model file name and load in model
-    # with open('/skgrid/select_model.yml', 'r') as fh:
-    #     try:
-    #         modelconfig = yaml.safe_load(fh)
-    #     except yaml.YAMLError as exc:
-    #         print(exc)
-    # model_file = modelconfig[args.cancer][args.platform]['file']
-
     configs = []
     with open(args.model_file) as handle:
         for line in handle:
