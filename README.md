@@ -68,7 +68,6 @@ Input data **must have proper feature labeling and rescaling prior** to running 
 ### 1A. Feature Relabeling and Transposing
 First, machine learning models need to be able to match genes to GDAN-TMP specific gene IDs (ex. convert gene TP53 to feature N:GEXP::TP53:7157:). Then reformatting to a sample x feature matrix.
 ```
-# Rename and format data_mrna_agilent_microarray.txt
 python tools/convert.py \
 	--data <original-user-data> \
 	--out <relabeled-user-data> \
@@ -78,7 +77,6 @@ python tools/convert.py \
 ### 1B. Quantile Rescaling
 Second, relabeled data must be transformed with a quantile rescale prior to running machine learning algorithms. The rescaled output file will always be located in `user-transformed-data/transformed-data.tsv`.
 ```
-# Quantile Rescale
 bash tools/run_transform.sh \
   <relabeled-user-data>
 ```
