@@ -23,7 +23,7 @@ There are five methods (SK Grid, AKLIMATE, CloudForst, JADBio, and SubSCOPE) and
 5. Best `METH` only model - highest performing model using only DNA methylation features
 6. Best `MIR` only model - highest performing model using only miRNA features
 
-There are a few **exceptions** to models provided by certain methods, see **"Model Selection and Input Specifications"** section below.
+There are a few **exceptions** to models provided by certain methods, see **"Additional Info: Model Selection and Input Specifications"** section below.
 
 Docker images for each model are pulled automatically in workflow shown in the "Analyze" section below. Docker images are stored in [CCG_TMP_Public Synapse Space](https://www.synapse.org/#!Synapse:syn29568296/docker/).
 
@@ -62,7 +62,26 @@ docker login -u <synapse-username> docker.synapse.org
 # Data Requirements
 User input data must be in tab separated format.
 
-# 1. Download Method Model Data
+# 1. Pre-processing User Data
+Input data **must have proper feature labeling and rescaling prior** to running machine learning models for subtype predictions.
+
+### 1A. Feature Relabeling and Transposing
+First, machine learning models need to be able to match genes to GDAN-TMP specific gene IDs (ex. convert gene TP53 to feature N:GEXP::TP53:7157:). Then reformatting to a sample x feature matrix.
+```
+python tools/convert.py \
+	--data <original-user-data> \
+	--out <relabeled-user-data> \
+	--cancer <cancer>
+```
+
+### 1B. Quantile Rescaling
+Second, relabeled data must be transformed with a quantile rescale prior to running machine learning algorithms. The rescaled output file will always be located in `user-transformed-data/transformed-data.tsv`.
+```
+bash tools/run_transform.sh \
+  <relabeled-user-data>
+```
+
+# 2. Download Method Models
 Certain methods require large or source files to run models. These files are available for download from the Publication page or through Synapse directly.
 
 > Required step: download associated model data for certain methods
@@ -76,7 +95,7 @@ Certain methods require large or source files to run models. These files are ava
 tar -xvf <file.tar.gz>
 ```
 
-# 2. Run Machine Learning Models to Predict Cancer Subtypes
+# 3. Run Machine Learning Models to Predict Cancer Subtypes
 Simple command to call one of the five methods. This will predict the molecular subtype for each sample `bash RUN_MODEL.sh <arguments>`
 
 > Available methods are `skgrid`, `aklimate`, `cloudforest`, `jadbio`, and `subscope`.
@@ -113,6 +132,7 @@ docker load -i <imagefile.tar.gz>
 | syn30993770 | subscope.tar.gz |
 
 Note that some methods have an additional model data file to run. These can be found at the publication page (see section Download Method Model Data)
+
 
 # Additional Info: Model Selection and Input Specifications
 Each the file in `user-job-ymls/` is associated with the method and is automatically generated from `RUN_MODEL.sh`.
@@ -152,3 +172,4 @@ Current maintainers:
 
 + Jordan A. Lee (GitHub jordan2lee)
 + Kyle Ellrott (GitHub kellrott)
++ Brian Karlberg (GitHub briankarlberg)

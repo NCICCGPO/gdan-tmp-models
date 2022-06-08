@@ -19,7 +19,7 @@ We will be predicting subtypes for `data_mrna_agilent_microarray.txt`.
 
 
 ## Pre-Processing
-First, machine learning models need to be able to match genes to GDAN-TMP specific gene IDs. We will convert `brca_metabric/data_mrna_agilent_microarray.txt` Entrez gene IDs and reformat into a sample x feature matrix. The output file can be found at `user-transformed-data/cbioportal_BRCA_GEXP.tsv`.
+First, machine learning models need to be able to match genes to GDAN-TMP specific gene IDs. We will convert `brca_metabric/data_mrna_agilent_microarray.txt` Entrez gene IDs and reformat into a sample x feature matrix (ex. convert gene TP53 to feature N:GEXP::TP53:7157:). The output file can be found at `user-transformed-data/cbioportal_BRCA_GEXP.tsv`.
 ```
 # Rename and format data_mrna_agilent_microarray.txt
 python tools/convert.py \
@@ -46,6 +46,7 @@ There are five methods (SK Grid, AKLIMATE, CloudForst, JADBio, and SubSCOPE) and
 5. Best `METH` only model - highest performing model using only DNA methylation features
 6. Best `MIR` only model - highest performing model using only miRNA features
 
+Note: there are some exceptions, see section "Additional Info: Model Selection and Input Specifications" in [README.md](../README.md) for details.
 
 # Predict Sample Subtypes
 We can pick from any of the five methods `SK Grid`, `AKLIMATE`, `JADBio`, `CloudForest`, or `SubSCOPE`. We also will want to pick which of the 6 models we want to use to make our subtype predictions (see the six models listed in Tutorial section "Platform Options").
