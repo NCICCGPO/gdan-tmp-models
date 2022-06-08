@@ -23,7 +23,7 @@ There are five methods (SK Grid, AKLIMATE, CloudForst, JADBio, and SubSCOPE) and
 5. Best `METH` only model - highest performing model using only DNA methylation features
 6. Best `MIR` only model - highest performing model using only miRNA features
 
-There are a few **exceptions** to models provided by certain methods, see **"Model Selection and Input Specifications"** section below.
+There are a few **exceptions** to models provided by certain methods, see **"Additional Info: Model Selection and Input Specifications"** section below.
 
 Docker images for each model are pulled automatically in workflow shown in the "Analyze" section below. Docker images are stored in [CCG_TMP_Public Synapse Space](https://www.synapse.org/#!Synapse:syn29568296/docker/).
 
@@ -135,17 +135,6 @@ docker load -i <imagefile.tar.gz>
 
 Note that some methods have an additional model data file to run. These can be found at the publication page (see section Download Method Model Data)
 
-# Additional Info: General Platform Options
-There are five methods (SK Grid, AKLIMATE, CloudForst, JADBio, and SubSCOPE) and each ran tens to thousands of models. The top performing models of each method, for each of the 26 cancer cohorts have been made available, and include:
-
-1. Best `OVERALL` model - highest performing model
-2. Best `GEXP` only model - highest performing model using only gene expression features
-3. Best `CNVR` only model - highest performing model using only copy number features
-4. Best `MUTA` only model - highest performing model using only mutation features
-5. Best `METH` only model - highest performing model using only DNA methylation features
-6. Best `MIR` only model - highest performing model using only miRNA features
-
-Note: there are some exceptions, see section "Additional Info: Model Selection and Input Specifications" for details.
 
 # Additional Info: Model Selection and Input Specifications
 Each the file in `user-job-ymls/` is associated with the method and is automatically generated from `RUN_MODEL.sh`.
