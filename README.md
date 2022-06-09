@@ -169,7 +169,7 @@ Model platform name differs for each method, see below:
 We would like to thank the National Cancer Institute for the support.
 
 # Troubleshooting
-See [Common Issues and How to Fix](tutorial/error_messages.md) for common error messages.
+See [How to Fix Common Issues](tutorial/error_messages.md) for common error messages.
 
 # Maintainers
 Current maintainers:

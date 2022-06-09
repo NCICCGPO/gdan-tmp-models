@@ -1,4 +1,4 @@
-# Common Issues and Errors
+# How to Fix Common Issues
 ### Logging into Docker / Synapse Docker Registry
 During set up, entering `docker login` or `docker login -u <synapse-username> docker.synapse.org` returns the error message:
 ```
