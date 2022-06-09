@@ -55,7 +55,7 @@ Docker Sign In (if not already)
 docker login
 ```
 
-Sign into Synapse Docker Registry - using Syanpse username and password
+Synapse Docker Registry Sign In - using Syanpse username and password
 ```
 docker login -u <synapse-username> docker.synapse.org
 ```
