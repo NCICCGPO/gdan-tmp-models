@@ -11,7 +11,7 @@ These tools were created from the GDAN-TMP group where minimal molecular markers
 
 Subtype predictions can be made for the following [TCGA cohorts](https://gdc.cancer.gov/resources-tcga-users/tcga-code-tables/tcga-study-abbreviations):
 
-> ACC, BLCA, BRCA, CESC, COADREAD, ESCC, GEA, HNSC, KIRCKICH, KIRP, LGGGBM, LIHCCHOL, LUAD, LUSC, MESO, OV, PAAD, PCPG, PRAD, SARC, SKCM, TGCT, THCA, THYM, UCEC, UVM`
+> ACC, BLCA, BRCA, CESC, COADREAD, ESCC, GEA, HNSC, KIRCKICH, KIRP, LGGGBM, LIHCCHOL, LUAD, LUSC, MESO, OV, PAAD, PCPG, PRAD, SARC, SKCM, TGCT, THCA, THYM, UCEC, UVM
 
 ### Model Library Available
 There are five methods (SK Grid, AKLIMATE, CloudForst, JADBio, and SubSCOPE) and each ran tens to thousands of models. The top performing models of each method, for each of the 26 cancer cohorts have been made available, and include:
@@ -42,7 +42,7 @@ Create an environment and install dependencies. This will install cwlref-runner 
 python3 -m venv venv
 . venv/bin/activate
 pip install --upgrade pip
-pip install -r requirements.text
+pip install -r requirements.txt
 ```
 
 Log into Docker (if not already), with username and password.
