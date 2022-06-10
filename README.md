@@ -14,7 +14,7 @@ Subtype predictions can be made for the following [TCGA cohorts](https://gdc.can
 > ACC, BLCA, BRCA, CESC, COADREAD, ESCC, GEA, HNSC, KIRCKICH, KIRP, LGGGBM, LIHCCHOL, LUAD, LUSC, MESO, OV, PAAD, PCPG, PRAD, SARC, SKCM, TGCT, THCA, THYM, UCEC, UVM`
 
 ### Model Library Available
-There are five methods (SK Grid, AKLIMATE, CloudForst, JADBio, and SubSCOPE) and each ran tens to thousands of models. The top performing models of each method, for each of the 26 cancer cohorts have been made available, and include:
+There are five methods (SK Grid, AKLIMATE, CloudForst, JADBio, and subSCOPE) and each ran tens to thousands of models. The top performing models of each method, for each of the 26 cancer cohorts have been made available, and include:
 
 1. Best `OVERALL` model - highest performing model
 2. Best `GEXP` only model - highest performing model using only gene expression features
@@ -157,9 +157,9 @@ Model platform name differs for each method, see below:
 + Model options: `OVERALL, MULTI, CNVR, GEXP, METH, MIR, or MUTA` where `OVERALL` is the best model for the cancer cohort. `MULTI` stands for using all available data types. **Not all cancer cohorts have a MULTI model** this only occurs if it is the highest performing model (of all models) is a non-single data platform model.
 + Additional method details found in [CloudForest README](cloudforest/README.md)
 
-### SubSCOPE options
+### subSCOPE options
 + Model options: `CNVR, GEXP, METH, MIR, MUTA`
-+ Additional method details found in [SubSCOPE README](subscope/README.md)
++ Additional method details found in [subSCOPE README](subscope/README.md)
 
 ### JADBio options
 + Model options: `MULTI, CNVR, GEXP, METH, MIR, MUTA`
