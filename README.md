@@ -45,15 +45,17 @@ pip install --upgrade pip
 pip install -r requirements.text
 ```
 
-Log into Docker (if not already), with username and password.
-```
-docker login
-```
-Setup for Synapse and AWS
+Synapse Sign In
 ```
 synapse login --remember-me
 ```
-Log into the Synapse to access the Docker images stored on Synapse.
+
+Docker Sign In (if not already)
+```
+docker login
+```
+
+Synapse Docker Registry Sign In - using Syanpse username and password
 ```
 docker login -u <synapse-username> docker.synapse.org
 ```
@@ -166,6 +168,8 @@ Model platform name differs for each method, see below:
 # Acknowledgment and Funding
 We would like to thank the National Cancer Institute for the support.
 
+# Troubleshooting
+See [How to Fix Common Issues](tutorial/error_messages.md) for common error messages.
 
 # Maintainers
 Current maintainers:
