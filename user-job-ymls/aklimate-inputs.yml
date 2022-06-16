@@ -1,7 +1,0 @@
-cancer:
-  - BRCA
-platform:
-  - TOP
-input_data:
-  - class: File
-    path: ../example_inputs_cancers/example_BRCA.tsv
