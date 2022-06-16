@@ -97,6 +97,8 @@ Certain methods require large or source files to run models. These files are ava
 tar -xvf <file.tar.gz>
 ```
 
+SK Grid, AKLIMATE, and subSCOPE do not need manual model data download.
+
 # 3. Run Machine Learning Models to Predict Cancer Subtypes
 Simple command to call one of the five methods. This will predict the molecular subtype for each sample `bash RUN_MODEL.sh <arguments>`
 
