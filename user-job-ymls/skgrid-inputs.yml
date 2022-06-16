@@ -1,9 +1,0 @@
-cancer:
-  - BRCA
-platform:
-  - GEXP
-input_data:
-  - class: File
-    path: ../user-transformed-data/transformed-data.tsv
-output_prefix:
-  - BRCA_GEXP_skgrid

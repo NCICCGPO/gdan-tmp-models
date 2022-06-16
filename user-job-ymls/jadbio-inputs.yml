@@ -1,8 +1,0 @@
-model:
-  - class: File
-    path: ../jadbio/data/models_jadbio/BRCA_GEXP_model.bin
-input_data:
-  - class: File
-    path: ../example_inputs_cancers/example_BRCA.csv
-out:
-  - BRCA_GEXP_jadbio_preds.csv
