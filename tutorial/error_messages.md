@@ -33,3 +33,5 @@ WARNING: The requested image's platform (linux/amd64) does not match the detecte
 ```
 
 This automated message is to inform that the Docker image was built on a different platform, but will continue to run. This does not impact the analysis and will produce accurate results. Instead this message is meant to simply inform users.
+
+Note: currently many neural network machine learning models do not run on Apple M1 chips. This means the deep learning method `subSCOPE` will not run on Apple M1 chips, but the other four methods will. If you are only able to run using an Apple M1, please use all other methods.
