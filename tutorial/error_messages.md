@@ -25,3 +25,13 @@ Invalid input combination, see options in tools/options.yml
 ```
 
 The combination (`cancer`, `platform`, `method`) you requested is not available. Classifiers are built with a specific set of statistical or data type assumptions - therefore some combinations are not allowed. Look in `tools/options.yml` for the allowed combinations - organized by `method`, `cancer`, and then by `platform`.
+
+### Running Machine Learning Models on Apple M1 Chip
+When running Docker images, it returns the message and continues to run:
+```
+WARNING: The requested image's platform (linux/amd64) does not match the detected host platform (linux/arm64/v8) and no specific platform was requested
+```
+
+This automated message is to inform that the Docker image was built on a different platform, but will continue to run. This does not impact the analysis and will produce accurate results. Instead this message is meant to simply inform users.
+
+Note: currently many neural network machine learning models do not run on Apple M1 chips. This means the deep learning method `subSCOPE` will not run on Apple M1 chips, but the other four methods will. If you are only able to run using an Apple M1, please use all other methods.
