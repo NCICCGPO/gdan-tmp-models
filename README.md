@@ -125,13 +125,14 @@ Docker images for methods are automatically pulled and built by CWL workflows an
 
 Alternatively:
 1. Docker images can be manually downloaded by going to the publication page for each method image file.
-| ImageFile |
-|---|
-| sk_grid.tar.gz |
-| aklimate.tar.gz |
-| cloudforest.tar.gz |
-| jadbio.tar.gz |
-| subscope.tar.gz |
+```
+# ImageFiles
+sk_grid.tar.gz
+aklimate.tar.gz
+cloudforest.tar.gz
+jadbio.tar.gz
+subscope.tar.gz
+```
 
 2. Build each method's docker image.
 ```
