@@ -1,7 +1,7 @@
 #!/usr/bin/bash
 
 # Example: bash RUN_model.sh BRCA GEXP cloudforest user-transformed-data/transformed-data.tsv
-# Example: bash RUN_MODEL.sh BRCA TOP aklimate example_inputs_cancers/example_BRCA.tsv
+# Example: bash RUN_MODEL.sh BRCA GEXP aklimate example_inputs_cancers/example_BRCA.tsv
 # Example: bash RUN_MODEL.sh BRCA GEXP skgrid user-transformed-data/transformed-data.tsv
 # Example: bash RUN_MODEL.sh BRCA GEXP subscope example_inputs_cancers/example_BRCA.tsv
 # Example: bash RUN_MODEL.sh BRCA GEXP jadbio example_inputs_cancers/example_BRCA.tsv

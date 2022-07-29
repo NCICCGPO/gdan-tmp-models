@@ -164,8 +164,9 @@ Model platform name differs for each method, see below:
 + Additional method details found in [subSCOPE README](subscope/README.md)
 
 ### JADBio options
-+ Model options: `MULTI, CNVR, GEXP, METH, MIR, MUTA`
++ Model options: `MULTI, CNVR, GEXP, METH, MIR, MUTA` where `MULTI` stands for using all available data types.
 + Additional method details found in [JADBio README](jadbio/README.md)
+
 
 # Acknowledgment and Funding
 We would like to thank the National Cancer Institute for the support.
