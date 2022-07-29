@@ -121,19 +121,23 @@ Examples for BRCA cancer cohorts are:
 An example of how to run the prediction workflow is shown [here](tutorial/README.md) using SK Grid best performing gene expression model on a breast cancer cBioPortal dataset.
 
 # Alternative Model Download (Optional)
-Docker images for methods are automatically pulled and built by CWL workflows and tools from the public Synapse repository. Alternatively, Docker images can be manually downloaded and built using:
+Docker images for methods are automatically pulled and built by CWL workflows and tools from the public Synapse repository.
+
+Alternatively:
+1. Docker images can be manually downloaded by going to the publication page for each method image file.
+| ImageFile |
+|---|
+| sk_grid.tar.gz |
+| aklimate.tar.gz |
+| cloudforest.tar.gz |
+| jadbio.tar.gz |
+| subscope.tar.gz |
+
+2. Build each method's docker image.
 ```
-synapse get <synapse-ID>
 docker load -i <imagefile.tar.gz>
 ```
-
-| SynapseID | ImageFile |
-|----|---|
-| syn29658355  | sk_grid.tar.gz |
-| syn29659459  | aklimate.tar.gz |
-| syn30267068  | cloudforest.tar.gz |
-| syn31114207  | jadbio.tar.gz |
-| syn30993770 | subscope.tar.gz |
+Check these images have been successfully loaded with `docker images`.
 
 Note that some methods have an additional model data file to run. These can be found at the publication page (see section Download Method Model Data)
 
