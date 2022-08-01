@@ -750,6 +750,12 @@ jadbio:
     - METH
     - MULTI
     - MUTA
+  LIHCCHOL:
+    - CNVR
+    - GEXP
+    - METH
+    - MULTI
+    - MUTA
   LUAD:
     - CNVR
     - GEXP
@@ -793,14 +799,17 @@ jadbio:
     - MULTI
     - MUTA
   PRAD:
+    - CNVR
     - GEXP
     - METH
     - MIR
+    - MULTI
     - MUTA
   SARC:
     - CNVR
     - GEXP
     - METH
+    - MIR
     - MULTI
     - MUTA
   SKCM:
@@ -808,18 +817,22 @@ jadbio:
     - GEXP
     - METH
     - MIR
+    - MULTI
+    - MUTA
   TGCT:
     - CNVR
     - GEXP
     - METH
     - MIR
     - MULTI
+    - MUTA
   THCA:
     - CNVR
     - GEXP
     - METH
     - MIR
     - MULTI
+    - MUTA
   THYM:
     - CNVR
     - GEXP
