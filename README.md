@@ -37,7 +37,7 @@ The following are required:
 
 
 # Setup
-Create an environment and install dependencies. This will install cwlref-runner version 1.0, this version is required to run analysis.
+1. Create an environment and install dependencies. This will install cwlref-runner version 1.0, this version is required to run analysis.
 ```
 python3 -m venv venv
 . venv/bin/activate
@@ -45,17 +45,17 @@ pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
-Synapse Sign In
+2. Synapse Sign In
 ```
 synapse login --remember-me
 ```
 
-Docker Sign In (if not already)
+3. Docker Sign In (if not already)
 ```
 docker login
 ```
 
-Synapse Docker Registry Sign In - using Syanpse username and password
+4. Synapse Docker Registry Sign In - using Syanpse username and password
 ```
 docker login -u <synapse-username> docker.synapse.org
 ```
