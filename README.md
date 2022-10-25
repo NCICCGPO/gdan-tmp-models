@@ -165,7 +165,7 @@ Model platform name differs for each method, see below:
 + Additional method details found in [CloudForest README](cloudforest/README.md)
 
 ### subSCOPE options
-+ Model options: `CNVR, GEXP, METH, MIR, MUTA`
++ Model options: `allcohorts, CNVR, GEXP, METH, MIR, MUTA` where `allcohorts` is the best model when trained with all cohorts simultaneously and will return the best subtype predictions regardless of cohort (ex. a users dataset can be returned with a mixture of subtypes from breast and liver cancers).
 + Additional method details found in [subSCOPE README](subscope/README.md)
 
 ### JADBio options
