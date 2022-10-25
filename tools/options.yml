@@ -520,6 +520,12 @@ cloudforest:
   - MUTA
   - OVERALL
 subscope:
+  allcohorts:
+    - GEXP
+    - CNVR
+    - METH
+    - MUTA
+    - MIR
   ACC:
     - GEXP
     - CNVR
