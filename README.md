@@ -3,9 +3,9 @@ A collection of machine learning models that make predictions of cancer molecula
 
 These tools were created from the GDAN-TMP group where minimal molecular markers were used to accurately predict 26 different cancer cohorts and 106 subtypes. Of the 1000's of models ran, the models with high predictive accuracy are made available to the public here.
 
-+ For the publication of this work, visit:  <ADD LINK>
++ For the publication of this work, visit: (TBA until after manuscript publication)
 
-+ For the publication page, visit: <ADD LINK>
++ For the publication page, visit: (TBA until after manuscript publication)
 
 > Model data downloads from publication page are required to run certain models
 
