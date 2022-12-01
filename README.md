@@ -75,6 +75,7 @@ python tools/convert.py \
 	--out <relabeled-user-data> \
 	--cancer <cancer>
 ```
+An optional argument of `--delete_i_col` can be included. An optional argument to inform which column to remove (0 based indexing). Use if a meta-data column is in data. If not specified, then will run with no column deletions.
 
 ### 1B. Quantile Rescaling
 Second, relabeled data must be transformed with a quantile rescale prior to running machine learning algorithms. The rescaled output file will always be located in `user-transformed-data/transformed-data.tsv`.
