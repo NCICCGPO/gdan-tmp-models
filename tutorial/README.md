@@ -25,8 +25,10 @@ First, machine learning models need to be able to match genes to GDAN-TMP specif
 python tools/convert.py \
 	--data brca_metabric/data_mrna_agilent_microarray.txt \
 	--out user-transformed-data/cbioportal_BRCA_GEXP.tsv \
-	--cancer BRCA
+	--cancer BRCA \
+	--delete_i_col 1 # this last line is dataset specific. 0 based index
 ```
+Note that the `--delete_i_col` is an optional argument to inform which column to remove (in this case the METABRIC data has a metadata column at index 1 so we will delete this).
 
 Second, data must be transformed with a quantile rescale prior to running machine learning algorithms. The output file can be found at `user-transformed-data/transformed-data.tsv`
 ```
