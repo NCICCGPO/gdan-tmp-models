@@ -11,19 +11,19 @@ This step requires `wget` to be installed already.
 ```
 # Download Gene Expression Data
 wget  https://cbioportal-datahub.s3.amazonaws.com/brca_metabric.tar.gz
-tar -xf brca_metabric.tar.gz brca_metabric/data_mrna_agilent_microarray.txt
+tar -xf brca_metabric.tar.gz brca_metabric/data_mrna_illumina_microarray.txt
 rm brca_metabric.tar.gz
 ```
 
-We will be predicting subtypes for `data_mrna_agilent_microarray.txt`.
+We will be predicting subtypes for `data_mrna_illumina_microarray.txt`.
 
 
 ## Pre-Processing
-First, machine learning models need to be able to match genes to GDAN-TMP specific gene IDs. We will convert `brca_metabric/data_mrna_agilent_microarray.txt` Entrez gene IDs and reformat into a sample x feature matrix (ex. convert gene TP53 to feature N:GEXP::TP53:7157:). The output file can be found at `user-transformed-data/cbioportal_BRCA_GEXP.tsv`.
+First, machine learning models need to be able to match genes to GDAN-TMP specific gene IDs. We will convert `brca_metabric/data_mrna_illumina_microarray.txt` Entrez gene IDs and reformat into a sample x feature matrix (ex. convert gene TP53 to feature N:GEXP::TP53:7157:). The output file can be found at `user-transformed-data/cbioportal_BRCA_GEXP.tsv`.
 ```
 # Rename and format data_mrna_agilent_microarray.txt
 python tools/convert.py \
-	--data brca_metabric/data_mrna_agilent_microarray.txt \
+	--data brca_metabric/data_mrna_illumina_microarray.txt \
 	--out user-transformed-data/cbioportal_BRCA_GEXP.tsv \
 	--cancer BRCA \
 	--delete_i_col 1 # this last line is dataset specific. 0 based index
