@@ -53,7 +53,7 @@ user_entrez = ['155060', '100130426','10357']
 cancer = 'BRCA'
 ```
 ```
-# Use CNVR converter to get ordered list of TMP Feature IDs
+# Use GEXP converter to get ordered list of TMP Feature IDs
 tmp_convert.gexp_converter(user_entrez, cancer)
 ```
 + Next replace these TMP feature IDs with those in your data. Then dedup your data so that there aren't multiple columns that have the same TMP feature ID. If there are multiple columns with the same TMP feature ID then you can randomly select one to keep because our models found that these features exist in the same cytoband and have similar molecular profiles.
