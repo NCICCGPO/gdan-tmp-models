@@ -81,7 +81,7 @@ SK Grid, AKLIMATE, and subSCOPE do not need manual model data download.
 ### 1B. Feature Renaming Reference Files
 Download and decompress the reference files - nrenaming any user data feature to nomenclature that machine learning models will recognize (TMP nomenclature).
 
-The `ft_name_convert.tar.gz` file (syn51315102) can be downloaded from the Publication Page and then placed in `tools/`
+The `ft_name_convert.tar.gz` file (SynapseID syn51315102) can be downloaded from the Publication Page and then placed in `tools/`
 ```
 cd tools
 tar -xzf ft_name_convert.tar.gz
