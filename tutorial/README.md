@@ -26,9 +26,10 @@ python tools/convert.py \
 	--data brca_metabric/data_mrna_illumina_microarray.txt \
 	--out user-transformed-data/cbioportal_BRCA_GEXP.tsv \
 	--cancer BRCA \
-	--delete_i_col 1 # this last line is dataset specific. 0 based index
+	--delete_i_col 1 
+# this last line is dataset specific. 0 based index
 ```
-Note that the `--delete_i_col` is an optional argument to inform which column to remove (in this case the METABRIC data has a metadata column at index 1 so we will delete this).
+Note that the `--delete_i_col` is an optional argument to inform which column to remove (in this case the METABRIC data has a metadata column at index 1 so we will delete this by specifying 1 as the value of `--delete_i_col`).
 
 Second, data must be transformed with a quantile rescale prior to running machine learning algorithms. The output file can be found at `user-transformed-data/transformed-data.tsv`
 ```
