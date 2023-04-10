@@ -3,9 +3,9 @@ def cnvr_converter(data_symbol_list, cancer):
     import json
 
     # Open conversion file and convert
-    with open('tools/entrez2tmp_{}_CNVR.json'.format(cancer), 'r') as fh:
-        entrez2tmp = json.load(fh)
-    return [entrez2tmp[e]['TMP_representative_ft'] for e in data_symbol_list]
+    with open('tools/symbol2tmp_{}_CNVR.json'.format(cancer), 'r') as fh:
+        symbol2tmp = json.load(fh)
+    return [symbol2tmp[e]['TMP_representative_ft'] for e in data_symbol_list]
 
 def gexp_converter(data_entrez_list, cancer):
     '''input list of entrez strings for GEXP. output feature name in TMP nomenclature'''
