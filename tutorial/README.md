@@ -21,7 +21,7 @@ We will be predicting subtypes for `data_mrna_illumina_microarray.txt`.
 ## Pre-Processing
 Run 1 sub-step that corresponds to your data type. If following tutorial with the METABRIC data, then follow the gene expression sub-step.
 
-#### 1.A Gene Expression - Convert Entrez IDs to GDAN-TMP Feature IDs (TMP Nomenclature) and Reformat Matrix
+### 1. Convert Feature Nomenclature of METABRIC data and Reformat Matrix
 Machine learning models need to be able to match genes to GDAN-TMP specific gene IDs. We will convert `brca_metabric/data_mrna_illumina_microarray.txt` Entrez gene IDs and reformat into a sample x feature matrix (ex. convert gene TP53 to feature N:GEXP::TP53:7157:). The output file can be found at `user-transformed-data/cbioportal_BRCA_GEXP.tsv`.
 ```
 # Rename and format data_mrna_illumina_microarray.txt
@@ -34,10 +34,37 @@ python tools/convert.py \
 ```
 Note that the `--delete_i_col` is an optional argument to inform which column to remove (in this case the METABRIC data has a metadata column at index 1 so we will delete this).
 
-#### 1.B Copy Number - Manually Convert Gene Symbols to GDAN-TMP Feature IDs (TMP Nomenclature)
+##### How to Convert Your Data into the Correct Feature Nomenclature (Manual)
+The above section details how to convert features to the nomenclature machine models will recognize (TMP nomenclature) specifically for METACBRIC data. Use this section to convert any data to TMP nomenclature.
+
+**A. Gene Expression Data Example for Three Features (Entrez gene IDs):**
++ First use `tmp_convert()`:
+```
+import sys
+sys.path.append('tools/')
+import tmp_convert
+```
+```
+# Create a list of YOUR data gene symbols
+# Example:
+user_entrez = ['155060', '100130426','10357']
+
+# Specify YOUR cancer cohort
+cancer = 'BRCA'
+```
+```
+# Use CNVR converter to get ordered list of TMP Feature IDs
+tmp_convert.gexp_converter(user_entrez, cancer)
+```
++ Next replace these TMP feature IDs with those in your data. Then dedup your data so that there aren't multiple columns that have the same TMP feature ID. If there are multiple columns with the same TMP feature ID then you can randomly select one to keep because our models found that these features exist in the same cytoband and have similar molecular profiles.
+
++ Finally, make sure your data matrix is formatted where the rows are samples and columns are features
+
+
+**B. Copy Number Variation Data Example for Three Features (gene symbols):**
 Your input data must have the features be gene symbols for using the conversion tool to map it to its corresponding GDAN-TMP feature id.
 
-**First,** if you have copy number variation data you can use the function `tmp_convert()`:
++ First, use `tmp_convert()`:
 ```
 import sys
 sys.path.append('tools/')
@@ -56,9 +83,9 @@ cancer = 'BRCA'
 tmp_convert.cnvr_converter(user_CNVR_symbols, cancer)
 ```
 
-**Next** replace these TMP feature IDs with those in your data. Then dedup your data so that there aren't multiple columns that have the same TMP feature ID. If there are multiple columns with the same TMP feature ID then you can randomly select one to keep because our models found that these features exist in the same cytoband and have similar molecular profiles.
++ Next replace these TMP feature IDs with those in your data. Then dedup your data so that there aren't multiple columns that have the same TMP feature ID. If there are multiple columns with the same TMP feature ID then you can randomly select one to keep because our models found that these features exist in the same cytoband and have similar molecular profiles.
 
-**Finally** make sure your data matrix is formatted where the rows are samples and columns are features
++ Finally, make sure your data matrix is formatted where the rows are samples and columns are features
 
 ### 2. Rescale Data into ML Data Space
 Data must be transformed with a quantile rescale prior to running machine learning algorithms. The output file can be found at `user-transformed-data/transformed-data.tsv`
