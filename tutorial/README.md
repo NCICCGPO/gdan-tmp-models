@@ -34,7 +34,7 @@ python tools/convert.py \
 ```
 Note that the `--delete_i_col` is an optional argument to inform which column to remove (in this case the METABRIC data has a metadata column at index 1 so we will delete this).
 
-##### How to Convert Your Data into the Correct Feature Nomenclature (Manual)
+#### **How to Convert Your Data into the Correct Feature Nomenclature (Manual)**
 The above section details how to convert features to the nomenclature machine models will recognize (TMP nomenclature) specifically for METACBRIC data. Use this section to convert any data to TMP nomenclature.
 
 **A. Gene Expression Data Example for Three Features (Entrez gene IDs):**
