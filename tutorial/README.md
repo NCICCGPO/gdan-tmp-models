@@ -23,6 +23,7 @@ Run 1 sub-step that corresponds to your data type. If following tutorial with th
 
 ### 1. Convert Feature Nomenclature of METABRIC data and Reformat Matrix
 Machine learning models need to be able to match genes to GDAN-TMP specific gene IDs. We will convert `brca_metabric/data_mrna_illumina_microarray.txt` Entrez gene IDs and reformat into a sample x feature matrix (ex. convert gene TP53 to feature N:GEXP::TP53:7157:). The output file can be found at `user-transformed-data/cbioportal_BRCA_GEXP.tsv`.
+
 ```
 # Rename and format data_mrna_illumina_microarray.txt
 python tools/convert.py \
@@ -32,7 +33,7 @@ python tools/convert.py \
 	--delete_i_col 1
 # this last line is dataset specific. 0 based index
 ```
-Note that the `--delete_i_col` is an optional argument to inform which column to remove (in this case the METABRIC data has a metadata column at index 1 so we will delete this).
+Note that the `--delete_i_col` is an optional argument to inform which column to remove (in this case the METABRIC data has a metadata column at index 1 so we will delete this by specifying 1 as the value of `--delete_i_col`).
 
 ### **How to Convert Your Data into the Correct Feature Nomenclature (Manual)**
 The above section details how to convert features to the nomenclature machine models will recognize (TMP nomenclature) specifically for METABRIC data. Use this section to convert any data to TMP nomenclature.
