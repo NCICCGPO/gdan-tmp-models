@@ -61,30 +61,8 @@ docker login -u <synapse-username> docker.synapse.org
 ```
 
 
-# Data Requirements
-User input data must be in tab separated format.
-
-# 1. Pre-processing User Data
-Input data **must have proper feature labeling and rescaling prior** to running machine learning models for subtype predictions.
-
-### 1A. Feature Relabeling and Transposing
-First, machine learning models need to be able to match genes to GDAN-TMP specific gene IDs (ex. convert gene TP53 to feature N:GEXP::TP53:7157:). Then reformatting to a sample x feature matrix.
-```
-python tools/convert.py \
-	--data <original-user-data> \
-	--out <relabeled-user-data> \
-	--cancer <cancer>
-```
-An optional argument of `--delete_i_col` can be included. An optional argument to inform which column to remove (0 based indexing). Use if a meta-data column is in data. If not specified, then will run with no column deletions.
-
-### 1B. Quantile Rescaling
-Second, relabeled data must be transformed with a quantile rescale prior to running machine learning algorithms. The rescaled output file will always be located in `user-transformed-data/transformed-data.tsv`.
-```
-bash tools/run_transform.sh \
-  <relabeled-user-data>
-```
-
-# 2. Download Method Models
+# 1. Download Data (Method Models and Feature Renaming Reference Files)
+### 1A. Method Models
 Certain methods require large or source files to run models. These files are available for download from the Publication page or through Synapse directly.
 
 > Required step: download associated model data for certain methods
@@ -99,6 +77,39 @@ tar -xvf <file.tar.gz>
 ```
 
 SK Grid, AKLIMATE, and subSCOPE do not need manual model data download.
+
+### 1B. Feature Renaming Reference Files
+Download and decompress the reference files - nrenaming any user data feature to nomenclature that machine learning models will recognize (TMP nomenclature).
+
+The `ft_name_convert.tar.gz` file (syn51315102) can be downloaded from the Publication Page and then placed in `tools/`
+```
+cd tools
+tar -xzf ft_name_convert.tar.gz
+cd ..
+```
+
+# Data Requirements
+User input data must be in tab separated format.
+
+# 2. Pre-processing User Data
+Input data **must have proper feature labeling and rescaling prior** to running machine learning models for subtype predictions.
+
+### 2A. Feature Relabeling and Transposing
+First, machine learning models need to be able to match genes to GDAN-TMP specific gene IDs (ex. convert gene TP53 to feature N:GEXP::TP53:7157:). Then reformatting to a sample x feature matrix.
+```
+python tools/convert.py \
+	--data <original-user-data> \
+	--out <relabeled-user-data> \
+	--cancer <cancer>
+```
+An optional argument of `--delete_i_col` can be included. An optional argument to inform which column to remove (0 based indexing). Use if a meta-data column is in data. If not specified, then will run with no column deletions.
+
+### 2B. Quantile Rescaling
+Second, relabeled data must be transformed with a quantile rescale prior to running machine learning algorithms. The rescaled output file will always be located in `user-transformed-data/transformed-data.tsv`.
+```
+bash tools/run_transform.sh \
+  <relabeled-user-data>
+```
 
 # 3. Run Machine Learning Models to Predict Cancer Subtypes
 Simple command to call one of the five methods. This will predict the molecular subtype for each sample `bash RUN_MODEL.sh <arguments>`
