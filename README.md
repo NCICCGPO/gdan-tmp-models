@@ -27,6 +27,24 @@ There are a few **exceptions** to models provided by certain methods, see **"Add
 
 Docker images for each model are pulled automatically in workflow shown in the "Analyze" section below. Docker images are stored in [CCG_TMP_Public Synapse Space](https://www.synapse.org/#!Synapse:syn29568296/docker/).
 
+### Which Machine Learning Models
+We have made publicly available the top models (above section) and any new data can get subtype predictions from these models. Explore these well performing models by seeing the algorithm name, parameters, and required feature list. The feature lists will be returned in TMP nomenclature.
+
+Example of model information. For more details see: [Explore_models.md](tutorial/Explore_models.md)
+```
+{'model': 'sklearn.ensemble.RandomForestClassifier',
+ 'model_params': {'criterion': 'entropy', 'n_estimators': 200},
+ 'fts': ['N:GEXP::CENPA:1058:',
+  'N:GEXP::FOXC1:2296:',
+  'N:GEXP::ESR1:2099:',
+  'N:GEXP::MBOAT1:154141:',
+  'N:GEXP::MIA:8190:',
+  'N:GEXP::ANXA3:306:',
+  'N:GEXP::WDR67:93594:',
+  'N:GEXP::NAT1:9:',
+  'N:GEXP::EXO1:9156:']}
+```
+
 # Requirements
 The following are required:
 
