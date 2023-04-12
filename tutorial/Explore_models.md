@@ -1,5 +1,6 @@
 # Explore the Machine Learning Models
 
+### Retrieve Machine Learning Model Information
 First download the required file to look into the model info, this file can be downloaded from the Publication Page: `model_info.json` (synapseID syn51321047)
 
 
@@ -28,3 +29,12 @@ Will return:
   'N:GEXP::NAT1:9:',
   'N:GEXP::EXO1:9156:']}
 ```
+
+### Allowed Options
+`get_model_info(method, platform, cancer)` allows for:
+
+Options `method` are ['skgrid', 'aklimate', 'cloudforest', 'subscope', 'jadbio']
+
+Options `platform` are ['GEXP', 'CNVR', 'MIR', 'MUTA', 'METH']
+
+Options `cancer` are ['BRCA', 'LGGGBM', 'COADREAD', 'SKCM', 'ACC', 'BLCA', 'CESC', 'ESCC', 'GEA', 'HNSC', 'KIRCKICH', 'KIRP', 'LIHCCHOL', 'LUAD', 'LUSC', 'MESO', 'OV', 'PAAD', 'PCPG', 'PRAD', 'SARC', 'TGCT', 'THCA', 'THYM', 'UCEC', 'UVM']
