@@ -71,6 +71,8 @@ Certain methods require large or source files to run models. These files are ava
 
 **JADBio download** of model data: download from the *publication page* `models_jadbio.tar.gz` (SynapseID syn31110725) into the directory `jadbio/data/` and decompress.
 
+**SK Grid download** of model data: download from the *publication page* `TMP_20230209.tar.gz` (SynapseID syn51081157) into the directory `skgrid/data/src/training_data/` and decompress.
+
 ```
 # In the data dir - Decompress
 tar -xvf <file.tar.gz>
