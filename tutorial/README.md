@@ -39,11 +39,11 @@ Note that the `--delete_i_col` is an optional argument to inform which column to
 The above section details how to convert features to the nomenclature machine models will recognize (TMP nomenclature) specifically for METABRIC data. Use this section to convert any data to TMP nomenclature.
 
 **A. Gene Expression Data Example for Three Features (Entrez gene IDs):**
-+ First use `tmp_convert()`:
++ First use `tools_ml()`:
 ```
 import sys
 sys.path.append('tools/')
-import tmp_convert
+import tools_ml
 ```
 ```
 # Create a list of YOUR data gene symbols
@@ -55,7 +55,7 @@ cancer = 'BRCA'
 ```
 ```
 # Use GEXP converter to get ordered list of TMP Feature IDs
-tmp_convert.gexp_converter(user_entrez, cancer)
+tools_ml.gexp_converter(user_entrez, cancer)
 ```
 + Next replace these TMP feature IDs with those in your data. Then dedup your data so that there aren't multiple columns that have the same TMP feature ID. If there are multiple columns with the same TMP feature ID then you can randomly select one to keep because our models found that these features exist in the same cytoband and have similar molecular profiles.
 
@@ -65,11 +65,11 @@ tmp_convert.gexp_converter(user_entrez, cancer)
 **B. Copy Number Variation Data Example for Three Features (gene symbols):**
 Your input data must have the features be gene symbols for using the conversion tool to map it to its corresponding GDAN-TMP feature id.
 
-+ First, use `tmp_convert()`:
++ First, use `tools_ml()`:
 ```
 import sys
 sys.path.append('tools/')
-import tmp_convert
+import tools_ml
 ```
 ```
 # Create a list of YOUR data gene symbols
@@ -81,7 +81,7 @@ cancer = 'BRCA'
 ```
 ```
 # Use CNVR converter to get ordered list of TMP Feature IDs
-tmp_convert.cnvr_converter(user_CNVR_symbols, cancer)
+tools_ml.cnvr_converter(user_CNVR_symbols, cancer)
 ```
 
 + Next replace these TMP feature IDs with those in your data. Then dedup your data so that there aren't multiple columns that have the same TMP feature ID. If there are multiple columns with the same TMP feature ID then you can randomly select one to keep because our models found that these features exist in the same cytoband and have similar molecular profiles.
