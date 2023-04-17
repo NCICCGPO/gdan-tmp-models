@@ -19,19 +19,77 @@ We will be predicting subtypes for `data_mrna_illumina_microarray.txt`.
 
 
 ## Pre-Processing
-First, machine learning models need to be able to match genes to GDAN-TMP specific gene IDs. We will convert `brca_metabric/data_mrna_illumina_microarray.txt` Entrez gene IDs and reformat into a sample x feature matrix (ex. convert gene TP53 to feature N:GEXP::TP53:7157:). The output file can be found at `user-transformed-data/cbioportal_BRCA_GEXP.tsv`.
+Run 1 sub-step that corresponds to your data type. If following tutorial with the METABRIC data, then follow the gene expression sub-step.
+
+### 1. Convert Feature Nomenclature of METABRIC data and Reformat Matrix
+Machine learning models need to be able to match genes to GDAN-TMP specific gene IDs. We will convert `brca_metabric/data_mrna_illumina_microarray.txt` Entrez gene IDs and reformat into a sample x feature matrix (ex. convert gene TP53 to feature N:GEXP::TP53:7157:). The output file can be found at `user-transformed-data/cbioportal_BRCA_GEXP.tsv`.
+
 ```
 # Rename and format data_mrna_illumina_microarray.txt
 python tools/convert.py \
 	--data brca_metabric/data_mrna_illumina_microarray.txt \
 	--out user-transformed-data/cbioportal_BRCA_GEXP.tsv \
 	--cancer BRCA \
-	--delete_i_col 1 
+	--delete_i_col 1
 # this last line is dataset specific. 0 based index
 ```
 Note that the `--delete_i_col` is an optional argument to inform which column to remove (in this case the METABRIC data has a metadata column at index 1 so we will delete this by specifying 1 as the value of `--delete_i_col`).
 
-Second, data must be transformed with a quantile rescale prior to running machine learning algorithms. The output file can be found at `user-transformed-data/transformed-data.tsv`
+### **How to Convert Your Data into the Correct Feature Nomenclature (Manual)**
+The above section details how to convert features to the nomenclature machine models will recognize (TMP nomenclature) specifically for METABRIC data. Use this section to convert any data to TMP nomenclature.
+
+**A. Gene Expression Data Example for Three Features (Entrez gene IDs):**
++ First use `tools_ml()`:
+```
+import sys
+sys.path.append('tools/')
+import tools_ml
+```
+```
+# Create a list of YOUR data gene symbols
+# Example:
+user_entrez = ['155060', '100130426','10357']
+
+# Specify YOUR cancer cohort
+cancer = 'BRCA'
+```
+```
+# Use GEXP converter to get ordered list of TMP Feature IDs
+tools_ml.gexp_converter(user_entrez, cancer)
+```
++ Next replace these TMP feature IDs with those in your data. Then dedup your data so that there aren't multiple columns that have the same TMP feature ID. If there are multiple columns with the same TMP feature ID then you can randomly select one to keep because our models found that these features exist in the same cytoband and have similar molecular profiles.
+
++ Finally, make sure your data matrix is formatted where the rows are samples and columns are features
+
+
+**B. Copy Number Variation Data Example for Three Features (gene symbols):**
+Your input data must have the features be gene symbols for using the conversion tool to map it to its corresponding GDAN-TMP feature id.
+
++ First, use `tools_ml()`:
+```
+import sys
+sys.path.append('tools/')
+import tools_ml
+```
+```
+# Create a list of YOUR data gene symbols
+# Example:
+user_CNVR_symbols = ['ATAD3C', 'LINC01128','PLEKHG5']
+
+# Specify YOUR cancer cohort
+cancer = 'BRCA'
+```
+```
+# Use CNVR converter to get ordered list of TMP Feature IDs
+tools_ml.cnvr_converter(user_CNVR_symbols, cancer)
+```
+
++ Next replace these TMP feature IDs with those in your data. Then dedup your data so that there aren't multiple columns that have the same TMP feature ID. If there are multiple columns with the same TMP feature ID then you can randomly select one to keep because our models found that these features exist in the same cytoband and have similar molecular profiles.
+
++ Finally, make sure your data matrix is formatted where the rows are samples and columns are features
+
+### 2. Rescale Data into ML Data Space
+Data must be transformed with a quantile rescale prior to running machine learning algorithms. The output file can be found at `user-transformed-data/transformed-data.tsv`
 ```
 # Quantile Rescale
 bash tools/run_transform.sh \

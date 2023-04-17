@@ -1,5 +1,5 @@
 # Introduction
-A collection of machine learning models that make predictions of cancer molecular subtypes. Users can run predictions on their molecular data. Data platforms supported are gene expression, DNA methylation, miRNA, copy number, and/or mutation calls.
+A collection of machine learning models that make predictions of cancer molecular subtypes. Users can predict cancer subtypes on their molecular data. Data platforms supported are gene expression, DNA methylation, miRNA, copy number, and/or mutation calls.
 
 These tools were created from the GDAN-TMP group where minimal molecular markers were used to accurately predict 26 different cancer cohorts and 106 subtypes. Of the 1000's of models ran, the models with high predictive accuracy are made available to the public here.
 
@@ -61,13 +61,42 @@ docker login -u <synapse-username> docker.synapse.org
 ```
 
 
+# 1. Download Data (Method Models and Feature Renaming Reference Files)
+### 1A. Method Models
+Certain methods require large or source files to run models. These files are available for download from the Publication page or through Synapse directly.
+
+> Required step: download associated model data for certain methods
+
+**CloudForest download** of model data: download from the *publication page* `models_cf.tar.gz` (SynapseID syn31752640) into the directory `cloudforest/data/` and decompress.
+
+**JADBio download** of model data: download from the *publication page* `models_jadbio.tar.gz` (SynapseID syn31110725) into the directory `jadbio/data/` and decompress.
+
+**SK Grid download** of model data: download from the *publication page* `TMP_20230209.tar.gz` (SynapseID syn51081157) into the directory `skgrid/data/src/training_data/` and decompress.
+
+```
+# In the data dir - Decompress
+tar -xvf <file.tar.gz>
+```
+
+SK Grid, AKLIMATE, and subSCOPE do not need manual model data download.
+
+### 1B. Feature Renaming Reference Files
+Download and decompress the reference files - nrenaming any user data feature to nomenclature that machine learning models will recognize (TMP nomenclature).
+
+The `ft_name_convert.tar.gz` file (SynapseID syn51315102) can be downloaded from the Publication Page and then placed in `tools/`
+```
+cd tools
+tar -xzf ft_name_convert.tar.gz
+cd ..
+```
+
 # Data Requirements
 User input data must be in tab separated format.
 
-# 1. Pre-processing User Data
+# 2. Pre-processing User Data
 Input data **must have proper feature labeling and rescaling prior** to running machine learning models for subtype predictions.
 
-### 1A. Feature Relabeling and Transposing
+### 2A. Feature Relabeling and Transposing
 First, machine learning models need to be able to match genes to GDAN-TMP specific gene IDs (ex. convert gene TP53 to feature N:GEXP::TP53:7157:). Then reformatting to a sample x feature matrix.
 ```
 python tools/convert.py \
@@ -77,28 +106,12 @@ python tools/convert.py \
 ```
 An optional argument of `--delete_i_col` can be included. An optional argument to inform which column to remove (0 based indexing). Use if a meta-data column is in data. If not specified, then will run with no column deletions.
 
-### 1B. Quantile Rescaling
+### 2B. Quantile Rescaling
 Second, relabeled data must be transformed with a quantile rescale prior to running machine learning algorithms. The rescaled output file will always be located in `user-transformed-data/transformed-data.tsv`.
 ```
 bash tools/run_transform.sh \
   <relabeled-user-data>
 ```
-
-# 2. Download Method Models
-Certain methods require large or source files to run models. These files are available for download from the Publication page or through Synapse directly.
-
-> Required step: download associated model data for certain methods
-
-**CloudForest download** of model data: download from the *publication page* `models_cf.tar.gz` (SynapseID syn31752640) into the directory `cloudforest/data/` and decompress.
-
-**JADBio download** of model data: download from the *publication page* `models_jadbio.tar.gz` (SynapseID syn31110725) into the directory `jadbio/data/` and decompress.
-
-```
-# In the data dir - Decompress
-tar -xvf <file.tar.gz>
-```
-
-SK Grid, AKLIMATE, and subSCOPE do not need manual model data download.
 
 # 3. Run Machine Learning Models to Predict Cancer Subtypes
 Simple command to call one of the five methods. This will predict the molecular subtype for each sample `bash RUN_MODEL.sh <arguments>`
