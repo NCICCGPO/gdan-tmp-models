@@ -59,6 +59,8 @@ tools_ml.gexp_converter(user_entrez, cancer)
 ```
 + Next replace these TMP feature IDs with those in your data. Then dedup your data so that there aren't multiple columns that have the same TMP feature ID. If there are multiple columns with the same TMP feature ID then you can randomly select one to keep because our models found that these features exist in the same cytoband and have similar molecular profiles.
 
++ Next remove any columns with the string name `nan`. These are features not used by machine learning models and therefore aren't need to recieve predictions
+
 + Finally, make sure your data matrix is formatted where the rows are samples and columns are features
 
 
