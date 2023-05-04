@@ -80,7 +80,17 @@ docker login -u <synapse-username> docker.synapse.org
 
 
 # 1. Download Data (Method Models and Feature Renaming Reference Files)
-### 1A. Method Models
+### 1A. Reference files for transform (project matrices)
+Download and decompress the reference files that are used as the target data space for data transformations (ex. quantile rescaling).
+
+The `TMP_20230209.tar.gz` file (SynapseID syn51081157) can be downloaded from the Publication Page and then placed in `tools/`
+```
+cd tools
+tar -xzf TMP_20230209.tar.gz
+cd ..
+```
+
+### 1B. Method Models
 Certain methods require large or source files to run models. These files are available for download from the Publication page or through Synapse directly.
 
 > Required step: download associated model data for certain methods
@@ -89,17 +99,15 @@ Certain methods require large or source files to run models. These files are ava
 
 **JADBio download** of model data: download from the *publication page* `models_jadbio.tar.gz` (SynapseID syn31110725) into the directory `jadbio/data/` and decompress.
 
-**SK Grid download** of model data: download from the *publication page* `TMP_20230209.tar.gz` (SynapseID syn51081157) into the directory `skgrid/data/src/training_data/` and decompress.
-
+**SK Grid download** of model data: copy over this file from tools
 ```
-# In the data dir - Decompress
-tar -xvf <file.tar.gz>
+cp -r tools/TMP_20230209 skgrid/data/src/training_data/
 ```
 
-SK Grid, AKLIMATE, and subSCOPE do not need manual model data download.
+AKLIMATE and subSCOPE do not need manual model data download.
 
-### 1B. Feature Renaming Reference Files
-Download and decompress the reference files - nrenaming any user data feature to nomenclature that machine learning models will recognize (TMP nomenclature).
+### 1C. Feature Renaming Reference Files
+Download and decompress the reference files - renaming any user data feature to nomenclature that machine learning models will recognize (TMP nomenclature).
 
 The `ft_name_convert.tar.gz` file (SynapseID syn51315102) can be downloaded from the Publication Page and then placed in `tools/`
 ```
@@ -107,6 +115,7 @@ cd tools
 tar -xzf ft_name_convert.tar.gz
 cd ..
 ```
+
 
 # Data Requirements
 User input data must be in tab separated format.
@@ -128,7 +137,8 @@ An optional argument of `--delete_i_col` can be included. An optional argument t
 Second, relabeled data must be transformed with a quantile rescale prior to running machine learning algorithms. The rescaled output file will always be located in `user-transformed-data/transformed-data.tsv`.
 ```
 bash tools/run_transform.sh \
-  <relabeled-user-data>
+  <relabeled-user-data> \
+	<cancer>
 ```
 
 # 3. Run Machine Learning Models to Predict Cancer Subtypes
