@@ -95,7 +95,8 @@ Data must be transformed with a quantile rescale prior to running machine learni
 ```
 # Quantile Rescale
 bash tools/run_transform.sh \
-  user-transformed-data/cbioportal_BRCA_GEXP.tsv
+  user-transformed-data/cbioportal_BRCA_GEXP.tsv \
+	BRCA
 ```
 
 
