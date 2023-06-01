@@ -95,6 +95,11 @@ Data must be transformed with a quantile rescale prior to running machine learni
 bash tools/run_transform.sh \
   user-transformed-data/cbioportal_BRCA_GEXP.tsv \
 	BRCA
+
+# Handle 10 quantile differences
+python tools/zero_floor.py \
+  -in user-transformed-data/transformed-data.tsv \
+  -out user-transformed-data/transformed-data.tsv
 ```
 
 
