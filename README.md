@@ -136,9 +136,15 @@ An optional argument of `--delete_i_col` can be included. An optional argument t
 ### 2B. Quantile Rescaling
 Second, relabeled data must be transformed with a quantile rescale prior to running machine learning algorithms. The rescaled output file will always be located in `user-transformed-data/transformed-data.tsv`.
 ```
+# Transform
 bash tools/run_transform.sh \
   <relabeled-user-data> \
 	<cancer>
+
+# Handle 10 quantile differences
+python tools/zero_floor.py \
+  -in user-transformed-data/transformed-data.tsv \
+  -out user-transformed-data/transformed-data.tsv
 ```
 
 # 3. Run Machine Learning Models to Predict Cancer Subtypes
