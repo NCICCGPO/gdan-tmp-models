@@ -1,6 +1,6 @@
 #!/bin/bash
 
-input_data=${1}
+# input_data=${1}
 
 # run cwl tool
 cwl-runner --outdir preds \
