@@ -46,11 +46,5 @@ fi
 
 # Run cwl workflow
 echo 'Starting machine learning job'
-if [[ ${method} == 'cloudforest' ]]
-then
-	cd ${method}
-	bash RUN.sh ${data}
-else
-	cd ${method}
-	bash RUN.sh
-fi
+cd ${method}
+bash RUN.sh
