@@ -9,8 +9,7 @@ requirements:
 
 hints:
   DockerRequirement:
-    dockerPull: cf_v2
-    #dockerPull: docker.synapse.org/syn29568296/cloudforest_all
+    dockerPull: docker.synapse.org/syn29568296/cloudforest_all
 
 
 inputs:

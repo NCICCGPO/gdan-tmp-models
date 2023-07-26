@@ -4,8 +4,7 @@ cwlVersion: v1.0
 class: Workflow
 requirements:
   - class: DockerRequirement
-    dockerPull: cf_v2
-    #dockerPull: docker.synapse.org/syn29568296/cloudforest_all
+    dockerPull: docker.synapse.org/syn29568296/cloudforest_all
   - class: ScatterFeatureRequirement
   - class: StepInputExpressionRequirement
   - class: SubworkflowFeatureRequirement
