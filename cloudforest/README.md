@@ -8,7 +8,7 @@ There will be two results files.
 the actual subtype column will be NA if the subtypes aren't provided by
 the user (this will be most user cases).
 
-2. The model vote file will have the suffix "cloudforest_votes.vo" (full name `<cancer>_<platform>_cloudforest_votes.vo`) and contains the categorical vote totals are kept.  
+2. The model vote file will have the suffix "cloudforest_votes.vo" (full name `<cancer>_<platform>_cloudforest_votes.vo`) and contains the categorical vote totals.  
 
 An input file with the suffix `.sf` is automatically fed into the machine learning model. This is the associated file for the top CloudForest model.
 
