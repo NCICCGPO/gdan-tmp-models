@@ -14,7 +14,8 @@ An input file with the suffix `.sf` is automatically fed into the machine learni
 
 # Model Notations
 
-`ALL` stands for using all available data types.  `OVERALL` is the best model
-for the cohort.  
+The following data platforms can be specified for CloudForest: `All` `CNVR` `GEXP` `METH` `MIR` `MUTA` `OVERALL`. Where
+`All` models must use all available data types (CNVR, GEXP, METH, MIR, and MUT).  `OVERALL` is the best model
+for the cohort (this can be a model that uses a single platform, several platforms, or all platforms; it simply returns the model that had the highest performance).  
 
 CloudForest does not include `MIR` models for `KIRCKICH`, `LGGGBM` or `LIHCCHOL`.
