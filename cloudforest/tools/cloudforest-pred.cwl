@@ -2,9 +2,11 @@
 
 cwlVersion: v1.0
 class: CommandLineTool
-baseCommand: [applyforest, -rfpred, -fm, -preds, ./] # name of command to run
+baseCommand: [applyforest, -rfpred, -fm, -preds, -votes ] # name of command to run
 requirements:
   InlineJavascriptRequirement: {}
+
+
 hints:
   DockerRequirement:
     dockerPull: docker.synapse.org/syn29568296/cloudforest_all
@@ -29,8 +31,18 @@ inputs:
       position: 3
       prefix: -preds
 
+  votes_input:
+    type: string
+    inputBinding:
+      position: 4
+      prefix: -votes
+
 outputs:
   predictionouts:
     type: File
     outputBinding:
       glob: "*.tsv"
+  voting_outs:
+    type: File
+    outputBinding:
+      glob: "*.vo"
