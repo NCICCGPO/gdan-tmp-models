@@ -136,9 +136,30 @@ Our molecular matrix with subtype predictions for each sample is located in the 
 | ...  | ... | ... | ... | ... | ... |
 | SampleN | Subtype2 | 0.44 | 0.87 | ... | 0.18 |
 
+# Generate Summary File of Prediction Results
+All five methods (SK Grid, AKLIMATE, CloudForest, subSCOPE, and JADBio) are ran the same way. However, the output format of the prediction file(s) is specific to each method - view each method's README.md for details. Here we will take care of that for you and generate a single file with the results of all methods.
+
+First let's move our results into a working directory called `results_dir` or any name you'd like. We also specify the cancer cohort and data platform we ran our machine learning models on.
+```
+# Migrate files to the new directory called "results"
+bash tools/migrate.sh BRCA GEXP results_dir
+```
+
+Now let's consolidate each model's results into a single file called `preds.tsv` or any name you'd like. Again, we specify the cancer cohort and data platform. The last argument are the names of all model methods we have ML predictions from, where each is separated by a `.`. The order of the methods does no matter. (example of the alternative sitation where we only ran SK Grid, AKLIMATE, and CloudForest, then this arugment would be skgrid.aklimate.cloudforest)
+```
+bash tools/build_results_file.sh preds.tsv results_dir BRCA GEXP skgrid.cloudforest.jadbio.aklimate.subscope
+```
+
 **Our analysis is now complete!**
 
-All five methods (SK Grid, AKLIMATE, CloudForest, subSCOPE, and JADBio) are ran the same way. However, the output format of the prediction file(s) is specific to each method - view each method's README.md for details.
+The subtype predictions can be found in column `subtype` of the file you specified. An example of the format of this file is shown below.
+
+| sampleID  | subtype | TCGA_cohort | platform | group_prediction_details | skgrid_call | skgrid:BRCA_1 | ... | subscope:BRCA_4|
+|----|---|---| ---| ---|  ---|  ---|  ---|  ---|
+| Sample1 | Subtype1 | cancer | data_platform | Subtype1 |  Subtype1 | 0.93 |  ... | 0.03 |
+| Sample2  | Subtype3 | cancer | data_platform | Subtype1:Subtype3 | Subtype3 | 0.21  | ... | 0.44 |
+| ...  | ... | ... | ... | ... | ... | ... |
+| SampleN | Subtype2 | cancer | data_platform | Subtype1 | Subtype1 | 0.44 | ... | 0.18 |
 
 
 # Understanding RUN_MODEL.sh
