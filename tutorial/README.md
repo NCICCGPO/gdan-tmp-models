@@ -161,6 +161,13 @@ The subtype predictions can be found in column `subtype` of the file you specifi
 | ...  | ... | ... | ... | ... | ... | ... | ... | ... |
 | SampleN | Subtype2 | cancer | data_platform | Subtype1:Subtype2 | Subtype1 | 0.44 | ... | 0.18 |
 
++ `sampleID` sample ID
++ `subtype` single subtype that was predicted by models with highest confidence  (mean confidence across all ML methods)
++ `TCGA_cohort` cancer cohort abbreviation
++ `platform` data type platform
++ `group_prediction_details` tied subtype calls are allowed if equal number of ML methods picked it (will match `subtype` column if no ties)
++ `skgrid_call` subtype with the highest model confidence by SK Grid (same format for each of the other ML methods)
++ `skgrid:BRCA_1` model confidence that a given sample is this particular subtype (same format for each of the other ML methods)
 
 # Understanding RUN_MODEL.sh
 The **first step** called by `RUN_MODEL.sh` is to automatically generate the CWL input file and can be viewed in `user-job-ymls/`. This file will tell the method how to run.
