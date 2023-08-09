@@ -4,7 +4,7 @@ For this tutorial, we will be predicting breast invasive carcinoma subtypes usin
 
 > Here we will build the `SK Grid` method to make predictions on our breast cancer dataset.
 
-## Data Download
+## 1. Data Download
 Be sure to follow the [README](../README.md) sections `Requirements` and `Setup`.
 
 This step requires `wget` to be installed already.
@@ -18,10 +18,10 @@ rm brca_metabric.tar.gz
 We will be predicting subtypes for `data_mrna_illumina_microarray.txt`.
 
 
-## Pre-Processing
+## 2. Pre-Processing
 Run 1 sub-step that corresponds to your data type. If following tutorial with the METABRIC data, then follow the gene expression sub-step.
 
-### 1. Convert Feature Nomenclature of METABRIC data and Reformat Matrix
+### 2.1 Convert Feature Nomenclature of METABRIC data and Reformat Matrix
 Machine learning models need to be able to match genes to GDAN-TMP specific gene IDs. We will convert `brca_metabric/data_mrna_illumina_microarray.txt` Entrez gene IDs and reformat into a sample x feature matrix (ex. convert gene TP53 to feature N:GEXP::TP53:7157:). The output file can be found at `user-transformed-data/cbioportal_BRCA_GEXP.tsv`.
 
 ```
@@ -88,7 +88,7 @@ tmp_convert.cnvr_converter(user_CNVR_symbols, cancer)
 
 + Finally, make sure your data matrix is formatted where the rows are samples and columns are features
 
-### 2. Rescale Data into ML Data Space
+### 2.2 Rescale Data into ML Data Space
 Data must be transformed with a quantile rescale prior to running machine learning algorithms. The output file can be found at `user-transformed-data/transformed-data.tsv`
 ```
 # Quantile Rescale
@@ -103,7 +103,7 @@ python tools/zero_floor.py \
 ```
 
 
-# Platform Options
+## 3. Understanding Platform Options
 There are five methods (SK Grid, AKLIMATE, CloudForst, JADBio, and subSCOPE) and each ran tens to thousands of models. The top performing models of each method, for each of the 26 cancer cohorts have been made available, and include:
 
 1. Best `OVERALL` model - highest performing model
@@ -115,7 +115,7 @@ There are five methods (SK Grid, AKLIMATE, CloudForst, JADBio, and subSCOPE) and
 
 Note: there are some exceptions, see section "Additional Info: Model Selection and Input Specifications" in [README.md](../README.md) for details.
 
-# Predict Sample Subtypes
+## 4. Predicting Sample Subtypes
 Simple command to call one of the five methods. We also will want to pick which of the 6 models we want to use to make our subtype predictions (see the six models listed in Tutorial section "Platform Options").
 
 > Available methods are `skgrid`, `aklimate`, `cloudforest`, `jadbio`, and `subscope`.
@@ -136,7 +136,25 @@ Our molecular matrix with subtype predictions for each sample is located in the 
 | ...  | ... | ... | ... | ... | ... |
 | SampleN | Subtype2 | 0.44 | 0.87 | ... | 0.18 |
 
-# Generate Summary File of Prediction Results
+### Understanding RUN_MODEL.sh
+The **first step** called by `RUN_MODEL.sh` is to automatically generate the CWL input file and can be viewed in `user-job-ymls/`. This file will tell the method how to run.
+
+Below is the content of `user-job-ymls/skgrid-inputs.yml` where we want to predict subtypes on our data "transformed-data.tsv" using the breast cancer model for gene expression only and the output file will have the prefix BRCA_GEXP_skgrid.
+```
+cancer:
+  - BRCA
+platform:
+  - GEXP
+input_data:
+  - class: File
+    path: ../user-transformed-data/transformed-data.tsv
+output_prefix:
+  - BRCA_GEXP_skgrid
+```
+
+The **second step** called by `RUN_MODEL.sh` will run the machine learning model. Models are will make sample level subtype predictions for our dataset. This is ran in a Docker container that is created by a CWL workflow. Certain methods have multiple steps (executed as tools), for instance SK Grid will generate a large library of different machine learning models, train models using TCGA data then save trained models as pickles, and predict subtypes for each sample in our dataset.
+
+## 5. Generate Summary File of Prediction Results
 All five methods (SK Grid, AKLIMATE, CloudForest, subSCOPE, and JADBio) are ran the same way. However, the output format of the prediction file(s) is specific to each method - view each method's README.md for details. Here we will take care of that for you and generate a single file with the results of all methods.
 
 First let's move our results into a working directory called `results_dir` or any name you'd like. We also specify the cancer cohort and data platform we ran our machine learning models on.
@@ -167,21 +185,3 @@ The subtype predictions can be found in column `subtype` of the file you specifi
 + `group_prediction_details` tied subtype calls are allowed if equal number of ML methods picked it (will match `subtype` column if no ties)
 + `skgrid_call` subtype with the highest model confidence by SK Grid (same format for each of the other ML methods)
 + `skgrid:BRCA_1` model confidence that a given sample is this particular subtype (same format for each of the other ML methods)
-
-# Understanding RUN_MODEL.sh
-The **first step** called by `RUN_MODEL.sh` is to automatically generate the CWL input file and can be viewed in `user-job-ymls/`. This file will tell the method how to run.
-
-Below is the content of `user-job-ymls/skgrid-inputs.yml` where we want to predict subtypes on our data "transformed-data.tsv" using the breast cancer model for gene expression only and the output file will have the prefix BRCA_GEXP_skgrid.
-```
-cancer:
-  - BRCA
-platform:
-  - GEXP
-input_data:
-  - class: File
-    path: ../user-transformed-data/transformed-data.tsv
-output_prefix:
-  - BRCA_GEXP_skgrid
-```
-
-The **second step** called by `RUN_MODEL.sh` will run the machine learning model. Models are will make sample level subtype predictions for our dataset. This is ran in a Docker container that is created by a CWL workflow. Certain methods have multiple steps (executed as tools), for instance SK Grid will generate a large library of different machine learning models, train models using TCGA data then save trained models as pickles, and predict subtypes for each sample in our dataset.
