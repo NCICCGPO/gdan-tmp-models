@@ -158,8 +158,8 @@ The subtype predictions can be found in column `subtype` of the file you specifi
 |----|---|---| ---| ---|  ---|  ---|  ---|  ---|
 | Sample1 | Subtype1 | cancer | data_platform | Subtype1 |  Subtype1 | 0.93 |  ... | 0.03 |
 | Sample2  | Subtype3 | cancer | data_platform | Subtype1:Subtype3 | Subtype3 | 0.21  | ... | 0.44 |
-| ...  | ... | ... | ... | ... | ... | ... |
-| SampleN | Subtype2 | cancer | data_platform | Subtype1 | Subtype1 | 0.44 | ... | 0.18 |
+| ...  | ... | ... | ... | ... | ... | ... | ... | ... |
+| SampleN | Subtype2 | cancer | data_platform | Subtype1:Subtype2 | Subtype1 | 0.44 | ... | 0.18 |
 
 
 # Understanding RUN_MODEL.sh
