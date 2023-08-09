@@ -141,7 +141,6 @@ All five methods (SK Grid, AKLIMATE, CloudForest, subSCOPE, and JADBio) are ran 
 
 First let's move our results into a working directory called `results_dir` or any name you'd like. We also specify the cancer cohort and data platform we ran our machine learning models on.
 ```
-# Migrate files to the new directory called "results"
 bash tools/migrate.sh BRCA GEXP results_dir
 ```
 
