@@ -57,8 +57,8 @@ for s in s1.index:
         final_call = ':'.join(final_call)
         no_ties_col.append(final_call)
         final_subtype_call.append(final_call)
-base.insert(2, 'group_prediction_details', no_ties_col)
-base.insert(0, 'subtype', final_subtype_call)
+base.insert(2, 'group_prediction_details', final_subtype_call)
+base.insert(0, 'subtype', no_ties_col)
 
 # Save
 base.to_csv(args.outfile, sep='\t', index=True)
