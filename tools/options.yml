@@ -150,7 +150,7 @@ aklimate:
   - CNVR
   - METH
 cloudforest:
-  ACC: &id001
+  ACC:
   - All
   - CNVR
   - GEXP
@@ -158,37 +158,203 @@ cloudforest:
   - MIR
   - MUTA
   - OVERALL
-  BLCA: *id001
-  BRCA: *id001
-  CESC: *id001
-  COADREAD: *id001
-  ESCC: *id001
-  GEA: *id001
-  HNSC: *id001
-  KIRCKICH: &id002
+  BLCA:
+  - All
+  - CNVR
+  - GEXP
+  - METH
+  - MIR
+  - MUTA
+  - OVERALL
+  BRCA:
+  - All
+  - CNVR
+  - GEXP
+  - METH
+  - MIR
+  - MUTA
+  - OVERALL
+  CESC:
+  - All
+  - CNVR
+  - GEXP
+  - METH
+  - MIR
+  - MUTA
+  - OVERALL
+  COADREAD:
+  - All
+  - CNVR
+  - GEXP
+  - METH
+  - MIR
+  - MUTA
+  - OVERALL
+  ESCC:
+  - All
+  - CNVR
+  - GEXP
+  - METH
+  - MIR
+  - MUTA
+  - OVERALL
+  GEA:
+  - All
+  - CNVR
+  - GEXP
+  - METH
+  - MIR
+  - MUTA
+  - OVERALL
+  HNSC:
+  - All
+  - CNVR
+  - GEXP
+  - METH
+  - MIR
+  - MUTA
+  - OVERALL
+  KIRCKICH:
   - All
   - CNVR
   - GEXP
   - METH
   - MUTA
   - OVERALL
-  KIRP: *id001
-  LGGGBM: *id002
-  LIHCCHOL: *id002
-  LUAD: *id001
-  LUSC: *id001
-  MESO: *id001
-  OV: *id001
-  PAAD: *id001
-  PCPG: *id001
-  PRAD: *id001
-  SARC: *id001
-  SKCM: *id001
-  TGCT: *id001
-  THCA: *id001
-  THYM: *id001
-  UCEC: *id001
-  UVM: *id001
+  KIRP:
+  - All
+  - CNVR
+  - GEXP
+  - METH
+  - MIR
+  - MUTA
+  - OVERALL
+  LGGGBM:
+  - All
+  - CNVR
+  - GEXP
+  - METH
+  - MUTA
+  - OVERALL
+  LIHCCHOL:
+  - All
+  - CNVR
+  - GEXP
+  - METH
+  - MUTA
+  - OVERALL
+  LUAD:
+  - All
+  - CNVR
+  - GEXP
+  - METH
+  - MIR
+  - MUTA
+  - OVERALL
+  LUSC:
+  - All
+  - CNVR
+  - GEXP
+  - METH
+  - MIR
+  - MUTA
+  - OVERALL
+  MESO:
+  - All
+  - CNVR
+  - GEXP
+  - METH
+  - MIR
+  - MUTA
+  - OVERALL
+  OV:
+  - All
+  - CNVR
+  - GEXP
+  - METH
+  - MIR
+  - MUTA
+  - OVERALL
+  PAAD:
+  - All
+  - CNVR
+  - GEXP
+  - METH
+  - MIR
+  - MUTA
+  - OVERALL
+  PCPG:
+  - All
+  - CNVR
+  - GEXP
+  - METH
+  - MIR
+  - MUTA
+  - OVERALL
+  PRAD:
+  - All
+  - CNVR
+  - GEXP
+  - METH
+  - MIR
+  - MUTA
+  - OVERALL
+  SARC:
+  - All
+  - CNVR
+  - GEXP
+  - METH
+  - MIR
+  - MUTA
+  - OVERALL
+  SKCM:
+  - All
+  - CNVR
+  - GEXP
+  - METH
+  - MIR
+  - MUTA
+  - OVERALL
+  TGCT:
+  - All
+  - CNVR
+  - GEXP
+  - METH
+  - MIR
+  - MUTA
+  - OVERALL
+  THCA:
+  - All
+  - CNVR
+  - GEXP
+  - METH
+  - MIR
+  - MUTA
+  - OVERALL
+  THYM:
+  - All
+  - CNVR
+  - GEXP
+  - METH
+  - MIR
+  - MUTA
+  - OVERALL
+  UCEC:
+  - All
+  - CNVR
+  - GEXP
+  - METH
+  - MIR
+  - MUTA
+  - OVERALL
+  UVM:
+  - All
+  - CNVR
+  - GEXP
+  - METH
+  - MIR
+  - MUTA
+  - OVERALL
 jadbio:
   ACC:
   - CNVR
