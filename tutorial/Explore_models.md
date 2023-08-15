@@ -35,6 +35,6 @@ Will return:
 
 Options `method` are ['skgrid', 'aklimate', 'cloudforest', 'subscope', 'jadbio']
 
-Options `platform` are ['GEXP', 'CNVR', 'MIR', 'MUTA', 'METH']
+Options `platform` are ['GEXP', 'CNVR', 'MIR', 'MUTA', 'METH', 'OVERALL', 'All']. Note 'OVERALL' and 'All' are for CloudForest only
 
 Options `cancer` are ['BRCA', 'LGGGBM', 'COADREAD', 'SKCM', 'ACC', 'BLCA', 'CESC', 'ESCC', 'GEA', 'HNSC', 'KIRCKICH', 'KIRP', 'LIHCCHOL', 'LUAD', 'LUSC', 'MESO', 'OV', 'PAAD', 'PCPG', 'PRAD', 'SARC', 'TGCT', 'THCA', 'THYM', 'UCEC', 'UVM']
