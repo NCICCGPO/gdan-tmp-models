@@ -1,18 +1,18 @@
 # Explore the Machine Learning Models
 
 ### Retrieve Machine Learning Model Information
-First download the required file to look into the model info, this file can be downloaded from the Publication Page: `model_info.json` (synapseID syn51321047)
+First download the required file to look into the model info, this file can be downloaded from the Publication Page: `model_info.json`
 
 
-Use the `get_model_info(method, platform, cancer)` from the tmp_convert module.
+Use the `get_model_info(method, platform, cancer)` from the tools_ml module.
 ```
 import sys
 sys.path.append('tools/')
-import tmp_convert
+import tools_ml
 
 
 # Example: top model of SK Grid, gene expression only model for breast cancer
-tmp_convert.get_model_info('skgrid', 'GEXP', 'BRCA')
+tools_ml.get_model_info('skgrid', 'GEXP', 'BRCA')
 ```
 
 Will return:
