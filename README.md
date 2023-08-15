@@ -83,7 +83,7 @@ docker login -u <synapse-username> docker.synapse.org
 ### 1A. Reference files for transform (project matrices)
 Download and decompress the reference files that are used as the target data space for data transformations (ex. quantile rescaling).
 
-The `TMP_20230209.tar.gz` file (SynapseID syn51081157) can be downloaded from the Publication Page and then placed in `tools/`
+The `TMP_20230209.tar.gz` file can be downloaded from the Publication Page and then placed in `tools/`
 ```
 cd tools
 tar -xzf TMP_20230209.tar.gz
@@ -91,13 +91,13 @@ cd ..
 ```
 
 ### 1B. Method Models
-Certain methods require large or source files to run models. These files are available for download from the Publication page or through Synapse directly.
+Certain methods require large or source files to run models. These files are available for download from the Publication page.
 
 > Required step: download associated model data for certain methods
 
-**CloudForest download** of model data: download from the *publication page* `models_cf.tar.gz` (SynapseID syn31752640) into the directory `cloudforest/data/` and decompress.
+**CloudForest download** of model data: download from the *publication page* `models_cf.tar.gz` into the directory `cloudforest/data/` and decompress.
 
-**JADBio download** of model data: download from the *publication page* `models_jadbio.tar.gz` (SynapseID syn31110725) into the directory `jadbio/data/` and decompress.
+**JADBio download** of model data: download from the *publication page* `models_jadbio.tar.gz` into the directory `jadbio/data/` and decompress.
 
 **SK Grid download** of model data: copy over this file from tools
 ```
@@ -109,7 +109,7 @@ AKLIMATE and subSCOPE do not need manual model data download.
 ### 1C. Feature Renaming Reference Files
 Download and decompress the reference files - renaming any user data feature to nomenclature that machine learning models will recognize (TMP nomenclature).
 
-The `ft_name_convert.tar.gz` file (SynapseID syn51315102) can be downloaded from the Publication Page and then placed in `tools/`
+The `ft_name_convert.tar.gz` file can be downloaded from the Publication Page and then placed in `tools/`
 ```
 cd tools
 tar -xzf ft_name_convert.tar.gz
