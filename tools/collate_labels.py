@@ -6,6 +6,7 @@ parser.add_argument('-p', '--platform',required = True, choices=['GEXP', 'MUTA',
 parser.add_argument('-c','--cancer_list', action='append', help='<Required> Set flag, where each cancer is listed', required=True)
 parser.add_argument('-i_dir', '--input_dir',required = False, help="input dir (ex. pred-alchemist)",  type=str)
 parser.add_argument('-o', '--outfile',required = False, help="output file name",  type=str)
+parser.add_argument('-m','--method_list', required=True, help='<Required> Set flag, where each method is listed', type=str)
 args = parser.parse_args()
 
 print('Collating labels')
@@ -15,9 +16,9 @@ with open(args.outfile, 'w') as out:
     out.write('sampleID\tsubtype_prediction\tTCGA_cohort\tplatform\tmethod\n')
 
 for TCGA_cohort in args.cancer_list:
-    for ml_method in ['skgrid', 'cloudforest', 'jadbio', 'aklimate', 'subscope']:
+    for ml_method in args.method_list.split('.'):
         if ml_method == 'jadbio':
-            file = '{}/{}/{}_{}_{}_preds.csv'.format(args.input_dir,TCGA_cohort,TCGA_cohort,args.platform, ml_method)
+            file = '{}/{}/{}_{}_jadbio_preds.csv'.format(args.input_dir,TCGA_cohort,TCGA_cohort,args.platform)
         else:
             file = '{}/{}/{}_{}_{}_preds.tsv'.format(args.input_dir,TCGA_cohort,TCGA_cohort,args.platform, ml_method)
         # Append to results file
@@ -54,7 +55,8 @@ for TCGA_cohort in args.cancer_list:
                         for i in range(1,len(header)):
                             if float(line[i])>probabilty_tracker['prob']:
                                 probabilty_tracker['prob']=float(line[i])
-                                probabilty_tracker['subtype']=TCGA_cohort+'_'+header[i].split(':')[1].split(' ')[0]
+                                assert header[i].strip().split('=')[-1].split(' ')[1].split('_')[0]==TCGA_cohort
+                                probabilty_tracker['subtype']=header[i].strip().split('=')[-1].split(' ')[1]
                         subtype_prediction = probabilty_tracker['subtype']
                         # Append results
                         out.write('{}\t{}\t{}\t{}\t{}\n'.format(sampleID,subtype_prediction, TCGA_cohort, args.platform, ml_method))
