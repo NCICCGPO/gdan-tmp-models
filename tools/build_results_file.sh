@@ -12,7 +12,8 @@ python tools/collate_labels.py \
 	--input_dir ${prediction_dir} \
 	-o ${prediction_dir}/midway/midway.subtype_predictions_${cancer}_${platform}.tsv \
 	-c ${cancer} \
-	-p ${platform}
+	-p ${platform} \
+	--method_list ${methods}
 # Add model probabilities
 python tools/collate_probs.py \
 	--input_dir ${prediction_dir} \
