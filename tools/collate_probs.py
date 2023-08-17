@@ -29,9 +29,11 @@ for cancer in args.cancer_list:
         probs = cancer2subtype[cancer]
 
         if ml_method == 'jadbio':
-            file = '{}/{}/{}_{}_{}_preds.csv'.format(args.input_dir,cancer,cancer,args.platform, ml_method)
+            file = '{}/{}/{}_{}_jadbio_preds.csv'.format(args.input_dir,cancer,cancer,args.platform)
         elif ml_method == 'cloudforest':
-            file = '{}/{}/{}_{}_{}_votes.vo'.format(args.input_dir,cancer,cancer,args.platform, ml_method)
+            file = '{}/{}/{}_{}_cloudforest_votes.vo'.format(args.input_dir,cancer,cancer,args.platform)
+        elif ml_method == 'subscope':
+            file = '{}/{}/{}_{}_subscope_confidence.tsv'.format(args.input_dir,cancer,  cancer, args.platform)
         else:
             file = '{}/{}/{}_{}_{}_preds.tsv'.format(args.input_dir,cancer,cancer,args.platform, ml_method)
 
