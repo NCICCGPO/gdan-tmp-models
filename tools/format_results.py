@@ -26,7 +26,7 @@ for method,df in results_d.items():
         base = pd.merge(base, df, on=['sampleID', 'TCGA_cohort', 'platform'], how='outer')
 
 # all absolute sample subtype call column
-# this shows the most voted for subtype
+# this shows the most voted-for subtype
 cols = list(map(lambda x: x + '_call', methods ))
 s1 = base[cols]
 final_subtype_call=[]
