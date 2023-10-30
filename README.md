@@ -28,7 +28,7 @@ There are a few **exceptions** to models provided by certain methods, see **"Add
 Docker images for each model are pulled automatically in workflow shown in the "Analyze" section below. Docker images are stored in [CCG_TMP_Public Synapse Space](https://www.synapse.org/#!Synapse:syn29568296/docker/).
 
 ### Which Machine Learning Models
-We have made publicly available the top models (above section) and any new data can get subtype predictions from these models. Explore these well performing models by seeing the algorithm name, parameters, and required feature list. The feature lists will be returned in TMP nomenclature.
+We have made publicly available the top models (above section) and any new data can get subtype predictions from these models. Explore these well-performing models by seeing the algorithm name, parameters, and required feature list. The feature lists will be returned in TMP nomenclature.
 
 Example of model information. For more details see: [Explore_models.md](tutorial/Explore_models.md)
 ```
@@ -119,7 +119,7 @@ cd ..
 
 
 # Data Requirements
-User input data must be in tab separated format.
+User input data must be in tab separated format. Where original user data has rows labeled with samples and columns labeled with features (ex. genes).
 
 # 2. Pre-processing User Data
 Input data **must have proper feature labeling and rescaling prior** to running machine learning models for subtype predictions.
