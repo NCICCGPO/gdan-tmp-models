@@ -36,7 +36,7 @@ def get_model_info(method, platform, cancer):
 
     options method = ['skgrid', 'aklimate', 'cloudforest', 'subscope', 'jadbio']
     options platform = ['GEXP', 'CNVR', 'MIR', 'MUTA', 'METH']
-    options cancer = ['BRCA', 'LGGGBM', 'COADREAD', 'SKCM', 'ACC', 'BLCA', 'CESC', 'ESCC', 'GEA', 'HNSC', 'KIRCKICH', 'KIRP', 'LIHCCHOL', 'LUAD', 'LUSC', 'MESO', 'OV', 'PAAD', 'PCPG', 'PRAD', 'SARC', 'TGCT', 'THCA', 'THYM', 'UCEC', 'UVM']
+    options cancer = ['ACC', 'BRCA', 'BLCA', 'CESC', 'COADREAD', 'ESCC', 'GEA', 'HNSC', 'KIRCKICH', 'KIRP', 'LGGGBM', 'LIHCCHOL', 'LUAD', 'LUSC', 'MESO', 'OV', 'PAAD', 'PCPG', 'PRAD', 'SARC', 'SKCM', 'TGCT', 'THCA', 'THYM', 'UCEC', 'UVM']
     '''
     import json
 
