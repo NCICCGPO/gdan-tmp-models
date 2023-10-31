@@ -27,6 +27,24 @@ There are a few **exceptions** to models provided by certain methods, see **"Add
 
 Docker images for each model are pulled automatically in workflow shown in the "Analyze" section below. Docker images are stored in [CCG_TMP_Public Synapse Space](https://www.synapse.org/#!Synapse:syn29568296/docker/).
 
+### Which Machine Learning Models
+We have made publicly available the top models (above section) and any new data can get subtype predictions from these models. Explore these well-performing models by seeing the algorithm name, parameters, and required feature list. The feature lists will be returned in TMP nomenclature.
+
+Example of model information. For more details see: [Explore_models.md](tutorial/Explore_models.md)
+```
+{'model': 'sklearn.ensemble.RandomForestClassifier',
+ 'model_params': {'criterion': 'entropy', 'n_estimators': 200},
+ 'fts': ['N:GEXP::CENPA:1058:',
+  'N:GEXP::FOXC1:2296:',
+  'N:GEXP::ESR1:2099:',
+  'N:GEXP::MBOAT1:154141:',
+  'N:GEXP::MIA:8190:',
+  'N:GEXP::ANXA3:306:',
+  'N:GEXP::WDR67:93594:',
+  'N:GEXP::NAT1:9:',
+  'N:GEXP::EXO1:9156:']}
+```
+
 # Requirements
 The following are required:
 
@@ -65,21 +83,22 @@ docker login -u <synapse-username> docker.synapse.org
 ### 1A. Reference files for transform (project matrices)
 Download and decompress the reference files that are used as the target data space for data transformations (ex. quantile rescaling).
 
-The `TMP_20230209.tar.gz` file (SynapseID syn51081157) can be downloaded from the Publication Page and then placed in `tools/`
+The `TMP_20230209.tar.gz` file can be downloaded from the Publication Page and then placed in `tools/`
 ```
 cd tools
 tar -xzf TMP_20230209.tar.gz
 cd ..
 ```
 
+
 ### 1B. Method Models
-Certain methods require large or source files to run models. These files are available for download from the Publication page or through Synapse directly.
+Certain methods require large or source files to run models. These files are available for download from the Publication page.
 
 > Required step: download associated model data for certain methods
 
-**CloudForest download** of model data: download from the *publication page* `models_cf.tar.gz` (SynapseID syn31752640) into the directory `cloudforest/data/` and decompress.
+**CloudForest download** of model data: download from the *publication page* `models_cf.tar.gz` into the directory `cloudforest/data/` and decompress.
 
-**JADBio download** of model data: download from the *publication page* `models_jadbio.tar.gz` (SynapseID syn31110725) into the directory `jadbio/data/` and decompress.
+**JADBio download** of model data: download from the *publication page* `models_jadbio.tar.gz` into the directory `jadbio/data/` and decompress.
 
 **SK Grid download** of model data: copy over this file from tools
 ```
@@ -91,15 +110,16 @@ AKLIMATE and subSCOPE do not need manual model data download.
 ### 1C. Feature Renaming Reference Files
 Download and decompress the reference files - renaming any user data feature to nomenclature that machine learning models will recognize (TMP nomenclature).
 
-The `ft_name_convert.tar.gz` file (SynapseID syn51315102) can be downloaded from the Publication Page and then placed in `tools/`
+The `ft_name_convert.tar.gz` file can be downloaded from the Publication Page and then placed in `tools/`
 ```
 cd tools
 tar -xzf ft_name_convert.tar.gz
 cd ..
 ```
 
+
 # Data Requirements
-User input data must be in tab separated format.
+User input data must be in tab separated format. Where original user data has rows labeled with samples and columns labeled with features (ex. genes).
 
 # 2. Pre-processing User Data
 Input data **must have proper feature labeling and rescaling prior** to running machine learning models for subtype predictions.
@@ -117,9 +137,15 @@ An optional argument of `--delete_i_col` can be included. An optional argument t
 ### 2B. Quantile Rescaling
 Second, relabeled data must be transformed with a quantile rescale prior to running machine learning algorithms. The rescaled output file will always be located in `user-transformed-data/transformed-data.tsv`.
 ```
+# Transform
 bash tools/run_transform.sh \
   <relabeled-user-data> \
 	<cancer>
+
+# Handle 10 quantile differences
+python tools/zero_floor.py \
+  -in user-transformed-data/transformed-data.tsv \
+  -out user-transformed-data/transformed-data.tsv
 ```
 
 # 3. Run Machine Learning Models to Predict Cancer Subtypes
@@ -176,23 +202,55 @@ Each method file is slightly different, but all will require selection of at lea
 Model platform name differs for each method, see below:
 
 ### SK Grid options
-+ Model options: `OVERALL, CNVR, GEXP, METH, MIR, or MUTA` where OVERALL is the highest performing model regardless of platform (can be single data platform type or a combination).
++ Model options: `OVERALL`, `CNVR`, `GEXP`, `METH`, `MIR`, or `MUTA`
++ `GEXP` best model that uses only mRNA expression (gene expression) for predictions
++ `CNVR` best model that uses only copy number variation for predictions
++ `METH` best model that uses only DNA methylation for predictions
++ `MIR` best model that uses only miRNA for predictions
++ `MUTA` best model that uses only somatic mutations for predictions
++ `OVERALL` best model regardless of platform (can be single data platform type or a combination of platforms).
 + Additional method details found in [SK Grid README](skgrid/README.md)
 
 ### AKLIMATE options
-+ Model options: `TOP, GEXP, CNVR, METH, or MULTI` where TOP is the highest performing model regardless of platform (can be single data platform type or a combination). MULTI is a combination of multiple data platform types.
++ Model options: `TOP`, `GEXP`, `CNVR`, `METH`, or `MULTI`
++ `GEXP` best model that uses only mRNA expression (gene expression) for predictions
++ `CNVR` best model that uses only copy number variation for predictions
++ `METH` best model that uses only DNA methylation for predictions
++ `MIR` best model that uses only miRNA for predictions
++ `MUTA` best model that uses only somatic mutations for predictions
++ `TOP` best model regardless of platform (can be single data platform type or a combination of platforms). *(recommended over MULTI)*
++ `MULTI` best model *can* use all available data types (CNVR, GEXP, METH, MIR, and MUTA)
 + Additional method details found in [AKLIMATE README](aklimate/README.md)
 
 ### CloudForest options
-+ Model options: `OVERALL, MULTI, CNVR, GEXP, METH, MIR, or MUTA` where `OVERALL` is the best model for the cancer cohort. `MULTI` stands for using all available data types. **Not all cancer cohorts have a MULTI model** this only occurs if it is the highest performing model (of all models) is a non-single data platform model.
++ Model options: `OVERALL`, `All`, `CNVR`, `GEXP`, `METH`, `MIR`, or `MUTA`
++ `GEXP` best model that uses only mRNA expression (gene expression) for predictions
++ `CNVR` best model that uses only copy number variation for predictions
++ `METH` best model that uses only DNA methylation for predictions
++ `MIR` best model that uses only miRNA for predictions
++ `MUTA` best model that uses only somatic mutations for predictions
++ `OVERALL` best model regardless of platform (this can be a model that uses a single platform, several platforms, or all platforms; it simply returns the model that had the highest performance). *(recommended over MULTI)*
++ `All` best model *must* use all available data types (CNVR, GEXP, METH, MIR, and MUTA)
 + Additional method details found in [CloudForest README](cloudforest/README.md)
 
 ### subSCOPE options
-+ Model options: `allcohorts, CNVR, GEXP, METH, MIR, MUTA` where `allcohorts` is the best model when trained with all cohorts simultaneously and will return the best subtype predictions regardless of cohort (ex. a users dataset can be returned with a mixture of subtypes from breast and liver cancers).
++ Model options: `allcohorts`, `CNVR`, `GEXP`, `METH`, `MIR`, or `MUTA`
++ `GEXP` best model that uses only mRNA expression (gene expression) for predictions
++ `CNVR` best model that uses only copy number variation for predictions
++ `METH` best model that uses only DNA methylation for predictions
++ `MIR` best model that uses only miRNA for predictions
++ `MUTA` best model that uses only somatic mutations for predictions
++ `allcohorts` best model that can predict on a mixed cancer cohort (ex. pancreatic tumors can be mixed with breast tumors). Will return the best subtype predictions regardless of cohort
 + Additional method details found in [subSCOPE README](subscope/README.md)
 
 ### JADBio options
-+ Model options: `MULTI, CNVR, GEXP, METH, MIR, MUTA` where `MULTI` stands for using all available data types.
++ Model options: `MULTI`, `CNVR`, `GEXP`, `METH`, `MIR`, or `MUTA`
++ `GEXP` best model that uses only mRNA expression (gene expression) for predictions
++ `CNVR` best model that uses only copy number variation for predictions
++ `METH` best model that uses only DNA methylation for predictions
++ `MIR` best model that uses only miRNA for predictions
++ `MUTA` best model that uses only somatic mutations for predictions
++ `MULTI` best model that *must* use all available data types
 + Additional method details found in [JADBio README](jadbio/README.md)
 
 

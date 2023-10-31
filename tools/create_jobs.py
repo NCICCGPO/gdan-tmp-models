@@ -67,6 +67,8 @@ elif args.method == 'cloudforest':
         fh.write('    path: ../{}\n'.format(rf_file))
         fh.write('preds_input:\n')
         fh.write('  - {}_preds.tsv\n'.format(args.outname))
+        fh.write('votes_input:\n')
+        fh.write('  - {}_votes.vo\n'.format(args.outname))
 
 elif args.method == 'subscope':
     # Test if user inputs valid

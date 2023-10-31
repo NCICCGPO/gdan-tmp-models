@@ -1,180 +1,3 @@
-skgrid:
-  ACC:
-    - OVERALL
-    - GEXP
-    - CNVR
-    - METH
-    - MUTA
-    - MIR
-  BLCA:
-    - OVERALL
-    - GEXP
-    - CNVR
-    - METH
-    - MUTA
-    - MIR
-  BRCA:
-    - OVERALL
-    - GEXP
-    - CNVR
-    - METH
-    - MUTA
-    - MIR
-  CESC:
-    - OVERALL
-    - GEXP
-    - CNVR
-    - METH
-    - MUTA
-    - MIR
-  COADREAD:
-    - OVERALL
-    - GEXP
-    - CNVR
-    - METH
-    - MUTA
-    - MIR
-  ESCC:
-    - OVERALL
-    - GEXP
-    - CNVR
-    - METH
-    - MUTA
-    - MIR
-  GEA:
-    - OVERALL
-    - GEXP
-    - CNVR
-    - METH
-    - MUTA
-    - MIR
-  HNSC:
-    - OVERALL
-    - GEXP
-    - CNVR
-    - METH
-    - MUTA
-    - MIR
-  KIRCKICH:
-    - OVERALL
-    - GEXP
-    - CNVR
-    - METH
-    - MUTA
-  KIRP:
-    - OVERALL
-    - GEXP
-    - CNVR
-    - METH
-    - MUTA
-    - MIR
-  LGGGBM:
-    - OVERALL
-    - GEXP
-    - CNVR
-    - METH
-    - MUTA
-  LIHCCHOL:
-    - OVERALL
-    - GEXP
-    - CNVR
-    - METH
-    - MUTA
-  LUAD:
-    - OVERALL
-    - GEXP
-    - CNVR
-    - METH
-    - MUTA
-    - MIR
-  LUSC:
-    - OVERALL
-    - GEXP
-    - CNVR
-    - METH
-    - MUTA
-    - MIR
-  MESO:
-    - OVERALL
-    - GEXP
-    - CNVR
-    - METH
-    - MIR
-  OV:
-    - OVERALL
-    - GEXP
-    - CNVR
-    - METH
-    - MIR
-  PAAD:
-    - OVERALL
-    - GEXP
-    - CNVR
-    - METH
-    - MIR
-  PCPG:
-    - OVERALL
-    - GEXP
-    - CNVR
-    - METH
-    - MUTA
-    - MIR
-  PRAD:
-    - OVERALL
-    - GEXP
-    - CNVR
-    - METH
-    - MUTA
-    - MIR
-  SARC:
-    - OVERALL
-    - GEXP
-    - CNVR
-    - METH
-    - MUTA
-    - MIR
-  SKCM:
-    - OVERALL
-    - GEXP
-    - CNVR
-    - METH
-    - MUTA
-    - MIR
-  TGCT:
-    - OVERALL
-    - GEXP
-    - CNVR
-    - METH
-    - MUTA
-    - MIR
-  THCA:
-    - OVERALL
-    - GEXP
-    - CNVR
-    - METH
-    - MUTA
-    - MIR
-  THYM:
-    - OVERALL
-    - GEXP
-    - CNVR
-    - METH
-    - MUTA
-    - MIR
-  UCEC:
-    - OVERALL
-    - GEXP
-    - CNVR
-    - METH
-    - MUTA
-    - MIR
-  UVM:
-    - OVERALL
-    - GEXP
-    - CNVR
-    - METH
-    - MUTA
-    - MIR
 aklimate:
   ACC:
   - TOP
@@ -331,532 +154,722 @@ cloudforest:
   - CNVR
   - GEXP
   - METH
-  - MIR
+  - All
   - MUTA
+  - MIR
   - OVERALL
   BLCA:
   - CNVR
   - GEXP
   - METH
-  - MIR
+  - All
   - MUTA
+  - MIR
   - OVERALL
   BRCA:
   - CNVR
   - GEXP
   - METH
-  - MIR
-  - MULTI
+  - All
   - MUTA
+  - MIR
   - OVERALL
   CESC:
   - CNVR
   - GEXP
   - METH
-  - MIR
+  - All
   - MUTA
+  - MIR
   - OVERALL
   COADREAD:
   - CNVR
   - GEXP
   - METH
-  - MIR
-  - MULTI
+  - All
   - MUTA
+  - MIR
   - OVERALL
   ESCC:
   - CNVR
   - GEXP
   - METH
-  - MIR
+  - All
   - MUTA
+  - MIR
   - OVERALL
   GEA:
   - CNVR
   - GEXP
   - METH
-  - MIR
-  - MULTI
+  - All
   - MUTA
+  - MIR
   - OVERALL
   HNSC:
   - CNVR
   - GEXP
   - METH
-  - MIR
+  - All
   - MUTA
+  - MIR
   - OVERALL
   KIRCKICH:
   - CNVR
   - GEXP
   - METH
+  - All
   - MUTA
   - OVERALL
   KIRP:
   - CNVR
   - GEXP
   - METH
-  - MIR
-  - MULTI
+  - All
   - MUTA
+  - MIR
   - OVERALL
   LGGGBM:
   - CNVR
   - GEXP
   - METH
-  - MULTI
+  - All
   - MUTA
   - OVERALL
   LIHCCHOL:
   - CNVR
   - GEXP
   - METH
-  - MULTI
+  - All
   - MUTA
   - OVERALL
   LUAD:
   - CNVR
   - GEXP
   - METH
-  - MIR
-  - MULTI
+  - All
   - MUTA
+  - MIR
   - OVERALL
   LUSC:
   - CNVR
   - GEXP
   - METH
-  - MIR
+  - All
   - MUTA
+  - MIR
   - OVERALL
   MESO:
   - CNVR
   - GEXP
   - METH
-  - MIR
-  - MULTI
+  - All
   - MUTA
+  - MIR
   - OVERALL
   OV:
   - CNVR
   - GEXP
   - METH
-  - MIR
+  - All
   - MUTA
+  - MIR
   - OVERALL
   PAAD:
   - CNVR
   - GEXP
   - METH
-  - MIR
+  - All
   - MUTA
+  - MIR
   - OVERALL
   PCPG:
   - CNVR
   - GEXP
   - METH
-  - MIR
+  - All
   - MUTA
+  - MIR
   - OVERALL
   PRAD:
   - CNVR
   - GEXP
   - METH
-  - MIR
-  - MULTI
+  - All
   - MUTA
+  - MIR
   - OVERALL
   SARC:
   - CNVR
   - GEXP
   - METH
-  - MIR
-  - MULTI
+  - All
   - MUTA
+  - MIR
   - OVERALL
   SKCM:
   - CNVR
   - GEXP
   - METH
-  - MIR
+  - All
   - MUTA
+  - MIR
   - OVERALL
   TGCT:
   - CNVR
   - GEXP
   - METH
-  - MIR
+  - All
   - MUTA
+  - MIR
   - OVERALL
   THCA:
   - CNVR
   - GEXP
   - METH
-  - MIR
+  - All
   - MUTA
+  - MIR
   - OVERALL
   THYM:
   - CNVR
   - GEXP
   - METH
-  - MIR
-  - MULTI
+  - All
   - MUTA
+  - MIR
   - OVERALL
   UCEC:
   - CNVR
   - GEXP
   - METH
-  - MIR
-  - MULTI
+  - All
   - MUTA
+  - MIR
   - OVERALL
   UVM:
   - CNVR
   - GEXP
   - METH
-  - MIR
-  - MULTI
+  - All
   - MUTA
+  - MIR
   - OVERALL
-subscope:
-  allcohorts:
-    - GEXP
-    - CNVR
-    - METH
-    - MUTA
-    - MIR
-  ACC:
-    - GEXP
-    - CNVR
-    - METH
-    - MUTA
-    - MIR
-  BLCA:
-    - GEXP
-    - CNVR
-    - METH
-    - MUTA
-    - MIR
-  BRCA:
-    - GEXP
-    - CNVR
-    - METH
-    - MUTA
-    - MIR
-  CESC:
-    - GEXP
-    - CNVR
-    - METH
-    - MUTA
-    - MIR
-  COADREAD:
-    - GEXP
-    - CNVR
-    - METH
-    - MUTA
-    - MIR
-  ESCC:
-    - GEXP
-    - CNVR
-    - METH
-    - MUTA
-    - MIR
-  GEA:
-    - GEXP
-    - CNVR
-    - METH
-    - MUTA
-    - MIR
-  HNSC:
-    - GEXP
-    - CNVR
-    - METH
-    - MUTA
-    - MIR
-  KIRCKICH:
-    - GEXP
-    - CNVR
-    - METH
-    - MUTA
-  KIRP:
-    - GEXP
-    - CNVR
-    - METH
-    - MUTA
-    - MIR
-  LGGGBM:
-    - GEXP
-    - CNVR
-    - METH
-    - MUTA
-    - MIR
-  LIHCCHOL:
-    - GEXP
-    - CNVR
-    - METH
-    - MUTA
-  LUAD:
-    - GEXP
-    - CNVR
-    - METH
-    - MUTA
-    - MIR
-  LUSC:
-    - GEXP
-    - CNVR
-    - METH
-    - MUTA
-    - MIR
-  MESO:
-    - GEXP
-    - CNVR
-    - METH
-    - MUTA
-    - MIR
-  OV:
-    - GEXP
-    - CNVR
-    - METH
-    - MUTA
-    - MIR
-  PAAD:
-    - GEXP
-    - CNVR
-    - METH
-    - MUTA
-    - MIR
-  PCPG:
-    - GEXP
-    - CNVR
-    - METH
-    - MUTA
-    - MIR
-  PRAD:
-    - GEXP
-    - CNVR
-    - METH
-    - MUTA
-    - MIR
-  SARC:
-    - GEXP
-    - CNVR
-    - METH
-    - MUTA
-    - MIR
-  SKCM:
-    - GEXP
-    - CNVR
-    - METH
-    - MUTA
-    - MIR
-  TGCT:
-    - GEXP
-    - CNVR
-    - METH
-    - MUTA
-    - MIR
-  THCA:
-    - GEXP
-    - CNVR
-    - METH
-    - MUTA
-    - MIR
-  THYM:
-    - GEXP
-    - CNVR
-    - METH
-    - MUTA
-    - MIR
-  UCEC:
-    - GEXP
-    - CNVR
-    - METH
-    - MUTA
-    - MIR
-  UVM:
-    - GEXP
-    - CNVR
-    - METH
-    - MUTA
-    - MIR
 jadbio:
   ACC:
-    - CNVR
-    - GEXP
-    - METH
-    - MIR
-    - MULTI
-    - MUTA
+  - CNVR
+  - GEXP
+  - METH
+  - MIR
+  - MULTI
+  - MUTA
   BLCA:
-    - CNVR
-    - GEXP
-    - METH
-    - MIR
-    - MULTI
-    - MUTA
+  - CNVR
+  - GEXP
+  - METH
+  - MIR
+  - MULTI
+  - MUTA
   BRCA:
-    - CNVR
-    - GEXP
-    - METH
-    - MIR
-    - MULTI
-    - MUTA
+  - CNVR
+  - GEXP
+  - METH
+  - MIR
+  - MULTI
+  - MUTA
   CESC:
-    - CNVR
-    - GEXP
-    - METH
-    - MIR
-    - MULTI
-    - MUTA
+  - CNVR
+  - GEXP
+  - METH
+  - MIR
+  - MULTI
+  - MUTA
   COADREAD:
-    - CNVR
-    - GEXP
-    - METH
-    - MIR
-    - MULTI
-    - MUTA
+  - CNVR
+  - GEXP
+  - METH
+  - MIR
+  - MULTI
+  - MUTA
   ESCC:
-    - CNVR
-    - GEXP
-    - METH
-    - MIR
-    - MULTI
-    - MUTA
+  - CNVR
+  - GEXP
+  - METH
+  - MIR
+  - MULTI
+  - MUTA
   GEA:
-    - CNVR
-    - GEXP
-    - METH
-    - MIR
-    - MULTI
-    - MUTA
+  - CNVR
+  - GEXP
+  - METH
+  - MIR
+  - MULTI
+  - MUTA
   HNSC:
-    - CNVR
-    - GEXP
-    - METH
-    - MIR
-    - MULTI
-    - MUTA
+  - CNVR
+  - GEXP
+  - METH
+  - MIR
+  - MULTI
+  - MUTA
   KIRCKICH:
-    - CNVR
-    - GEXP
-    - METH
-    - MULTI
-    - MUTA
+  - CNVR
+  - GEXP
+  - METH
+  - MULTI
+  - MUTA
   KIRP:
-    - CNVR
-    - GEXP
-    - METH
-    - MIR
-    - MULTI
-    - MUTA
+  - CNVR
+  - GEXP
+  - METH
+  - MIR
+  - MULTI
+  - MUTA
   LGGGBM:
-    - CNVR
-    - GEXP
-    - METH
-    - MULTI
-    - MUTA
+  - CNVR
+  - GEXP
+  - METH
+  - MULTI
+  - MUTA
   LIHCCHOL:
-    - CNVR
-    - GEXP
-    - METH
-    - MULTI
-    - MUTA
+  - CNVR
+  - GEXP
+  - METH
+  - MULTI
+  - MUTA
   LUAD:
-    - CNVR
-    - GEXP
-    - METH
-    - MIR
-    - MULTI
-    - MUTA
+  - CNVR
+  - GEXP
+  - METH
+  - MIR
+  - MULTI
+  - MUTA
   LUSC:
-    - CNVR
-    - GEXP
-    - METH
-    - MIR
-    - MULTI
-    - MUTA
+  - CNVR
+  - GEXP
+  - METH
+  - MIR
+  - MULTI
+  - MUTA
   MESO:
-    - CNVR
-    - GEXP
-    - METH
-    - MIR
-    - MULTI
-    - MUTA
+  - CNVR
+  - GEXP
+  - METH
+  - MIR
+  - MULTI
+  - MUTA
   OV:
-    - CNVR
-    - GEXP
-    - METH
-    - MIR
-    - MULTI
-    - MUTA
+  - CNVR
+  - GEXP
+  - METH
+  - MIR
+  - MULTI
+  - MUTA
   PAAD:
-    - CNVR
-    - GEXP
-    - METH
-    - MIR
-    - MULTI
-    - MUTA
+  - CNVR
+  - GEXP
+  - METH
+  - MIR
+  - MULTI
+  - MUTA
   PCPG:
-    - CNVR
-    - GEXP
-    - METH
-    - MIR
-    - MULTI
-    - MUTA
+  - CNVR
+  - GEXP
+  - METH
+  - MIR
+  - MULTI
+  - MUTA
   PRAD:
-    - CNVR
-    - GEXP
-    - METH
-    - MIR
-    - MULTI
-    - MUTA
+  - CNVR
+  - GEXP
+  - METH
+  - MIR
+  - MULTI
+  - MUTA
   SARC:
-    - CNVR
-    - GEXP
-    - METH
-    - MIR
-    - MULTI
-    - MUTA
+  - CNVR
+  - GEXP
+  - METH
+  - MIR
+  - MULTI
+  - MUTA
   SKCM:
-    - CNVR
-    - GEXP
-    - METH
-    - MIR
-    - MULTI
-    - MUTA
+  - CNVR
+  - GEXP
+  - METH
+  - MIR
+  - MULTI
+  - MUTA
   TGCT:
-    - CNVR
-    - GEXP
-    - METH
-    - MIR
-    - MULTI
-    - MUTA
+  - CNVR
+  - GEXP
+  - METH
+  - MIR
+  - MULTI
+  - MUTA
   THCA:
-    - CNVR
-    - GEXP
-    - METH
-    - MIR
-    - MULTI
-    - MUTA
+  - CNVR
+  - GEXP
+  - METH
+  - MIR
+  - MULTI
+  - MUTA
   THYM:
-    - CNVR
-    - GEXP
-    - METH
-    - MIR
-    - MULTI
-    - MUTA
+  - CNVR
+  - GEXP
+  - METH
+  - MIR
+  - MULTI
+  - MUTA
   UCEC:
-    - CNVR
-    - GEXP
-    - METH
-    - MIR
-    - MULTI
-    - MUTA
+  - CNVR
+  - GEXP
+  - METH
+  - MIR
+  - MULTI
+  - MUTA
   UVM:
-    - CNVR
-    - GEXP
-    - METH
-    - MIR
-    - MULTI
-    - MUTA
+  - CNVR
+  - GEXP
+  - METH
+  - MIR
+  - MULTI
+  - MUTA
+skgrid:
+  ACC:
+  - OVERALL
+  - GEXP
+  - CNVR
+  - METH
+  - MUTA
+  - MIR
+  BLCA:
+  - OVERALL
+  - GEXP
+  - CNVR
+  - METH
+  - MUTA
+  - MIR
+  BRCA:
+  - OVERALL
+  - GEXP
+  - CNVR
+  - METH
+  - MUTA
+  - MIR
+  CESC:
+  - OVERALL
+  - GEXP
+  - CNVR
+  - METH
+  - MUTA
+  - MIR
+  COADREAD:
+  - OVERALL
+  - GEXP
+  - CNVR
+  - METH
+  - MUTA
+  - MIR
+  ESCC:
+  - OVERALL
+  - GEXP
+  - CNVR
+  - METH
+  - MUTA
+  - MIR
+  GEA:
+  - OVERALL
+  - GEXP
+  - CNVR
+  - METH
+  - MUTA
+  - MIR
+  HNSC:
+  - OVERALL
+  - GEXP
+  - CNVR
+  - METH
+  - MUTA
+  - MIR
+  KIRCKICH:
+  - OVERALL
+  - GEXP
+  - CNVR
+  - METH
+  - MUTA
+  KIRP:
+  - OVERALL
+  - GEXP
+  - CNVR
+  - METH
+  - MUTA
+  - MIR
+  LGGGBM:
+  - OVERALL
+  - GEXP
+  - CNVR
+  - METH
+  - MUTA
+  LIHCCHOL:
+  - OVERALL
+  - GEXP
+  - CNVR
+  - METH
+  - MUTA
+  LUAD:
+  - OVERALL
+  - GEXP
+  - CNVR
+  - METH
+  - MUTA
+  - MIR
+  LUSC:
+  - OVERALL
+  - GEXP
+  - CNVR
+  - METH
+  - MUTA
+  - MIR
+  MESO:
+  - OVERALL
+  - GEXP
+  - CNVR
+  - METH
+  - MIR
+  OV:
+  - OVERALL
+  - GEXP
+  - CNVR
+  - METH
+  - MIR
+  PAAD:
+  - OVERALL
+  - GEXP
+  - CNVR
+  - METH
+  - MIR
+  PCPG:
+  - OVERALL
+  - GEXP
+  - CNVR
+  - METH
+  - MUTA
+  - MIR
+  PRAD:
+  - OVERALL
+  - GEXP
+  - CNVR
+  - METH
+  - MUTA
+  - MIR
+  SARC:
+  - OVERALL
+  - GEXP
+  - CNVR
+  - METH
+  - MUTA
+  - MIR
+  SKCM:
+  - OVERALL
+  - GEXP
+  - CNVR
+  - METH
+  - MUTA
+  - MIR
+  TGCT:
+  - OVERALL
+  - GEXP
+  - CNVR
+  - METH
+  - MUTA
+  - MIR
+  THCA:
+  - OVERALL
+  - GEXP
+  - CNVR
+  - METH
+  - MUTA
+  - MIR
+  THYM:
+  - OVERALL
+  - GEXP
+  - CNVR
+  - METH
+  - MUTA
+  - MIR
+  UCEC:
+  - OVERALL
+  - GEXP
+  - CNVR
+  - METH
+  - MUTA
+  - MIR
+  UVM:
+  - OVERALL
+  - GEXP
+  - CNVR
+  - METH
+  - MUTA
+  - MIR
+subscope:
+  ACC:
+  - GEXP
+  - CNVR
+  - METH
+  - MUTA
+  - MIR
+  BLCA:
+  - GEXP
+  - CNVR
+  - METH
+  - MUTA
+  - MIR
+  BRCA:
+  - GEXP
+  - CNVR
+  - METH
+  - MUTA
+  - MIR
+  CESC:
+  - GEXP
+  - CNVR
+  - METH
+  - MUTA
+  - MIR
+  COADREAD:
+  - GEXP
+  - CNVR
+  - METH
+  - MUTA
+  - MIR
+  ESCC:
+  - GEXP
+  - CNVR
+  - METH
+  - MUTA
+  - MIR
+  GEA:
+  - GEXP
+  - CNVR
+  - METH
+  - MUTA
+  - MIR
+  HNSC:
+  - GEXP
+  - CNVR
+  - METH
+  - MUTA
+  - MIR
+  KIRCKICH:
+  - GEXP
+  - CNVR
+  - METH
+  - MUTA
+  KIRP:
+  - GEXP
+  - CNVR
+  - METH
+  - MUTA
+  - MIR
+  LGGGBM:
+  - GEXP
+  - CNVR
+  - METH
+  - MUTA
+  - MIR
+  LIHCCHOL:
+  - GEXP
+  - CNVR
+  - METH
+  - MUTA
+  LUAD:
+  - GEXP
+  - CNVR
+  - METH
+  - MUTA
+  - MIR
+  LUSC:
+  - GEXP
+  - CNVR
+  - METH
+  - MUTA
+  - MIR
+  MESO:
+  - GEXP
+  - CNVR
+  - METH
+  - MUTA
+  - MIR
+  OV:
+  - GEXP
+  - CNVR
+  - METH
+  - MUTA
+  - MIR
+  PAAD:
+  - GEXP
+  - CNVR
+  - METH
+  - MUTA
+  - MIR
+  PCPG:
+  - GEXP
+  - CNVR
+  - METH
+  - MUTA
+  - MIR
+  PRAD:
+  - GEXP
+  - CNVR
+  - METH
+  - MUTA
+  - MIR
+  SARC:
+  - GEXP
+  - CNVR
+  - METH
+  - MUTA
+  - MIR
+  SKCM:
+  - GEXP
+  - CNVR
+  - METH
+  - MUTA
+  - MIR
+  TGCT:
+  - GEXP
+  - CNVR
+  - METH
+  - MUTA
+  - MIR
+  THCA:
+  - GEXP
+  - CNVR
+  - METH
+  - MUTA
+  - MIR
+  THYM:
+  - GEXP
+  - CNVR
+  - METH
+  - MUTA
+  - MIR
+  UCEC:
+  - GEXP
+  - CNVR
+  - METH
+  - MUTA
+  - MIR
+  UVM:
+  - GEXP
+  - CNVR
+  - METH
+  - MUTA
+  - MIR
+  allcohorts:
+  - GEXP
+  - CNVR
+  - METH
+  - MUTA
+  - MIR

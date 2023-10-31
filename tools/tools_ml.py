@@ -27,3 +27,19 @@ def gexp_converter(data_entrez_list, cancer):
             except:
                 results.append('nan')
     return results
+
+def get_model_info(method, platform, cancer):
+    '''retrieves TMP model information
+    includes: model name, model parameters, and feature list (reported in TMP nomenclature)
+
+    specify which model you would like to look at. example: top performing jadbio gene expression only model
+
+    options method = ['skgrid', 'aklimate', 'cloudforest', 'subscope', 'jadbio']
+    options platform = ['GEXP', 'CNVR', 'MIR', 'MUTA', 'METH']
+    options cancer = ['ACC', 'BRCA', 'BLCA', 'CESC', 'COADREAD', 'ESCC', 'GEA', 'HNSC', 'KIRCKICH', 'KIRP', 'LGGGBM', 'LIHCCHOL', 'LUAD', 'LUSC', 'MESO', 'OV', 'PAAD', 'PCPG', 'PRAD', 'SARC', 'SKCM', 'TGCT', 'THCA', 'THYM', 'UCEC', 'UVM']
+    '''
+    import json
+
+    with open('tools/model_info.json', 'r') as fh:
+        data = json.load(fh)
+    return data[method][cancer][platform]
