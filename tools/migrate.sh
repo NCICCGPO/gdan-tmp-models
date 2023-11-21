@@ -10,7 +10,7 @@ mkdir -p ${results_dir}/${cancer}
 mkdir -p ${results_dir}/midway
 
 # Move files, there will be an error message if any of these 5 methods didn't work
-mv skgrid/preds/${cancer}_${platform}_skgrid_preds.tsv ${results_dir}/${cancer}/
+# mv skgrid/preds/${cancer}_${platform}_skgrid_preds.tsv ${results_dir}/${cancer}/
 mv jadbio/preds/${cancer}* ${results_dir}/${cancer}/
 mv cloudforest/preds/${cancer}* ${results_dir}/${cancer}/
 
@@ -20,5 +20,5 @@ mv aklimate/preds/${cancer}* ${results_dir}/${cancer}/
 mkdir ${results_dir}/${cancer}/subscope_additional_files
 mv subscope/preds/* ${results_dir}/${cancer}/
 mv ${results_dir}/${cancer}/${platform}-model* ${results_dir}/${cancer}/subscope_additional_files/
-mv ${results_dir}/${cancer}/GEXP-subscope-results.txt ${results_dir}/${cancer}/${1}_${2}_subscope_preds.tsv
-mv ${results_dir}/${cancer}/GEXP-subscope-confidence.txt ${results_dir}/${cancer}/${1}_${2}_subscope_confidence.tsv
+mv ${results_dir}/${cancer}/${platform}-subscope-results.txt ${results_dir}/${cancer}/${1}_${2}_subscope_preds.tsv
+mv ${results_dir}/${cancer}/${platform}-subscope-confidence.txt ${results_dir}/${cancer}/${1}_${2}_subscope_confidence.tsv
