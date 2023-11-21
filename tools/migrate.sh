@@ -10,7 +10,7 @@ mkdir -p ${results_dir}/${cancer}
 mkdir -p ${results_dir}/midway
 
 # Move files, there will be an error message if any of these 5 methods didn't work
-# mv skgrid/preds/${cancer}_${platform}_skgrid_preds.tsv ${results_dir}/${cancer}/
+mv skgrid/preds/${cancer}_${platform}_skgrid_preds.tsv ${results_dir}/${cancer}/
 mv jadbio/preds/${cancer}* ${results_dir}/${cancer}/
 mv cloudforest/preds/${cancer}* ${results_dir}/${cancer}/
 
