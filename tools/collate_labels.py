@@ -55,8 +55,13 @@ for TCGA_cohort in args.cancer_list:
                         for i in range(1,len(header)):
                             if float(line[i])>probabilty_tracker['prob']:
                                 probabilty_tracker['prob']=float(line[i])
-                                assert header[i].strip().split('=')[-1].split(' ')[1].split('_')[0]==TCGA_cohort
-                                probabilty_tracker['subtype']=header[i].strip().split('=')[-1].split(' ')[1]
+                                label = header[i].strip().split('=')[-1].split(' ')[1]
+                                if ':' in label:
+                                    assert label.split(':')[0]==TCGA_cohort
+                                    label = '_'.join(label.split(':'))
+                                elif '_' in label:
+                                    assert label.split('_')[0]==TCGA_cohort
+                                probabilty_tracker['subtype']=label
                         subtype_prediction = probabilty_tracker['subtype']
                         # Append results
                         out.write('{}\t{}\t{}\t{}\t{}\n'.format(sampleID,subtype_prediction, TCGA_cohort, args.platform, ml_method))
