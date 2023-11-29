@@ -24,15 +24,18 @@ Run 1 sub-step that corresponds to your data type. If following tutorial with th
 ### 2.1 Convert Feature Nomenclature of METABRIC data and Reformat Matrix
 Machine learning models need to be able to match genes to GDAN-TMP specific gene IDs. We will convert `brca_metabric/data_mrna_illumina_microarray.txt` Entrez gene IDs and reformat into a sample x feature matrix (ex. convert gene TP53 to feature N:GEXP::TP53:7157:). The output file can be found at `user-transformed-data/cbioportal_BRCA_GEXP.tsv`.
 
+
+Rename and format data_mrna_illumina_microarray.txt
 ```
-# Rename and format data_mrna_illumina_microarray.txt
 python tools/convert.py \
 	--data brca_metabric/data_mrna_illumina_microarray.txt \
 	--out user-transformed-data/cbioportal_BRCA_GEXP.tsv \
 	--cancer BRCA \
+	--conversion_file tools/ft_name_convert/entrez2tmp_BRCA_GEXP.json \
 	--delete_i_col 1
-# this last line is dataset specific. 0 based index
 ```
+> this last line is dataset specific. 0 based index
+
 Note that the `--delete_i_col` is an optional argument to inform which column to remove (in this case the METABRIC data has a metadata column at index 1 so we will delete this by specifying 1 as the value of `--delete_i_col`).
 
 ### **How to Convert Your Data into the Correct Feature Nomenclature (Manual)**
@@ -59,7 +62,7 @@ tools_ml.gexp_converter(user_entrez, cancer)
 ```
 + Next replace these TMP feature IDs with those in your data. Then dedup your data so that there aren't multiple columns that have the same TMP feature ID. If there are multiple columns with the same TMP feature ID then you can randomly select one to keep because our models found that these features exist in the same cytoband and have similar molecular profiles.
 
-+ Next remove any columns with the string name `nan`. These are features not used by machine learning models and therefore aren't need to recieve predictions
++ Next remove any columns with the string name `nan`. These are features not used by machine learning models and therefore aren't need to receive predictions
 
 + Finally, make sure your data matrix is formatted where the rows are samples and columns are features
 
