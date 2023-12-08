@@ -24,3 +24,17 @@ If we want to survey all the subtype names of a cancer cohort we can extract the
 cancer2name['BRCA']
 ```
 > {'BRCA_1': 'LumA', 'BRCA_2': 'LumB', 'BRCA_3': 'Basal', 'BRCA_4': 'Her2'}
+
+### General Navigation
+To view all cancer cohort options:
+```
+cancer2name.keys()
+```
+> dict_keys(['ACC', 'BLCA', 'BRCA', 'CESC', 'COADREAD', 'ESCC', 'GEA', 'HNSC', 'KIRCKICH', 'KIRP', 'LGGGBM', 'LIHCCHOL', 'LUAD', 'LUSC', 'MESO', 'OV', 'PAAD', 'PCPG', 'PRAD', 'SARC', 'SKCM', 'TGCT', 'THCA', 'THYM', 'UCEC', 'UVM'])
+
+
+To view how many subtypes a cancer cohort has, example `BRCA`:
+```
+len(cancer2name['BRCA'].values())
+```
+> 4
