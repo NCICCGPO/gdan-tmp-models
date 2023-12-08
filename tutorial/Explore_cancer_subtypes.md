@@ -1,5 +1,5 @@
-# Explore Cancer Subtypes
-### Understanding Subtype Abbreviations
+# Understanding Subtype Abbreviations
+### General Navigation
 We have used cancer subtypes abbreviations for classifiers, this means that the output prediction file contains these abbreviations. There is a quick and easy way to pull the full subtype name.
 
 Let's look at the breast invasive carcinoma subtypes `BRCA`. In python:
@@ -25,7 +25,7 @@ cancer2name['BRCA']
 ```
 > {'BRCA_1': 'LumA', 'BRCA_2': 'LumB', 'BRCA_3': 'Basal', 'BRCA_4': 'Her2'}
 
-### General Navigation
+### Additional Navigation
 To view all cancer cohort options:
 ```
 cancer2name.keys()
