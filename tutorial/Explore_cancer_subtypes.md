@@ -16,12 +16,11 @@ If we want to look up the name of the first breast invasive carcinoma subtype (a
 ```
 cancer2name['BRCA']['BRCA_1']
 ```
+> 'LumA'
 
 ### Other Uses
 If we want to survey all the subtype names of a cancer cohort we can extract the nested python dictionary by:
 ```
 cancer2name['BRCA']
 ```
-
-> Returns the following
 > {'BRCA_1': 'LumA', 'BRCA_2': 'LumB', 'BRCA_3': 'Basal', 'BRCA_4': 'Her2'}
