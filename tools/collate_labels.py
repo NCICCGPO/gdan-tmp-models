@@ -2,7 +2,7 @@
 import argparse
 
 parser = argparse.ArgumentParser()
-parser.add_argument('-p', '--platform',required = True, choices=['GEXP', 'MUTA', 'CNVR', 'METH', 'MIR', 'OVERALL'], help="platform (ex. GEXP)", type=str)
+parser.add_argument('-p', '--platform',required = True, choices=['GEXP', 'MUTA', 'CNVR', 'METH', 'MIR', 'OVERALL', 'MULTI'], help="platform (ex. GEXP)", type=str)
 parser.add_argument('-c','--cancer_list', action='append', help='<Required> Set flag, where each cancer is listed', required=True)
 parser.add_argument('-i_dir', '--input_dir',required = False, help="input dir (ex. pred-alchemist)",  type=str)
 parser.add_argument('-o', '--outfile',required = False, help="output file name",  type=str)
