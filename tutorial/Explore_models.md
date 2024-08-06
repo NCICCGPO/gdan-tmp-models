@@ -1,9 +1,6 @@
 # Explore the Machine Learning Models
 
 ### Retrieve Machine Learning Model Information
-First download the required file to look into the model info, this file can be downloaded from the Publication Page: `model_info.json`
-
-
 Use the `get_model_info(method, platform, cancer)` from the tools_ml module.
 ```
 import sys

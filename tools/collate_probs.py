@@ -11,7 +11,7 @@ class ExtendAction(argparse.Action):
         setattr(namespace, self.dest, items)
 
 parser = argparse.ArgumentParser()
-parser.add_argument('-p', '--platform',required = True, choices=['GEXP', 'MUTA', 'CNVR', 'METH', 'MIR'], help="platform (ex. GEXP)", type=str)
+parser.add_argument('-p', '--platform',required = True, choices=['GEXP', 'MUTA', 'CNVR', 'METH', 'MIR', 'OVERALL'], help="platform (ex. GEXP)", type=str)
 parser.add_argument('-i_dir', '--input_dir',required = False, help="input dir (ex. pred-alchemist)",  type=str)
 parser.add_argument('-c','--cancer_list', action='append', help='<Required> Set flag, where each cancer is listed', required=True)
 parser.add_argument('-m','--method_list', required=True, help='<Required> Set flag, where each method is listed', type=str)

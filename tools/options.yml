@@ -15,6 +15,7 @@ aklimate:
   - MULTI
   - GEXP
   - CNVR
+  - METH
   CESC:
   - TOP
   - MULTI
@@ -94,6 +95,7 @@ aklimate:
   - METH
   PAAD:
   - TOP
+  - GEXP
   - MULTI
   - CNVR
   - METH
@@ -119,6 +121,7 @@ aklimate:
   - TOP
   - MULTI
   - GEXP
+  - CNVR
   - METH
   TGCT:
   - TOP
