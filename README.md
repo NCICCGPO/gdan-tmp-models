@@ -167,8 +167,10 @@ Examples for BRCA cancer cohorts are:
 + bash RUN_MODEL.sh BRCA GEXP subscope user-transformed-data/transformed-data.tsv
 
 
-# Tutorial
+# Tutorials
 An example of how to run the prediction workflow is shown [here](tutorial/README.md) using SK Grid best performing gene expression model on a breast cancer cBioPortal dataset.
+
+Interpreting the subtype abbreviations: the shorthand notations provided by our tool represent molecular subtypes. Instructions on how to translate subtype abbreviations (ex. BRCA_1) to molecular subtype names (ex. Luminal A) is shown [here](tutorial/Explore_cancer_subtypes.md).
 
 # Alternative Model Download (Optional)
 Docker images for methods are automatically pulled and built by CWL workflows and tools from the public Synapse repository.
