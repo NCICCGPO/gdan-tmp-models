@@ -3,11 +3,12 @@ A collection of machine learning models that make predictions of cancer molecula
 
 These tools were created from the GDAN-TMP group where minimal molecular markers were used to accurately predict 26 different cancer cohorts and 106 subtypes. Of the 1000's of models ran, the models with high predictive accuracy are made available to the public here.
 
-+ For the publication of this work, visit: (TBA until after manuscript publication)
++ Visit Cancer Cell for the open access publication of this work: [Classification of non-TCGA cancer samples to TCGA molecular subtypes using compact feature sets](https://doi.org/10.1016/j.ccell.2024.12.002)
 
-+ For the publication page, visit: (TBA until after manuscript publication)
++ Data are freely available for download on the [Publication Page](https://gdc.cancer.gov/about-data/publications/CCG-TMP-2022)
 
-> Model data downloads from publication page are required to run certain models
+
+> Model data downloads from Publication Page are required to run certain models
 
 Subtype predictions can be made for the following [TCGA cohorts](https://gdc.cancer.gov/resources-tcga-users/tcga-code-tables/tcga-study-abbreviations):
 
@@ -83,7 +84,7 @@ docker login -u <synapse-username> docker.synapse.org
 ### 1A. Reference files for transform (project matrices)
 Download and decompress the reference files that are used as the target data space for data transformations (ex. quantile rescaling).
 
-The `TMP_20230209.tar.gz` file can be downloaded from the Publication Page and then placed in `tools/`
+The `TMP_20230209.tar.gz` file can be downloaded from the [Publication Page under Supplemental Data](https://gdc.cancer.gov/about-data/publications/CCG-TMP-2022) and then placed in `tools/`
 ```
 cd tools
 tar -xzf TMP_20230209.tar.gz
@@ -92,13 +93,13 @@ cd ..
 
 
 ### 1B. Method Models
-Certain methods require large or source files to run models. These files are available for download from the Publication page.
+Certain methods require large or source files to run models. These files are available for download from the [Publication Page under Supplemental Data](https://gdc.cancer.gov/about-data/publications/CCG-TMP-2022).
 
 > Required step: download associated model data for certain methods
 
-**CloudForest download** of model data: download from the *publication page* `models_cf.tar.gz` into the directory `cloudforest/data/` and decompress.
+**CloudForest download** of model data: download from the [Publication Page under Supplemental Data](https://gdc.cancer.gov/about-data/publications/CCG-TMP-2022) `models_cf.tar.gz` into the directory `cloudforest/data/` and decompress.
 
-**JADBio download** of model data: download from the *publication page* `models_jadbio.tar.gz` into the directory `jadbio/data/` and decompress.
+**JADBio download** of model data: download from the [Publication Page under Supplemental Data](https://gdc.cancer.gov/about-data/publications/CCG-TMP-2022) `models_jadbio.tar.gz` into the directory `jadbio/data/` and decompress.
 
 **SK Grid download** of model data: copy over this file from tools
 ```
@@ -110,7 +111,7 @@ AKLIMATE and subSCOPE do not need manual model data download.
 ### 1C. Feature Renaming Reference Files
 Download and decompress the reference files - renaming any user data feature to nomenclature that machine learning models will recognize (TMP nomenclature).
 
-The `ft_name_convert.tar.gz` file can be downloaded from the Publication Page and then placed in `tools/`
+The `ft_name_convert.tar.gz` file can be downloaded from the [Publication Page under Supplemental Data](https://gdc.cancer.gov/about-data/publications/CCG-TMP-2022) and then placed in `tools/`
 ```
 cd tools
 tar -xzf ft_name_convert.tar.gz
@@ -173,7 +174,7 @@ An example of how to run the prediction workflow is shown [here](tutorial/README
 Docker images for methods are automatically pulled and built by CWL workflows and tools from the public Synapse repository.
 
 Alternatively:
-1. Docker images can be manually downloaded by going to the publication page for each method image file.
+1. Docker images can be manually downloaded by going to the [Publication Page under Supplemental Data](https://gdc.cancer.gov/about-data/publications/CCG-TMP-2022) for each method image file.
 ```
 # ImageFiles
 sk_grid.tar.gz
@@ -189,7 +190,7 @@ docker load -i <imagefile.tar.gz>
 ```
 Check these images have been successfully loaded with `docker images`.
 
-Note that some methods have an additional model data file to run. These can be found at the publication page (see section Download Method Model Data)
+Note that some methods have an additional model data file to run. These can be found at the [Publication Page under Supplemental Data](https://gdc.cancer.gov/about-data/publications/CCG-TMP-2022) (see section Download Method Model Data)
 
 
 # Additional Info: Model Selection and Input Specifications
