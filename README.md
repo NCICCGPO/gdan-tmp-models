@@ -3,7 +3,7 @@ A collection of machine learning models that make predictions of cancer molecula
 
 These tools were created from the GDAN-TMP group where minimal molecular markers were used to accurately predict 26 different cancer cohorts and 106 subtypes. Of the 1000's of models ran, the models with high predictive accuracy are made available to the public here.
 
-+ Visit Cancer Cell for the open access publication of this work: [Classification of non-TCGA cancer samples to TCGA molecular subtypes using compact feature sets](https://doi.org/10.1016/j.ccell.2024.12.002)
++ Visit Cancer Cell for the publication of this work (open access): [Classification of non-TCGA cancer samples to TCGA molecular subtypes using compact feature sets](https://doi.org/10.1016/j.ccell.2024.12.002)
 
 + Data are freely available for download on the [Publication Page](https://gdc.cancer.gov/about-data/publications/CCG-TMP-2022)
 
