@@ -80,7 +80,7 @@ docker login -u <synapse-username> docker.synapse.org
 ```
 
 
-# 1. Download Data (Method Models and Feature Renaming Reference Files)
+# 1. Download Data
 ### 1A. Reference files for transform (project matrices)
 Download and decompress the reference files that are used as the target data space for data transformations (ex. quantile rescaling).
 
@@ -91,8 +91,11 @@ tar -xzf TMP_20230209.tar.gz
 cd ..
 ```
 
+### 1B. Additional Info 
+Download files containing model specific info by going to the [Publication Page](https://gdc.cancer.gov/about-data/publications/CCG-TMP-2022) under Supplemental Data and downloading model_info.json and placing in `tools/` folder.
 
-### 1B. Method Models
+
+### 1C. Method Models
 Certain methods require large or source files to run models. These files are available for download from the [Publication Page under Supplemental Data](https://gdc.cancer.gov/about-data/publications/CCG-TMP-2022).
 
 > Required step: download associated model data for certain methods
@@ -108,7 +111,7 @@ cp -r tools/TMP_20230209 skgrid/data/src/training_data/
 
 AKLIMATE and subSCOPE do not need manual model data download.
 
-### 1C. Feature Renaming Reference Files
+### 1D. Feature Renaming Reference Files
 Download and decompress the reference files - renaming any user data feature to nomenclature that machine learning models will recognize (TMP nomenclature).
 
 The `ft_name_convert.tar.gz` file can be downloaded from the [Publication Page under Supplemental Data](https://gdc.cancer.gov/about-data/publications/CCG-TMP-2022) and then placed in `tools/`
