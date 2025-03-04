@@ -42,4 +42,7 @@ def get_model_info(method, platform, cancer):
 
     with open('tools/model_info.json', 'r') as fh:
         data = json.load(fh)
-    return data[method][cancer][platform]
+    try:
+        return data[method][cancer][platform]
+    except KeyError:
+        return None
