@@ -40,6 +40,17 @@ def get_model_info(method, platform, cancer):
     '''
     import json
 
-    with open('tools/model_info.json', 'r') as fh:
-        data = json.load(fh)
-    return data[method][cancer][platform]
+    try:
+        with open('tools/model_info.json', 'r') as fh:
+            data = json.load(fh)
+
+    except FileNotFoundError:
+        print('Error: tools/model_info.json file not found.')
+        print('File url: https://gdc.cancer.gov/about-data/publications/CCG-TMP-2022')
+        return None
+
+    try:
+        return data[method][cancer][platform]
+    except KeyError:
+        print(f'None returned for missing {platform} {cancer} {method} combination')
+        return None
