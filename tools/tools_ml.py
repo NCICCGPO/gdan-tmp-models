@@ -45,7 +45,7 @@ def get_model_info(method, platform, cancer):
             data = json.load(fh)
 
     except FileNotFoundError:
-        print('Error: model_info.json file not found.')
+        print('Error: tools/model_info.json file not found.')
         print('File url: https://gdc.cancer.gov/about-data/publications/CCG-TMP-2022')
         return None
 
