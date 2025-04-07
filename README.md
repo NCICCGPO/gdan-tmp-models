@@ -131,15 +131,21 @@ bash RUN_model.sh <cancer> <platform> <method> <user-transformed-data/transforme
   ```bash RUN_model.sh COADREAD MUTA cloudforest user-transformed-data/transformed-data.tsv```
 
 ## Tutorials
-An example of how to run the prediction workflow is shown [here](tutorial/README.md) using SK Grid best performing gene expression model on a breast cancer cBioPortal dataset.
 
-Interpreting the subtype abbreviations: the shorthand notations provided by our tool represent molecular subtypes. Instructions on how to translate subtype abbreviations (ex. BRCA_1) to molecular subtype names (ex. Luminal A) is shown [here](tutorial/Explore_cancer_subtypes.md).
+For a guided tutorial of running our models for subtype assignments, see the [Guided Tutorial](doc/tutorial/walk_thru_tutorial.md) page.
+
+To understand the specific parameters and other details of individual containerized models, see the [Explore Models](doc/tutorial/Explore_models.md) page.
+
+To interprete and convert the TMP Toolkit subtype abbreviations, see the [Understanding Subtype Abbreviations](doc/tutorial/Explore_cancer_subtypes.md) page. 
+
+
+  + > Our models use the BRCA_1 abbreviate to denote the luminal A subtype. Learn how to automatically convert TMP Toolkit abbreviations to common names for all our subtypes
+
+## Troubleshooting
+See [How to Fix Common Issues](doc/error_messages.md) for common error messages.
 
 ## Acknowledgment and Funding
 We would like to thank the National Cancer Institute for the support.
-
-## Troubleshooting
-See [How to Fix Common Issues](tutorial/error_messages.md) for common error messages.
 
 ## Maintainers
 Current maintainers:

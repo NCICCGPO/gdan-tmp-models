@@ -2,6 +2,8 @@
 ### General Navigation
 We have used cancer subtypes abbreviations for classifiers, this means that the output prediction file contains these abbreviations. There is a quick and easy way to pull the full subtype name.
 
+> Our models use the BRCA_1 abbreviate to denote the luminal A subtype. Learn how to automatically convert TMP Toolkit abbreviations to common names.
+
 Let's look at the breast invasive carcinoma subtypes `BRCA`. In python:
 ```
 import json

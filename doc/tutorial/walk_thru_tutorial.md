@@ -1,4 +1,7 @@
-# Tutorial: Breast Cancer Subtype Predictions
+# Guided Tutorial
+
+Obtaining Breast Cancer Subtype Predictions
+
 ## Introduction
 For this tutorial, we will be predicting breast invasive carcinoma subtypes using the best gene expression machine learning model from SK Grid. The METABRIC gene expression dataset is freely available to the public at cBioPortal.
 
