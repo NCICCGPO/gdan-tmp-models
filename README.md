@@ -139,7 +139,7 @@ To understand the specific parameters and other details of individual containeri
 To interprete and convert the TMP Toolkit subtype abbreviations, see the [Understanding Subtype Abbreviations](doc/tutorial/Explore_cancer_subtypes.md) page. 
 
 
-  + > Our models use the BRCA_1 abbreviate to denote the luminal A subtype. Learn how to automatically convert TMP Toolkit abbreviations to common names for all our subtypes
+  + > Our models use the BRCA_1 abbreviation to denote the luminal A subtype. Learn how to automatically convert TMP Toolkit abbreviations to common names for all our subtypes
 
 ## Troubleshooting
 See [How to Fix Common Issues](doc/error_messages.md) for common error messages.
