@@ -1,5 +1,5 @@
 <h1 align="center">Tumor Molecular Pathology Toolkit</h1>
-<h4 align="center">An easy to run tool to assign cancer subtypes to new datasets</h4>
+<h4 align="center">An easy to run tool to classify cancer subtypes to new datasets</h4>
 
 
 ## Table of contents
@@ -14,11 +14,11 @@
 
 
 ## Introduction
-The TMP toolkit is designed to assign cancer subtypes to new datasets. Users can input their own datasets and have reliable subtype assignments.
+The TMP toolkit is designed to classify cancer subtypes to new datasets. Users can input their own datasets and have reliable subtype classification.
 
 The top performing models (of the hundreds of thousands models evaluated) have been pre-trained and available within Docker containers for ease of use.
 
-The TMP toolkit is applicable to 26 different cancer cohorts (ex. breast invasive carcinoma, colon adenocarcinoma) and has been trained on TCGA primary tumor samples to assign any of 106 cancer subtype to new samples.  
+The TMP toolkit is applicable to 26 different cancer cohorts (ex. breast invasive carcinoma, colon adenocarcinoma) and has been trained on TCGA primary tumor samples to classify any of 106 cancer subtype to new samples.  
 
 
 Cancer cohorts include:
@@ -132,7 +132,7 @@ bash RUN_model.sh <cancer> <platform> <method> <user-transformed-data/transforme
 
 ## Tutorials
 
-For a guided tutorial of running our models for subtype assignments, see the [Guided Tutorial](doc/tutorial/walk_thru_tutorial.md) page.
+For a guided tutorial of running our models for subtype classification, see the [Guided Tutorial](doc/tutorial/walk_thru_tutorial.md) page.
 
 To understand the specific parameters and other details of individual containerized models, see the [Explore Models](doc/tutorial/Explore_models.md) page.
 

@@ -96,7 +96,6 @@ cp -r tools/TMP_20230209 skgrid/data/src/training_data/
 
 > Note: AKLIMATE and subSCOPE models do not need manual model data download
 
-
 # Alternative Build Docker Images (Optional)
 Docker images for methods are automatically pulled and built by CWL workflows and tools from the public Synapse repository.
 

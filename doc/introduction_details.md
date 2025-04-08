@@ -20,7 +20,7 @@ Data are freely available for download:
 
 ## A Tool for Many Cancer Cohorts
 
-The TMP toolkit is applicable to 26 different cancer cohorts (ex. breast invasive carcinoma, colon adenocarcinoma) and has been trained on TCGA primary tumor samples to assign any of 106 cancer subtype to new samples.  
+The TMP toolkit is applicable to 26 different cancer cohorts (ex. breast invasive carcinoma, colon adenocarcinoma) and has been trained on TCGA primary tumor samples to classify any of 106 cancer subtype to new samples.  
 
 Subtype predictions can be made for the following:
 
