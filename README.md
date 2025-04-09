@@ -8,8 +8,8 @@
 - [Data Availability and Publication](#data-availability-and-publication)
 - [Quickstart Guide](#quickstart-guide)
 - [Tutorials](#tutorials)
-- [Acknowledgment and Funding](#acknowledgment-and-funding)
 - [Troubleshooting](#troubleshooting)
+- [Acknowledgment and Funding](#acknowledgment-and-funding)
 - [Maintainers](#maintainers)
 
 
