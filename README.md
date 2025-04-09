@@ -1,5 +1,5 @@
 <h1 align="center">Tumor Molecular Pathology Toolkit</h1>
-<h4 align="center">An easy to run tool to classify cancer subtypes to new datasets</h4>
+<h4 align="center">An easy-to-run tool to classify cancer samples to defined TCGA subtypes using molecular profile data</h4>
 
 
 ## Table of contents
@@ -14,9 +14,9 @@
 
 
 ## Introduction
-The TMP toolkit is designed to classify cancer subtypes to new datasets. Users can input their own datasets and have reliable subtype classification.
+The TMP toolkit is designed to classify cancer samples to subtypes using molecular data. This tool can provide reliable subtype classification on non-TCGA studies, clinical trials, or other user datasets.
 
-The top performing models (of the hundreds of thousands models evaluated) have been pre-trained and available within Docker containers for ease of use.
+The top-performing models (of the hundreds of thousands models evaluated) have been pre-trained and available within Docker containers for ease of use.
 
 The TMP toolkit is applicable to 26 different cancer cohorts (ex. breast invasive carcinoma, colon adenocarcinoma) and has been trained on TCGA primary tumor samples to classify any of 106 cancer subtype to new samples.  
 
@@ -25,7 +25,7 @@ Cancer cohorts include:
 
 + ACC, BLCA, BRCA, CESC, COADREAD, ESCC, GEA, HNSC, KIRCKICH, KIRP, LGGGBM, LIHCCHOL, LUAD, LUSC, MESO, OV, PAAD, PCPG, PRAD, SARC, SKCM, TGCT, THCA, THYM, UCEC, UVM
 
-  > Full cancer cohort names of these abbreviations can be [found here](https://gdc.cancer.gov/resources-tcga-users/tcga-code-tables/tcga-study-abbreviations)
+  > Full cancer cohort names of these abbreviations can be [found here](https://gdc.cancer.gov/resources-tcga-users/tcga-code-tables/tcga-study-abbreviations). Note that our study combined several of the TCGA primary tumors in the linked list
 
 
 The data platforms supported are gene expression, DNA methylation, miRNA, copy number, and/or mutation calls.
@@ -40,30 +40,30 @@ Data are freely available for download:
 
 + [Publication Page](https://gdc.cancer.gov/about-data/publications/CCG-TMP-2022)
 
-    > Note: Data required to run tool must be downloaded from here
+    > Note: Data required to run tool must be downloaded from the above link
 
 ## Quickstart Guide
 
 ### Setup
 
-Please ensure you have completed the following set up from the [Requirements page](doc/requirements.md):
+Install requirements - detailed instructions are found on the [Requirements page](doc/requirements.md):
 
-1. Installed Python 3+
-2. Installed Docker Desktop (or Docker)
-3. Installed Synapse Client
-4. Installed AWS Client
+1. Install Python 3+
+2. Install Docker Desktop (or Docker)
+3. Install Synapse Client
+4. Install AWS Client
 
-And that you have finished steps in [Requirements](doc/requirements.md) - *(includes creating working environment, signining in, and manually downloading required data)*
+Ensure that steps are completed on the [Requirements page](doc/requirements.md) - *(includes creating working environment, signining in, and manually downloading required data)*
 
-> Alternatively you can build Docker images directly - see [Requirements](doc.requirements.md)
+> Alternatively, Docker images can be built directly. Instructions are found on the [Requirements page](doc.requirements.md)
 
 ### Required Input Format
-Activate your environment 
+Activate the python virtual environment 
 ```bash
 source venv/bin/activate
 ```
 
-User input data must be in tab separated format. Where original user data has rows labeled with samples and columns labeled with features (ex. genes).
+User input data must be in tab-separated format (.tsv) - where original user data has rows labeled with samples and columns labeled with features (ex. genes).
 
 > Ensure your data matches above description
 
@@ -80,7 +80,7 @@ python tools/convert.py \
 	--cancer <cancer>
 ```
 
-An optional argument of `--delete_i_col` can be included. An optional argument to inform which column to remove (0 based indexing). Use if a meta-data column is in data. If not specified, then will run with no column deletions.
+If the data contains a meta-data column, use the option argument `--delete_i_col` to delete the specified column (where *n* is an integer with zero-based indexing). If not specified, then will run with no column deletions.
 
 ### Quantile Rescaling
 
@@ -97,15 +97,16 @@ python tools/zero_floor.py \
   -out user-transformed-data/transformed-data.tsv
 ```
 
-> The rescaled output file will always be located in `user-transformed-data/transformed-data.tsv`.
+> The rescaled output file will written to disk at `user-transformed-data/transformed-data.tsv`.
 
 ### Run Machine Learning Models to Predict Cancer Subtypes
 
-A sinlge command to call one of the five methods. This will predict the molecular subtype for each sample.
+Run a single command to predict the molecular subtype all samples.
 
 ```
 bash RUN_model.sh <cancer> <platform> <method> <user-transformed-data/transformed-data.tsv>
 ```
+
 > Available cancers: `ACC`, `BLCA`, `BRCA`, `CESC`, `COADREAD`, `ESCC`, `GEA`, `HNSC`, `KIRCKICH`, `KIRP`, `LGGGBM`, `LIHCCHOL`, `LUAD`, `LUSC`, `MESO`, `OV`, `PAAD`, `PCPG`, `PRAD`, `SARC`, `SKCM`, `TGCT`, `THCA`, `THYM`, `UCEC`, `UVM` 
 
 > Available platforms: `GEXP`, `METH`, `MUTA`, `MIR`, `CNVR` 
@@ -145,7 +146,7 @@ To interprete and convert the TMP Toolkit subtype abbreviations, see the [Unders
 See [How to Fix Common Issues](doc/error_messages.md) for common error messages.
 
 ## Acknowledgment and Funding
-We would like to thank the National Cancer Institute for the support.
+We would like to thank the National Cancer Institute for support.
 
 ## Maintainers
 Current maintainers:
